@@ -9,18 +9,22 @@ public class Employee {
 	private String city;
 	
 	private String Dept;
+	
+	private Double salary;
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", city=" + city + ", Dept=" + Dept + "]";
+		return "Employee [id=" + id + ", name=" + name + ", city=" + city + ", Dept=" + Dept + ", salary=" + salary
+				+ "]";
 	}
 
-	public Employee(Integer id, String name, String city, String dept) {
+	public Employee(Integer id, String name, String city, String dept, Double salary) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.city = city;
 		Dept = dept;
+		this.salary = salary;
 	}
 
 	public Integer getId() {
@@ -54,6 +58,14 @@ public class Employee {
 	public void setDept(String dept) {
 		Dept = dept;
 	}
+
+	public Double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
 	
-	
+
 }
