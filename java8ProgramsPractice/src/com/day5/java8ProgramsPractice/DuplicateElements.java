@@ -39,6 +39,15 @@ public class DuplicateElements {
 		.filter(d3 -> !set3.add(d3))
 		.forEach(System.out::println);
 		
+		System.out.println("Fourth List : ");
+		List<Integer> list4 = Arrays.asList(
+				9,5,1,3,5,7,8,2,6,4);
+		
+		Set<Integer> set4 = new HashSet<Integer>();
+		
+		list3.stream()
+		.filter(d4 -> !set4.add(d4))
+		.forEach(System.out::println);
 		
 	}
 }
