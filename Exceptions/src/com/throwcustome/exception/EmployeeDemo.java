@@ -1,5 +1,6 @@
 package com.throwcustome.exception;
 
+import com.allcustome.exceptions.*;
 import java.util.Scanner;
 
 public class EmployeeDemo {
@@ -9,9 +10,9 @@ public class EmployeeDemo {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Employee : ");
 		
-		String emp = sc.next();
+		String emp = sc.next("Amit");
 		
-		if(String e : emp)
+		if(emp == Amit)
 		{
 			throw new EmployeeNotFoundException("Employee not found");
 		}
@@ -24,8 +25,14 @@ public class EmployeeDemo {
 		
 		EmployeeDemo ed = new EmployeeDemo();
 		
-		ed.employeeDemo();
-		
+		try
+		{
+			ed.employeeDemo();
+		}
+		catch(EmployeeNotFoundException e)
+		{
+			System.out.println(e.getMessage());
+		}
 		
 	}
 }
