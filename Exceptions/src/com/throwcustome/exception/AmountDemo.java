@@ -26,8 +26,14 @@ public class AmountDemo {
 		
 		AmountDemo amountd = new AmountDemo();
 		
-		amountd.amountCheck();
-		
+		try
+		{
+			amountd.amountCheck();
+		}
+		catch(AmountNotValidException a)
+		{
+			System.out.println(a.getMessage());
+		}
 		
 	}
 }
