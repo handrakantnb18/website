@@ -26,8 +26,14 @@ public class UserNotFound {
 		
 		UserNotFound unf = new UserNotFound();
 		
-		unf.userNotFount();
-		
+		try
+		{
+			unf.userNotFount();
+		}
+		catch(UserNotFoundException u)
+		{
+			System.out.println(u.getMessage());
+		}
 		
 	}
 }
