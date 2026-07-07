@@ -26,6 +26,13 @@ public class InsufficentBalance {
 		
 		InsufficentBalance ifb = new InsufficentBalance();
 		
-		ifb.balanceCheck();
+		try
+		{
+		  ifb.balanceCheck();
+		}
+		catch(InsufficentBalanceException i)
+		{
+			System.out.println(i.getMessage());
+		}
 	}
 }
