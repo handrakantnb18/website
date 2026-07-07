@@ -29,6 +29,13 @@ public class AgeDemo {
 
 		AgeDemo demo = new AgeDemo();
 		
-		demo.ageCheck();
+		try
+		{
+			demo.ageCheck();
+		}
+		catch(AgeNotValidException e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 }
