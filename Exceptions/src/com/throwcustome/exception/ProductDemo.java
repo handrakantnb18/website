@@ -11,9 +11,9 @@ public class ProductDemo {
 		Scanner scr = new Scanner(System.in);
 		System.out.println("Enter product : ");
 		
-		String name1 = scr.next();
+		String name1 = scr.next("abc");
 		
-		if(name1 < true)
+		if(name1 < abc)
 		{
 			throw new ProductNotFoundException("Product Not found");
 		}
@@ -26,8 +26,14 @@ public class ProductDemo {
 		
 		ProductDemo pd = new ProductDemo();
 		
-		
-		pd.productFound();
+		try
+		{
+			pd.productFound();
+		}
+		catch(ProductNotFoundException p)
+		{
+			System.out.println(p.getMessage());
+		}
 		
 	}
 }
