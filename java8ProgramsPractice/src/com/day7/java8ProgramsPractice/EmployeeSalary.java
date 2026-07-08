@@ -21,9 +21,11 @@ public class EmployeeSalary {
 
 				);
 		
-		list.forEach(System.out::println);
+//		list.forEach(System.out::println);
 		
-		
+		list.stream()
+		.filter(s -> s.getSalary() > 50000)
+		.forEach(System.out::println);
 		
 	}
 }
