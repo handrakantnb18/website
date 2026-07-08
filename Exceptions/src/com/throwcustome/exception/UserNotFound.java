@@ -5,30 +5,31 @@ import java.util.Scanner;
 
 public class UserNotFound {
 
-	void userNotFount()
-	{
-		Scanner scr = new Scanner(System.in);
-		System.out.println("Enter User name");
-		
-		String name = scr.next("chandrakant");
-		
-//		if(String n : name)
-//		{
-//			throw new UserNotFoundException("USer Not Found");
-//		}
-//		else
-//		{
-//			System.out.println("User Found");
-//		}
-	}
-	
+    void userNotFound() throws UserNotFoundException {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.print("Enter User Name: ");
+
+        String name = scr.next();
+
+        if ("chandr".equals(name)) {
+            System.out.println("User Found");
+        } else {
+            throw new UserNotFoundException("User Not Found");
+        }
+
+        scr.close();
+    }
+    
+
 	public static void main(String[] args) {
 		
 		UserNotFound unf = new UserNotFound();
 		
 		try
 		{
-			unf.userNotFount();
+			unf.userNotFound();
 		}
 		catch(UserNotFoundException u)
 		{
