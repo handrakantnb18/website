@@ -6,22 +6,25 @@ import java.util.Scanner;
 public class ProductDemo {
 
 	
-	void productFound()
-	{
-		Scanner scr = new Scanner(System.in);
-		System.out.println("Enter product : ");
-		
-		String name1 = scr.next("abc");
-		
-//		if(name1 < abc)
-//		{
-//			throw new ProductNotFoundException("Product Not found");
-//		}
-//		else
-//		{
-//			System.out.println("Product Found");
-//		}
-	}
+    void productFound() throws ProductNotFoundException {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.print("Enter Product Name: ");
+
+        String name1 = scr.next();
+
+        if ("mobile".equals(name1)) {
+            System.out.println("Product Found");
+        } else {
+            throw new ProductNotFoundException("Product Not Found");
+        }
+
+        scr.close();
+    }
+
+	
+	
 	public static void main(String[] args) {
 		
 		ProductDemo pd = new ProductDemo();
