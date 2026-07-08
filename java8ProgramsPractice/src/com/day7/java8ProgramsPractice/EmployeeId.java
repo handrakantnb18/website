@@ -21,9 +21,15 @@ public class EmployeeId {
 
 				);
 
+		System.out.println("--------------- Greater than 5 : ---------");
 		list.stream()
 		.filter(a -> a.getId() > 105)
 		.forEach(System.out::println);
+		
+		System.out.println("--------------- Less than 5 : ---------");
+		list.stream()
+		.filter(b -> b.getId() < 105)
+		.forEach(System.out::println);	
 		
 	}
 }
