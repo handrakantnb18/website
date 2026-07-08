@@ -13,14 +13,14 @@ public class ProductDemo {
 		
 		String name1 = scr.next("abc");
 		
-		if(name1 < abc)
-		{
-			throw new ProductNotFoundException("Product Not found");
-		}
-		else
-		{
-			System.out.println("Product Found");
-		}
+//		if(name1 < abc)
+//		{
+//			throw new ProductNotFoundException("Product Not found");
+//		}
+//		else
+//		{
+//			System.out.println("Product Found");
+//		}
 	}
 	public static void main(String[] args) {
 		
