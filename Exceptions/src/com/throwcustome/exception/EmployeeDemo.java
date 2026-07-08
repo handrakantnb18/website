@@ -5,22 +5,25 @@ import java.util.Scanner;
 
 public class EmployeeDemo {
 
-	void employeeDemo()
-	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Employee : ");
-		
-		String emp = sc.next("Amit");
-		
-		if(emp == Amit)
-		{
-			throw new EmployeeNotFoundException("Employee not found");
-		}
-		else
-		{
-			System.out.println("Employee Found");
-		}
-	}
+    void employeeDemo() throws EmployeeNotFoundException {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee Name: ");
+
+        String emp = sc.next();
+
+        if ("chandr".equals(emp)) {
+            System.out.println("Employee Found");
+        } else {
+            throw new EmployeeNotFoundException("Employee not found");
+        }
+
+        sc.close();
+    }
+
+	
+	
 	public static void main(String[] args) {
 		
 		EmployeeDemo ed = new EmployeeDemo();
