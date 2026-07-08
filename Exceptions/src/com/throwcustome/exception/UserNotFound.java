@@ -12,14 +12,14 @@ public class UserNotFound {
 		
 		String name = scr.next("chandrakant");
 		
-		if(String n : name)
-		{
-			throw new UserNotFoundException("USer Not Found");
-		}
-		else
-		{
-			System.out.println("User Found");
-		}
+//		if(String n : name)
+//		{
+//			throw new UserNotFoundException("USer Not Found");
+//		}
+//		else
+//		{
+//			System.out.println("User Found");
+//		}
 	}
 	
 	public static void main(String[] args) {
