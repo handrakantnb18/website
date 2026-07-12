@@ -29,7 +29,7 @@ public class AIService {
 		chat.setQuestion(question);
 		chat.setAnswar(answer);
 
-		repository.save(chat);
+		//repository.save(chat);
 		
 		return answer;
 		
