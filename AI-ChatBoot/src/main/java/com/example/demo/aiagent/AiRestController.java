@@ -21,4 +21,10 @@ public class AiRestController {
 	{
 		return aiService.askAI(message);
 	}
+	
+	@GetMapping("/ask")
+	public String ask(String question)
+	{
+		return aiService.askAI(question);
+	}
 }
