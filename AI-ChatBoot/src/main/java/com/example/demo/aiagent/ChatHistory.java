@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 @Entity
-@Data
 public class ChatHistory {
 
 	@Id
@@ -17,8 +16,32 @@ public class ChatHistory {
 	
 	private String question;
 	
-	@Column(length = 5000)
+	@Column(columnDefinition = "TEXT")
 	private String answar;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public String getAnswar() {
+		return answar;
+	}
+
+	public void setAnswar(String answar) {
+		this.answar = answar;
+	}
 	
 	
 }
