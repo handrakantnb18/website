@@ -1,5 +1,6 @@
 package com.example.demo.aiagent;
 
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,7 +21,6 @@ public class AIService {
 				.prompt(question)
 				.call()
 				.content();
-		
 	}
 	
 }
