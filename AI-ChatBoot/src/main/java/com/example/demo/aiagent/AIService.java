@@ -16,11 +16,32 @@ public class AIService {
 	
 	public String askAI(String question)
 	{
-		
-		return chatClient
+		String answer = 
+				chatClient
 				.prompt(question)
 				.call()
 				.content();
+		
+		ChatHistory chat = new ChatHistory();
+		chat.setQuestion(question); 
+		chat.setAnswer(answer);
+		
+		repository.save(chat);
+		
+		return answer;
+		
 	}
+	
+	
+//	public String askAI(String question)
+//	{
+//		
+//		return chatClient
+//				.prompt(question)
+//				.call()
+//				.content();
+//	}
+//	
+	
 	
 }
