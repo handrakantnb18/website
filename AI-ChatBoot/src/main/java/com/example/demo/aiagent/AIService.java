@@ -8,10 +8,13 @@ public class AIService {
 
 	
 	private final ChatClient chatClient;
+	private final ChatHistory repository;
 	
-	public AIService(ChatClient.Builder builder)
+	
+	public AIService(ChatClient.Builder builder, ChatHistory repository)
 	{
 		this.chatClient = builder.build();
+		this.repository = repository;
 	}
 	
 	public String askAI(String question)
@@ -23,9 +26,9 @@ public class AIService {
 				.content();
 		
 		ChatHistory chat = new ChatHistory();
-		chat.setQuestion(question); 
-		chat.setAnswer(answer);
-		
+		chat.setQuestion(question);
+		chat.setAnswar(answer);
+
 		repository.save(chat);
 		
 		return answer;
