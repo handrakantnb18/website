@@ -14,6 +14,38 @@ public class Book {
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", dept=" + dept + ", PRNnumber=" + PRNnumber + "]";
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public String getPRNnumber() {
+		return PRNnumber;
+	}
+
+	public void setPRNnumber(String pRNnumber) {
+		PRNnumber = pRNnumber;
+	}
 	
 	
 }
