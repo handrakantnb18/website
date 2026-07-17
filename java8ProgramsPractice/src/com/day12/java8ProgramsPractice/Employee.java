@@ -17,6 +17,55 @@ public class Employee {
 		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + ", city=" + city
 				+ "]";
 	}
+
+	public Employee(Integer id, String name, String dept, String salary, String city) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.salary = salary;
+		this.city = city;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 	
 	
 }
