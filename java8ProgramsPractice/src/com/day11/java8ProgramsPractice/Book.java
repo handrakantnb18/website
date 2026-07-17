@@ -46,6 +46,14 @@ public class Book {
 	public void setPRNnumber(String pRNnumber) {
 		PRNnumber = pRNnumber;
 	}
+
+	public Book(Integer id, String name, String dept, String pRNnumber) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		PRNnumber = pRNnumber;
+	}
 	
 	
 }
