@@ -46,6 +46,14 @@ public class Student {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	s
+
+	public Student(Integer id, String name, String collage, String address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.collage = collage;
+		this.address = address;
+	}
+	
 	
 }
