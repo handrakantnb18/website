@@ -66,6 +66,11 @@ public class Bank {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
+
+	public Bank() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }
