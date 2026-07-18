@@ -16,14 +16,14 @@ public class StudentName {
 				    new Student(105, "Sneha", "Kolhapur", "Shivaji University"),
 				    new Student(106, "Rohit", "Satara", "Shivaji University"),
 				    new Student(107, "Neha", "Solapur", "Solapur University"),
-				    new Student(108, "Pooja", "Aurangabad", "Dr. Babasaheb Ambedkar Marathwada University"),
+				    new Student(108, "Amit", "Sangli", "Dr. Babasaheb Ambedkar Marathwada University"),
 				    new Student(109, "Vikas", "Sangli", "Shivaji University"),
-				    new Student(110, "Anjali", "Ahmednagar", "Savitribai Phule Pune University")
+				    new Student(110, "Anjali", "Sangli", "Savitribai Phule Pune University")
 
 				 );
 
 		 list.stream()
-		 .filter(s -> s.getSname().equals("Amit"))
+		 .filter(s -> s.getSname().equals("Amit") && s.getCity().equals("Sangli"))
 		 .forEach(System.out::println);
 	}
 }
