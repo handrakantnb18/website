@@ -1,0 +1,30 @@
+package com.day14.java8ProgramsPractice;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class AdminName {
+
+	public static void main(String[] args) {
+		
+		List<Admin> list = Arrays.asList(
+				new Admin(111, "Ram", "ram@gmail.com", "IT"),
+				new Admin(111, "Ram", "ram@gmail.com", "IT"),
+		        new Admin(112, "Shyam", "shyam@gmail.com", "HR"),
+		        new Admin(113, "Rahul", "rahul@gmail.com", "Finance"),
+		        new Admin(114, "Amit", "amit@gmail.com", "Admin"),
+		        new Admin(115, "Sachin", "sachin@gmail.com", "Development"),
+		        new Admin(116, "Priya", "priya@gmail.com", "Testing"),
+		        new Admin(117, "Sneha", "sneha@gmail.com", "Support"),
+		        new Admin(118, "Kiran", "kiran@gmail.com", "Security"),
+		        new Admin(119, "Neha", "neha@gmail.com", "Marketing"),
+		        new Admin(120, "Vikas", "vikas@gmail.com", "Operations")
+				
+				);
+		
+		list.stream()
+		.filter(s -> s.getName().equals("Ram"))
+		.forEach(System.out::println);
+		
+	}
+}
