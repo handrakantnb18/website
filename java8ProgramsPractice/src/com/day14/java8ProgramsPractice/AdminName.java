@@ -18,7 +18,7 @@ public class AdminName {
 		        new Admin(117, "Sneha", "sneha@gmail.com", "Support"),
 		        new Admin(118, "Kiran", "kiran@gmail.com", "Security"),
 		        new Admin(119, "Neha", "neha@gmail.com", "Marketing"),
-		        new Admin(120, "Vikas", "vikas@gmail.com", "Operations")
+		        new Admin(120, "Vikas", "vikas@gmail.com", "HR")
 				
 				);
 		
