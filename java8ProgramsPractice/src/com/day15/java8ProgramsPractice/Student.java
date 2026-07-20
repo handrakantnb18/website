@@ -10,7 +10,7 @@ public class Student {
 	
 	private String email;
 	
-	private String mobileNo;
+	private Long mobileNo;
 
 	@Override
 	public String toString() {
@@ -18,7 +18,7 @@ public class Student {
 				+ mobileNo + "]";
 	}
 
-	public Student(Integer id, String name, String collage, String email, String mobileNo) {
+	public Student(Integer id, String name, String collage, String email, Long mobileNo) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -64,11 +64,11 @@ public class Student {
 		this.email = email;
 	}
 
-	public String getMobileNo() {
+	public Long getMobileNo() {
 		return mobileNo;
 	}
 
-	public void setMobileNo(String mobileNo) {
+	public void setMobileNo(Long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 	
