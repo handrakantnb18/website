@@ -12,7 +12,7 @@ public class Employee {
 	
 	private String dept;
 	
-	private String salary;
+	private Double salary;
 
 	@Override
 	public String toString() {
@@ -20,7 +20,7 @@ public class Employee {
 				+ dept + ", salary=" + salary + "]";
 	}
 
-	public Employee(Integer id, String name, String email, String mobileNo, String dept, String salary) {
+	public Employee(Integer id, String name, String email, String mobileNo, String dept, Double salary) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -75,11 +75,11 @@ public class Employee {
 		this.dept = dept;
 	}
 
-	public String getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 	
