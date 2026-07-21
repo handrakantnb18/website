@@ -32,5 +32,8 @@ public class EmployeeIdName {
 		
 		System.out.println(map);
 		
+		map.forEach((id, name)
+				-> System.out.println(id + " : "+ name));
+		
 	}
 }
