@@ -6,7 +6,7 @@ public class Bank {
 	
 	private String name;
 	
-	private Double accountNo;
+	private Integer accountNo;
 	
 	private String email;
 	
@@ -18,7 +18,7 @@ public class Bank {
 				+ mobileNo + "]";
 	}
 
-	public Bank(Integer id, String name, Double accountNo, String email, Long mobileNo) {
+	public Bank(Integer id, String name, Integer accountNo, String email, Long mobileNo) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -48,11 +48,11 @@ public class Bank {
 		this.name = name;
 	}
 
-	public Double getAccountNo() {
+	public Integer getAccountNo() {
 		return accountNo;
 	}
 
-	public void setAccountNo(Double accountNo) {
+	public void setAccountNo(Integer accountNo) {
 		this.accountNo = accountNo;
 	}
 
