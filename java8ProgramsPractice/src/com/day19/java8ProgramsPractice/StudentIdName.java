@@ -29,15 +29,23 @@ public class StudentIdName {
 //	    .map(Student::getName)
 //	    .forEach(System.out::println);
 		
-		Map<Integer, Student> studentMap = list.stream()
-		        .collect(Collectors.toMap(
-		                Student::getId,
-		                student -> student
-		        ));
-
-		studentMap.forEach((id, student) ->
-		        System.out.println(id + " -> " + student));
+//		Map<Integer, Student> studentMap = list.stream()
+//		        .collect(Collectors.toMap(
+//		                Student::getId,
+//		                student -> student
+//		        ));
+//
+//		studentMap.forEach((id, student) ->
+//		        System.out.println(id + " -> " + student));
 		
+		
+		Map<String, List<Student>> cityMap = list.stream()
+		        .collect(Collectors.groupingBy(Student::getCity));
+
+		cityMap.forEach((city, students) -> {
+		    System.out.println(city);
+		    students.forEach(System.out::println);
+		});
 		
 		
 	}
