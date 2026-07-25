@@ -2,6 +2,8 @@ package com.day19.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeIdCity {
 
@@ -20,9 +22,18 @@ public class EmployeeIdCity {
 			    new Employee(1010, "Sachin", "sachin@gmail.com", "Satara", 85000.00)
 			);
 		
-		list.stream()
-		.map(Employee::getId)
-		.forEach(System.out::println);
+//		list.stream()
+//		.map(Employee::getId)
+//		.forEach(System.out::println);
 		
+		
+		Map<Integer, String> employeeMap = list.stream()
+			    .collect(Collectors.toMap(
+			        Employee::getId,
+			        Employee::getName
+			    ));
+
+			employeeMap.forEach((id, name) ->
+			    System.out.println(id + " : " + name));
 	}
 }
