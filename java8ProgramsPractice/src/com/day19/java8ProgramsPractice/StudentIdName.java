@@ -2,6 +2,8 @@ package com.day19.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StudentIdName {
 
@@ -23,9 +25,20 @@ public class StudentIdName {
 //		list.stream()
 //				.forEach(System.out::println);
 		
-		list.stream()
-	    .map(Student::getName)
-	    .forEach(System.out::println);
+//		list.stream()
+//	    .map(Student::getName)
+//	    .forEach(System.out::println);
+		
+		Map<Integer, Student> studentMap = list.stream()
+		        .collect(Collectors.toMap(
+		                Student::getId,
+		                student -> student
+		        ));
+
+		studentMap.forEach((id, student) ->
+		        System.out.println(id + " -> " + student));
+		
+		
 		
 	}
 }
