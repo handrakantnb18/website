@@ -20,10 +20,12 @@ public class StudentIdName {
 			    new Student(1010, "Neha", "neha@gmail.com", "Thane", 23, "MBA", 85.95)
 			);
 		
+//		list.stream()
+//				.forEach(System.out::println);
+		
 		list.stream()
-				.forEach(System.out::println);
-		
-		
+	    .map(Student::getName)
+	    .forEach(System.out::println);
 		
 	}
 }
