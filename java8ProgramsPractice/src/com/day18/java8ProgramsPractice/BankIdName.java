@@ -2,6 +2,8 @@ package com.day18.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class BankIdName {
 
@@ -20,7 +22,12 @@ public class BankIdName {
 			    new Bank(20, "Development", "Suresh", "9871234574")
 			);
 		
-		list.forEach(System.out::println);
+//		list.forEach(System.out::println);
+		
+		Map<Integer, Bank> map = list.stream()
+		        .collect(Collectors.toMap(Bank::getId, bank -> bank));
+
+		map.forEach((id, bank) -> System.out.println(id + " : " + bank));
 		
 	}
 }
