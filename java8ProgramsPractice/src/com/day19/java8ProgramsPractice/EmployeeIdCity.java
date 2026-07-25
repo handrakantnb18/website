@@ -27,13 +27,27 @@ public class EmployeeIdCity {
 //		.forEach(System.out::println);
 		
 		
-		Map<Integer, String> employeeMap = list.stream()
-			    .collect(Collectors.toMap(
-			        Employee::getId,
-			        Employee::getName
-			    ));
+//		Map<Integer, String> employeeMap = list.stream()
+//			    .collect(Collectors.toMap(
+//			        Employee::getId,
+//			        Employee::getName
+//			    ));
+//
+//			employeeMap.forEach((id, name) ->
+//			    System.out.println(id + " : " + name));
+			
+			List<Employee> updatedEmployees = list.stream()
+				    .map(emp -> new Employee(
+				            emp.getId(),
+				            emp.getName().toUpperCase(),
+				            emp.getEmail(),
+				            emp.getLocation().toUpperCase(),
+				            emp.getSalary() + 80000
+				    ))
+				    .collect(Collectors.toList());
 
-			employeeMap.forEach((id, name) ->
-			    System.out.println(id + " : " + name));
+				updatedEmployees.forEach(System.out::println);
+			
+			
 	}
 }
