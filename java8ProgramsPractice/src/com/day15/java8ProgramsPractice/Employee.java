@@ -30,7 +30,7 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Employee() {
+	public Employee(int i, String string, String string2, String string3, double d, long l, String string4) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
