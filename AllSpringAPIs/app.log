@@ -1975,3 +1975,12 @@ Unconditional classes:
 2026-07-30T12:54:04.972+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
 2026-07-30T12:54:04.973+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
 2026-07-30T12:54:04.976+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-30T13:19:49.201+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/logging", parameters={}
+2026-07-30T13:19:49.202+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.allspringApis.practice.logging.MyService#doSomething()
+2026-07-30T13:19:49.202+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2026-07-30T13:19:49.203+05:30  INFO 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] c.a.practice.logging.MyService           : Processing..
+2026-07-30T13:19:49.203+05:30 ERROR 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] c.a.practice.logging.MyService           : Something went wrong...
+2026-07-30T13:19:49.204+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2026-07-30T13:19:49.206+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2026-07-30T13:19:49.206+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2026-07-30T13:19:49.207+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
