@@ -1,5 +1,6 @@
 package com.allspringApis.practice.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.catalina.User;
@@ -12,7 +13,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.allspringApis.practice.entity.Acount;
 import com.allspringApis.practice.services.UserServices;
+
+import jakarta.transaction.Transactional;
+
 
 @ControllerAdvice
 @RestController
@@ -39,5 +44,16 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error : " + ex.getMessage());
 		
 	}
+	
+//	@Transactional
+//	public void transferMoney(Acount from, Acount to, BigDecimal amount) {
+//		
+//		debit(from, amount);
+//		 
+//		 throw new RuntimeException();
+//		 
+//		 credit(to, amount);
+//	}
+	
 	
 }

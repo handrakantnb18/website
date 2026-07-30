@@ -1984,3 +1984,5 @@ Unconditional classes:
 2026-07-30T13:19:49.206+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
 2026-07-30T13:19:49.206+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
 2026-07-30T13:19:49.207+05:30 DEBUG 1328 --- [AllSpringAPIs] [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-30T13:28:25.328+05:30  WARN 1328 --- [AllSpringAPIs] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m56s623ms452µs700ns).
+2026-07-30T13:54:04.860+05:30  WARN 1328 --- [AllSpringAPIs] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m39s530ms657µs).
