@@ -4,9 +4,9 @@ public class CheckingAgeVoting {
 
 	public static void main(String[] args) {
 		
-//		int age = 15;
+		int age = 15;
 
-		int age = 19;
+//		int age = 19;
 		
 //		int weight = 75;
 		
@@ -16,6 +16,10 @@ public class CheckingAgeVoting {
 //				System.out.println();
 //			}
 			System.out.println("Your are Eligible for Voting...");
+		}
+		else {
+			System.out.println("Your are Not Eligible for Voting...");
+
 		}
 	}
 }
