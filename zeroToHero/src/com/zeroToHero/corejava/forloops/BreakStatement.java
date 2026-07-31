@@ -15,7 +15,7 @@ public class BreakStatement {
 			}
 		}
 		
-		// 
+		// Java break statement with Loop
 		
 		for(int j=1; j<=10; j++) {
 			if(j == 5) {
