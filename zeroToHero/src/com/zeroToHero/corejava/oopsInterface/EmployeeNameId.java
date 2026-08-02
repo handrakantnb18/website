@@ -20,7 +20,10 @@ public class EmployeeNameId {
 		        new Employee(110, "Anjali More", "9874561239", "anjali@gmail.com", "Pune", "Development")
 		);
 		
-		list.forEach(name -> System.out.println(name));
+//		list.forEach(name -> System.out.println(name));
+		
+		Employee employee = list.get(105);
+		System.out.println(employee);
 		
 	}
 }
