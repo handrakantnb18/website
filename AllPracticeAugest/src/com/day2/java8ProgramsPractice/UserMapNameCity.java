@@ -23,6 +23,14 @@ public class UserMapNameCity {
 		for(Map.Entry<Integer, User> entry : map.entrySet()) {
 			System.out.println(entry.getKey()+" -> "+entry.getValue());
 			
+			
+			map.values()
+			.stream()
+			.filter(user -> user.getUsalary() > 60000)
+			.forEach(System.out::println);
+			
+			
+			
 		}
 	}
 }
