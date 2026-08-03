@@ -20,17 +20,21 @@ public class UserMapNameCity {
 		map.put(109, new User(109, "Kiran", "kiran@gmail.com", 75000.0, "9876543218", "Sangli"));
 		map.put(110, new User(110, "Pooja", "pooja@gmail.com", 67000.0, "9876543219", "Pune"));
 
-		for(Map.Entry<Integer, User> entry : map.entrySet()) {
-			System.out.println(entry.getKey()+" -> "+entry.getValue());
+//		for(Map.Entry<Integer, User> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+" -> "+entry.getValue());
+			
+			
+//			map.values()
+//			.stream()
+//			.filter(user -> user.getUsalary() > 60000)
+//			.forEach(System.out::println);
 			
 			
 			map.values()
-			.stream()
-			.filter(user -> user.getUsalary() > 60000)
-			.forEach(System.out::println);
-			
-			
+			   .stream()
+			   .sorted((u1, u2) -> u1.getUsalary().compareTo(u2.getUsalary()))
+			   .forEach(System.out::println);
 			
 		}
 	}
-}
+
