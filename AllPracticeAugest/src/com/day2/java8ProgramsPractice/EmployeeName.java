@@ -20,9 +20,15 @@ public class EmployeeName {
 		map.put(109, new Employee(109, "Kiran", "kiran@gmail.com", "9876543218", "Satara", 72000.0, "Development"));
 		map.put(110, new Employee(110, "Pooja", "pooja@gmail.com", "9876543219", "Sangli", 68000.0, "QA"));
 
-		for(Map.Entry<Integer, Employee> entry : map.entrySet()) {
-			System.out.println(entry.getKey()+ " -> " + entry.getValue());
+//		for(Map.Entry<Integer, Employee> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+ " -> " + entry.getValue());
+//			
 			
+		map.values()
+		.stream()
+		.filter(emp -> emp.getCity().equalsIgnoreCase("Pune"))
+		.forEach(System.out::println);
+		
+		
 		}
 	}
-}
