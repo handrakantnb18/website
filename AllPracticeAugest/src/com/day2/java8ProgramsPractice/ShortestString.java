@@ -8,7 +8,7 @@ public class ShortestString {
 
 	// find smallest String in the Arrays of list
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {  
 		
 		List<String> str = Arrays.asList(
 				"Software","chandrakant","Priyanka", "Shivraj");
