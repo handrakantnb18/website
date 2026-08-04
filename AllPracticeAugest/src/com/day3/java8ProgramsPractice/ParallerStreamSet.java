@@ -16,5 +16,9 @@ public class ParallerStreamSet {
 		.parallel()
 		.forEach(System.out::println);
 		
+		System.out.println("==================");
+		
+		list.parallelStream()
+		.forEach(System.out::println);
 	}
 }
