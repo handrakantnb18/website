@@ -4,6 +4,7 @@ import java.util.Optional;
 
 public class OptionalTest {
 
+	
 	// The Optional class was introduced in Java 8 and 
 	// is available in the java.util package.
 	public static void main(String[] args) {
@@ -11,6 +12,19 @@ public class OptionalTest {
 		Optional<String> name = Optional.ofNullable(null);
 		
 		System.out.println(name.orElse("Guest"));
+		
+		
+//		Employee employee = repository.findById(101);
+//
+//		Optional<Employee> optionalEmployee = Optional.ofNullable(employee);
+//
+//		String empName = optionalEmployee
+//		                    .map(Employee::getName)
+//		                    .orElse("Employee Not Found");
+//
+//		System.out.println(empName);
+		
+		
 		
 	}
 }
