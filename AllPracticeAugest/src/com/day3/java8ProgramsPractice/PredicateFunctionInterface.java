@@ -1,0 +1,15 @@
+package com.day3.java8ProgramsPractice;
+
+import java.util.function.Predicate;
+
+public class PredicateFunctionInterface {
+
+	// Checks a condition and returns true or false.
+	public static void main(String[] args) {
+		
+		Predicate<Integer> isEven = n -> n % 2 == 0;
+		
+		System.out.println(isEven.test(10));
+		System.out.println(isEven.test(15));
+	}
+}
