@@ -6,6 +6,8 @@ import java.util.List;
 
 public class EmployeeTest {
 
+	// filters employees with a salary greater than 50,000,
+	// sorts them by name, and stores the result in a new list.
 	public static void main(String[] args) {
 		
 		List<Employee> list = Arrays.asList(
