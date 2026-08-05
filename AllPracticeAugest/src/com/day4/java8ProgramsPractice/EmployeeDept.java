@@ -1,6 +1,8 @@
 package com.day4.java8ProgramsPractice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeDept {
@@ -25,9 +27,14 @@ public class EmployeeDept {
 
 			// Filter employees from IT department
 			
-		map.values().stream()
-		.filter(emp -> emp.getDept().equalsIgnoreCase("IT"))
-		.forEach(System.out::println);
+//		map.values().stream()
+//		.filter(emp -> emp.getDept().equalsIgnoreCase("IT"))
+//		.forEach(System.out::println);
+		
+		// Convert Map<Integer, Employee> to List<Employee>
+		
+		List<Employee> emp = new ArrayList<>(map.values());
+		emp.forEach(System.out::println);
 		
 			
 	}
