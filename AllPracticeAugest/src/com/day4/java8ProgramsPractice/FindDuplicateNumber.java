@@ -8,16 +8,14 @@ import java.util.Set;
 public class FindDuplicateNumber {
 
 	public static void main(String[] args) {
-		
+
 		// find Duplicate Integer in the list
 
-List<Integer> list = Arrays.asList(2,25,45,8,5,2,45,5);
-		
+		List<Integer> list = Arrays.asList(2, 25, 45, 8, 5, 8, 2, 45, 5);
+
 		Set<Integer> set = new HashSet<Integer>();
-		
-		list.stream()
-		.filter(s -> !set.add(s))
-		.forEach(System.out::println);
-		
+
+		list.stream().filter(s -> !set.add(s)).forEach(System.out::println);
+
 	}
 }
