@@ -14,10 +14,10 @@ public class Student {
 	
 	private String email;
 	
-	private String city;
+	private String cource;
 
 	public Student(Integer id, String name, String collage, String address, String mobileNo, String email,
-			String city) {
+			String cource) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -25,13 +25,13 @@ public class Student {
 		this.address = address;
 		this.mobileNo = mobileNo;
 		this.email = email;
-		this.city = city;
+		this.cource = cource;
 	}
 
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", collage=" + collage + ", address=" + address + ", mobileNo="
-				+ mobileNo + ", email=" + email + ", city=" + city + "]";
+				+ mobileNo + ", email=" + email + ", cource=" + cource + "]";
 	}
 
 	public Integer getId() {
@@ -82,12 +82,12 @@ public class Student {
 		this.email = email;
 	}
 
-	public String getCity() {
-		return city;
+	public String getCource() {
+		return cource;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setCity(String cource) {
+		this.cource = cource;
 	}
 
 	public Student() {
