@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class EmployeeSalary {
 
+//	 If you want to store Employee objects in a Map<Integer, Employee>, here is an example with 10 employees.
+	
 	public static void main(String[] args) {
 		
 		Map<Integer, Employee> map = new HashMap<Integer, Employee>();
@@ -20,10 +22,14 @@ public class EmployeeSalary {
 		map.put(109, new Employee(109, "Karan", "Aurangabad", "9876543218", "karan@gmail.com", "DevOps"));
 		map.put(110, new Employee(110, "Anjali", "Sangli", "9876543219", "anjali@gmail.com", "QA"));
 
-		map.forEach((id, emp) ->
-		System.out.println(id+ " "+emp));
-		
-		
-		
+//		map.forEach((id, emp) ->
+//		System.out.println(id+ " "+emp));
+//		
+	
+		// Filter employees from Pune
+		map.values().stream()
+		.filter(emp -> emp.getCity().equalsIgnoreCase("Pune"))
+		.forEach(System.out::println);
+				
 	}
 }
