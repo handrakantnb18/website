@@ -31,10 +31,17 @@ public class EmployeeNameCity {
 	        
 	       // map.forEach((id, employee) -> System.out.println(id+ " "+employee));
 	        
+//	        map.values()
+//	        	.stream()
+//	        	.map(Employee::getName)
+//	        	.forEach(System.out::println);
+	        
 	        map.values()
-	        	.stream()
-	        	.map(Employee::getName)
-	        	.forEach(System.out::println);
+	        .stream()
+	        .filter(emp -> emp.getDept().equals("IT"))
+	        .map(Employee::getName)
+	        .forEach(System.out::println);
+	        
 	        
 	}
 }
