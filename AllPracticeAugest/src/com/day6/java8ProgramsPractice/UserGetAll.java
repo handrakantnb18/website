@@ -40,5 +40,11 @@ public class UserGetAll {
 		.map(User::getName)
 		.forEach(System.out::println);
 		
+		
+		user.values()
+		.stream()
+		.filter(use -> use.getCity().equals("Pune"))
+		.forEach(System.out::println);
+		
 	}
 }
