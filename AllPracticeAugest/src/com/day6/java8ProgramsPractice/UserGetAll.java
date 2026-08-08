@@ -30,9 +30,15 @@ public class UserGetAll {
 		user.put(110, new User(110, "Kiran", "kiran@gmail.com", "9876543219", "Male", "Pune"));
 		
 		
-		user.forEach((id, users) -> {
-			System.out.println(id+""+users);
-		});
+//		user.forEach((id, users) -> {
+//			System.out.println(id+""+users);
+//		});
+		
+		
+		user.values()
+		.stream()
+		.map(User::getName)
+		.forEach(System.out::println);
 		
 	}
 }
