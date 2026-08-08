@@ -29,8 +29,12 @@ public class EmployeeNameCity {
 
 	        map.put(110, new Employee(110, "Kiran", "kiran@gmail.com", "IT", "70000", "9876543219"));
 	        
-	        map.forEach((id, employee) -> System.out.println(id+ " "+employee));
+	       // map.forEach((id, employee) -> System.out.println(id+ " "+employee));
 	        
+	        map.values()
+	        	.stream()
+	        	.map(Employee::getName)
+	        	.forEach(System.out::println);
 	        
 	}
 }
