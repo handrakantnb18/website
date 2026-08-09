@@ -29,7 +29,13 @@ public class StudentMap {
 
 		map.put(110, new Student(110, "Kiran", "React", "kiran@gmail.com", "9876543219", "CS", "Solapur"));
 		
-		map.forEach((id, name) -> System.out.println(id+" "+name));
+		//map.forEach((id, name) -> System.out.println(id+" "+name));
+		
+		map.values()
+		.stream()
+		.map(Student::getName)
+		.forEach(System.out::println);
+		
 		
 		
 	}
