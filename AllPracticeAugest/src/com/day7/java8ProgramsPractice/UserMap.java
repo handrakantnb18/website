@@ -30,9 +30,12 @@ public class UserMap {
 		map.put(110, new User(110, "Kiran", "kiran@gmail.com", "Solapur", "9876543219", "IT", "Solapur"));
 		
 		
-		map.forEach((id, name) -> System.out.println(id+" "+name));
+		//map.forEach((id, name) -> System.out.println(id+" "+name));
 		
-		
+		map.values()
+		.stream()
+		.filter(user -> user.getDept().equals("IT"))
+		.forEach(System.out::println);
 		
 	}
 }
