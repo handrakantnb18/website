@@ -32,8 +32,13 @@ public class EmployeeMap {
 	        map.put(111, new Employee(111, "Sivraj", "shivraj@gmail.com", "IT", "Pune", "9975629875", "Male"));
 	        
 	        
-	        map.forEach((id, name) -> System.out.println(id+ " "+name));
+	       // map.forEach((id, name) -> System.out.println(id+ " "+name));
 	        
+	        
+	        map.values()
+	           .stream()
+	           .map(Employee::getName)
+	           .forEach(System.out::println);
 	        
 	        
 	}
