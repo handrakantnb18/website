@@ -32,9 +32,15 @@ public class UserMap {
 		
 		//map.forEach((id, name) -> System.out.println(id+" "+name));
 		
-		map.values()
-		.stream()
-		.filter(user -> user.getDept().equals("IT"))
+//		map.values()
+//		.stream()
+//		.filter(user -> user.getDept().equals("IT"))
+//		.forEach(System.out::println);
+		
+		
+		map.values().stream()
+		.sorted((u1, u2) -> 
+		u1.getName().compareTo(u2.getName()))
 		.forEach(System.out::println);
 		
 	}
