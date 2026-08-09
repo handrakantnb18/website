@@ -31,9 +31,14 @@ public class StudentMap {
 		
 		//map.forEach((id, name) -> System.out.println(id+" "+name));
 		
+//		map.values()
+//		.stream()
+//		.map(Student::getName)
+//		.forEach(System.out::println);
+		
 		map.values()
 		.stream()
-		.map(Student::getName)
+		.filter(s -> s.getCourse().equals("Java"))
 		.forEach(System.out::println);
 		
 		
