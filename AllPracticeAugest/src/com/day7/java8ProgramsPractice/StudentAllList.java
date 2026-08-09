@@ -23,8 +23,12 @@ public class StudentAllList {
 
 		map.put(107, new Student(107, "Rohit", "rohit@gmail.com", "Java", "Nagpur", 48000.0, "IT"));
 		
-		map.forEach((id, name) -> System.out.println(id+" "+name));
+		// map.forEach((id, name) -> System.out.println(id+" "+name));
 		
+		map.values()
+		.stream()
+		.filter(s -> s.getFees() > 45000)
+		.forEach(System.out::println);
 		
 		
 	}
