@@ -31,8 +31,14 @@ public class EmployeeAllList {
 
 	        list.put(110, new Employee(110, "Kiran", "kiran@gmail.com", "IT", "70000", "9876543219"));
 
-	        list.forEach((id, sum) ->System.out.println(id+" "+sum));
+	       // list.forEach((id, sum) ->System.out.println(id+" "+sum));
 	        
+	        
+	        list.values()
+	        .stream()
+	        .filter(num -> num.getDept().equals("IT"))
+	        .map(Employee::getSalary)
+	        .forEach(System.out::println);
 	        
 	        
 	}
