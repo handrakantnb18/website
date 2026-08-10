@@ -32,11 +32,19 @@ public class EmployeeDept {
 				
 				);
 
-		Map<String, List<Employee>> res =
-		emp.stream()
-		.collect(Collectors.groupingBy(Employee::getDept));
+//		Map<String, List<Employee>> res =
+//		emp.stream()
+//		.collect(Collectors.groupingBy(Employee::getDept));
+//		
+//		res.forEach((id, name) -> System.out.println(id+ " = "+name));
 		
-		res.forEach((id, name) -> System.out.println(id+ " = "+name));
-		
+		Map<String, Long> result =
+		        emp.stream()
+		                 .collect(Collectors.groupingBy(
+		                         Employee::getDept,
+		                         Collectors.counting()
+		                 ));
+
+		System.out.println(result);
 	}
 }
