@@ -31,16 +31,23 @@ public class EmployeeHeightSalary {
 				
 				);
 
-		Employee high =
+//		Employee high =
+//				emp.stream()
+//				.sorted(Comparator.comparing(
+//						Employee::getSalary)
+//						.reversed())
+//				.skip(1)
+//				.findFirst()
+//				.get();
+//		
+//		System.out.println(high);
+		
+		Employee emphigh = 
 				emp.stream()
-				.sorted(Comparator.comparing(
-						Employee::getSalary)
-						.reversed())
-				.skip(1)
-				.findFirst()
+				.max(Comparator.comparing(Employee::getSalary))
 				.get();
 		
-		System.out.println(high);
+		System.out.println(emphigh);
 		
 		
 	}
