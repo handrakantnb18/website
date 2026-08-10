@@ -2,6 +2,7 @@ package com.day9.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EmployeeSalary {
 
@@ -30,7 +31,16 @@ public class EmployeeSalary {
 				
 				);
 		
-		list.forEach(System.out::println);
+		//list.forEach(System.out::println);
+		
+		
+		List<Employee> res =
+				list.stream()
+				.filter(emp -> emp.getSalary() > 70000)
+				.collect(Collectors.toList());
+		
+		res.forEach(System.out::println);
+		
 		
 		
 	}
