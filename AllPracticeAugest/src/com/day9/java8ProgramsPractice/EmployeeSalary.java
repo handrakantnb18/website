@@ -34,14 +34,19 @@ public class EmployeeSalary {
 		//list.forEach(System.out::println);
 		
 		
-		List<Employee> res =
-				list.stream()
-				.filter(emp -> emp.getSalary() > 70000)
-				.collect(Collectors.toList());
+//		List<Employee> res =
+//				list.stream()
+//				.filter(emp -> emp.getSalary() > 70000)
+//				.collect(Collectors.toList());
+//		
+//		res.forEach(System.out::println);
 		
-		res.forEach(System.out::println);
 		
-		
+		List<String> names = list.stream()
+		        .map(Employee::getName)
+		        .collect(Collectors.toList());
+
+		System.out.println(names);
 		
 	}
 }
