@@ -46,5 +46,13 @@ public class EmployeeDept {
 		                 ));
 
 		System.out.println(result);
+		
+		System.out.println("===============");
+		double totSalary =
+			emp.stream()
+			.mapToDouble(Employee::getSalary)
+			.sum();
+			
+			System.out.println(totSalary);
 	}
 }
