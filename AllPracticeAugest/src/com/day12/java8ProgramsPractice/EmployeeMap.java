@@ -29,9 +29,15 @@ public class EmployeeMap {
 				    new Employee(110, "Kavita", "kavita@gmail.com", "9876543219", "Sales", "Pune", "Female")
 				);
 		
+//		emp.stream()
+//		.map(Employee::getName)
+//		.forEach(System.out::println);
+		
+		
 		emp.stream()
-		.map(Employee::getName)
+		.filter(e -> e.getAddress().equals("Pune"))
 		.forEach(System.out::println);
+		
 		
 	}
 }
