@@ -34,8 +34,17 @@ public class EmployeeMap {
 //		.forEach(System.out::println);
 		
 		
+//		emp.stream()
+//		.filter(e -> e.getAddress().equals("Pune"))
+//		.forEach(System.out::println);
+	
 		emp.stream()
-		.filter(e -> e.getAddress().equals("Pune"))
+		.filter(f -> f.getGender().equals("Female"))
+		.forEach(System.out::println);
+		
+		System.out.println("=======================");
+		emp.stream()
+		.filter(m -> m.getGender().equals("Male"))
 		.forEach(System.out::println);
 		
 		
