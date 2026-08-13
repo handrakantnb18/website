@@ -30,11 +30,14 @@ public class EmployeeMap {
 	        map.put(110, new Employee(110, "Kiran", "kiran@gmail.com", "9876543219", "IT", "Mumbai", 75000.0));
 	        
 	        
-	        for(Map.Entry<Integer, Employee> entry : map.entrySet()) {
-	        	System.out.println(entry.getKey()+" : "+entry.getValue());
+//	        for(Map.Entry<Integer, Employee> entry : map.entrySet()) {
+//	        	System.out.println(entry.getKey()+" : "+entry.getValue());
+//	        	
+	        	
+	        	map.forEach((id, emp) -> System.out.println(id+" : "+emp));
 	        	
 	        	
 	        }
 	        
 	}
-}
+
