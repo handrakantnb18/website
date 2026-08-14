@@ -29,9 +29,17 @@ public class EmployeeMap {
 
 	        map.put(110, new Employee(110, "Kiran", "kiran@gmail.com", "Mumbai", "9876543219", 80000.0, "IT"));
 		
-		
+		// 10 Employee objects using Map<Integer, Employee>, use the employee id as the map key.
 	        map.forEach((id, name) -> {
 	        	System.out.println(id+" : "+name);
 	        });
+	        
+	        // key and value
+	        
+	        map.forEach((key, value) -> {
+	        	System.out.println(key+ " : "+value);
+	        });
+	        
+	        
 	}
 }
