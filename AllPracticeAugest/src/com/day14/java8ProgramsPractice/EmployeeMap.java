@@ -41,8 +41,18 @@ public class EmployeeMap {
 //	        });
 	        
 	        // Get one employee
-	        Employee emp = map.get(105);
-
-	        System.out.println(emp);
+//	        Employee emp = map.get(105);
+//
+//	        System.out.println(emp);
+	        
+	        // Get employees whose salary is greater than 70000:
+	        
+	        map.values()
+	        .stream()
+	        .filter(e -> e.getSalary() > 70000)
+	        .forEach(System.out::println);
+	        
+	        
+	        
 	}
 }
