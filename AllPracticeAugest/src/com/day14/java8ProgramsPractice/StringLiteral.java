@@ -37,6 +37,15 @@ public class StringLiteral {
 		System.out.println("Equals() method : "+s9.equals(s10));
 		System.out.println("CompareTo result : "+s9.compareTo(s10));
 		
+		// how to concatenate strings.
+		
+		String str1 = "chandrakant";
+		String str2 = " Bhosale";
+		
+		String combine = str1.concat(str2);
+		
+		System.out.println("Concated String : "+combine);
+		
 		
 	}
 }
