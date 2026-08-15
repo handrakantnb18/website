@@ -29,11 +29,15 @@ public class EmployeeNameAll {
 
 		map.put(10, new Employee(10, "Neha", "neha@gmail.com", "9876543219", "Sales", 57000.0, "Mumbai"));
 		
-		map.forEach((id, emp) -> {
-			System.out.println(id+" : "+emp);
-		});
+//		map.forEach((id, emp) -> {
+//			System.out.println(id+" : "+emp);
+//		});
 		
-		
+	map.forEach((id, name) -> {
+		System.out.println(name.getName());
+	});	
+	
+	
 		
 	}
 }
