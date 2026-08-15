@@ -9,6 +9,7 @@ public class EmployeeNameAll {
 		
 		Map<Integer, Employee> map = new HashMap<Integer, Employee>();
 		
+		// Map<Integer, Employee> with 10 employees using your Employee class.
 		map.put(1, new Employee(1, "Chandrakant", "chandra@gmail.com", "9876543210", "IT", 60000.0, "Pune"));
 
 		map.put(2, new Employee(2, "Rahul", "rahul@gmail.com", "9876543211", "HR", 55000.0, "Mumbai"));
@@ -33,11 +34,20 @@ public class EmployeeNameAll {
 //			System.out.println(id+" : "+emp);
 //		});
 		
-	map.forEach((id, name) -> {
-		System.out.println(name.getName());
-	});	
+		// Print only employee names:
+//	map.forEach((id, name) -> {
+//		System.out.println(name.getName());
+//	});	
 	
 	
+		// Find employees having salary greater than 60,000:
+		map.forEach((id, emp) -> {
+			if(emp.getSalary() > 60000) {
+				System.out.println(emp);
+			}
+		});
+		
+		
 		
 	}
 }
