@@ -19,5 +19,15 @@ public class ReverseStringStream {
 		System.out.println("Original String : "+str);
 		System.out.println("Reverse String : "+reverse);
 		
+		// Java 8 concepts used: IntStream, mapToObj(), Collectors.joining().
+		
+		String rev =
+				IntStream.range(0, str.length())
+				.mapToObj(i -> String.valueOf(str.charAt(str.length() - 1 - i)))
+				.collect(Collectors.joining());
+		
+		System.out.println(rev);
+		
+		
 	}
 }
