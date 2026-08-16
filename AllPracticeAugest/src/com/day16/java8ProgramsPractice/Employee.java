@@ -10,7 +10,7 @@ public class Employee {
 	
 	private String dept;
 	
-	private String salary;
+	private Double salary;
 	
 	private String mobileNo;
 	
@@ -20,18 +20,6 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", dept=" + dept + ", salary=" + salary
 				+ ", mobileNo=" + mobileNo + ", address=" + address + "]";
-	}
-
-	public Employee(Integer id, String name, String email, String dept, String salary, String mobileNo,
-			String address) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.dept = dept;
-		this.salary = salary;
-		this.mobileNo = mobileNo;
-		this.address = address;
 	}
 
 	public Integer getId() {
@@ -66,11 +54,11 @@ public class Employee {
 		this.dept = dept;
 	}
 
-	public String getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 
@@ -89,7 +77,19 @@ public class Employee {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
+	public Employee(Integer id, String name, String email, String dept, Double salary, String mobileNo,
+			String address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.dept = dept;
+		this.salary = salary;
+		this.mobileNo = mobileNo;
+		this.address = address;
+	}
+
+		
 	
 }
