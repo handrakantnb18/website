@@ -17,5 +17,6 @@ public class MinimumNumber {
 			.orElse(0);
 			
 		System.out.println(min);
+		
 	}
 }
