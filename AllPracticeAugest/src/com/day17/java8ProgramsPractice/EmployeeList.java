@@ -3,6 +3,8 @@ package com.day17.java8ProgramsPractice;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeList {
 
@@ -36,13 +38,24 @@ public class EmployeeList {
 //		.forEach(System.out::println);
 		
 		// Find the highest-paid employee
-		Employee highSalary =
-		emp.stream()
-		.max(Comparator.comparing(Employee::getSalary))
-		.orElse(null);
+//		Employee highSalary =
+//		emp.stream()
+//		.max(Comparator.comparing(Employee::getSalary))
+//		.orElse(null);
+//		
+//		System.out.println(highSalary);
 		
-		System.out.println(highSalary);
 		
+		// This is one of the most important Java 8 interview programs.
+		Map<String, List<Employee>> result =
+		        emp.stream()
+		                 .collect(Collectors.groupingBy(
+		                         Employee::getDept
+		                 ));
+
+		result.forEach((dept, empList) -> {
+		    System.out.println(dept + " : " + empList);
+		});
 		
 	}
 }
