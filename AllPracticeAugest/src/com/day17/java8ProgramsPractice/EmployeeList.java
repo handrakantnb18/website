@@ -1,6 +1,7 @@
 package com.day17.java8ProgramsPractice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeList {
@@ -31,9 +32,16 @@ public class EmployeeList {
 				
 				);
 		
-		emp.stream()
-		.forEach(System.out::println);
+//		emp.stream()
+//		.forEach(System.out::println);
 		
+		// Find the highest-paid employee
+		Employee highSalary =
+		emp.stream()
+		.max(Comparator.comparing(Employee::getSalary))
+		.orElse(null);
+		
+		System.out.println(highSalary);
 		
 		
 	}
