@@ -29,9 +29,15 @@ public class StudentNameMarks {
 
 	        map.put(10, new Student(10, "Kiran", "PQR College", "kiran@gmail.com", "9876543219", 76.0, "Solapur"));
 		
-	        map.forEach((id, std) -> {
-	        	System.out.println(id+" : "+std);
-	        });
+//	        map.forEach((id, std) -> {
+//	        	System.out.println(id+" : "+std);
+//	        });
+	      
+	        map.values()
+	        .stream()
+	        .filter(s -> s.getMarks() > 85 )
+	        .forEach(System.out::println);
+	        
 	        
 	        
 	}
