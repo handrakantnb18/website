@@ -2,6 +2,7 @@ package com.day17.java8ProgramsPractice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StudentNameMarks {
 
@@ -33,12 +34,19 @@ public class StudentNameMarks {
 //	        	System.out.println(id+" : "+std);
 //	        });
 	      
-	        map.values()
-	        .stream()
-	        .filter(s -> s.getMarks() > 85 )
-	        .forEach(System.out::println);
+//	        map.values()
+//	        .stream()
+//	        .filter(s -> s.getMarks() > 85 )
+//	        .forEach(System.out::println);
 	        
+	        Map<String, Long> coll =
+	        		map.values()
+	        		.stream()
+	        		.collect(Collectors.groupingBy(
+	        				Student::getCollage,
+	        				Collectors.counting()
+	        				));
 	        
-	        
+	        System.out.println(coll);
 	}
 }
