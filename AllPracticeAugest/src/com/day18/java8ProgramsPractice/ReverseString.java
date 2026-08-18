@@ -4,6 +4,7 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 		
+		// Reverse String for given word
 		String str = "chandrakant";
 		
 		String rev = "";
