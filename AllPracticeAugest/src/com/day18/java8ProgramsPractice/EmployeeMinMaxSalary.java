@@ -1,5 +1,6 @@
 package com.day18.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,24 +32,40 @@ public class EmployeeMinMaxSalary {
 
 	    // Map<Integer, Employee>, you can find maximum and minimum salary
 	    
-	    Employee maxSal = 
-			    map.values()
-			    .stream()
-			    .max((e1, e2) -> Double.compare(
-			    		e1.getSalary(), e2.getSalary()))
-			    .orElse(null);
-	    
-	    System.out.println("Maximum salary Employee : "+maxSal);
-
-	    Employee minSal =
+//	    Employee maxSal = 
+//			    map.values()
+//			    .stream()
+//			    .max((e1, e2) -> Double.compare(
+//			    		e1.getSalary(), e2.getSalary()))
+//			    .orElse(null);
+//	    
+//	    System.out.println("Maximum salary Employee : "+maxSal);
+//
+//	    Employee minSal =
+//				map.values()
+//				.stream()
+//				.min((a1, a2) -> Double.compare(a1.getSalary(), a2.getSalary()))
+//				.orElse(null);
+//		
+//		System.out.println("Employee Minimum Salary : "+minSal);
+		
+	    // Map<Integer, Employee>, you can find maximum and minimum salary
+	    // Using Comparator.comparing()
+	   Employee max =
 				map.values()
 				.stream()
-				.min((a1, a2) -> Double.compare(a1.getSalary(), a2.getSalary()))
+				.max(Comparator.comparing(Employee::getSalary))
+				.orElse(null);
+	   System.out.println("Maximum Salary : "+max);
+		
+		Employee min =
+				map.values()
+				.stream()
+				.min(Comparator.comparing(Employee::getSalary))
 				.orElse(null);
 		
-		System.out.println("Employee Minimum Salary : "+minSal);
+		System.out.println("Minimum values : "+min);
 		
-	}	
-	
-	
+		
+	}		
 }
