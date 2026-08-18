@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class FindDuplicateNumbers {
 
+	// fins the duplicate numbers in the list
 	public static void main(String[] args) {
 		
 		List<Integer> list = Arrays.asList(
