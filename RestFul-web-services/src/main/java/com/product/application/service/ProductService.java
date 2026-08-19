@@ -8,7 +8,7 @@ import com.product.application.entity.Product;
 import com.product.application.exception.ResourceNotFoundException;
 import com.product.application.repository.ProductRepository;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -49,10 +49,19 @@ public class ProductService {
 		
 	}
 	
+	
 	public void deleteProduct(Long id) {
 		Product existing = getProductById(id);
 		productRepository.delete(existing);
 	}
 	
+	@Transactional(readOnly = true)
+	public List<Product> getProductByCategory(String category) {
+		return productRepository.findByCategoryIgnoreCase(category);
+	}
 	
+	@Transactional(readOnly = true)
+	public List<Product> searchProductByName(String name) {
+		return productRepository.findByNameContainingIgnoreCase(name);
+	}
 }
