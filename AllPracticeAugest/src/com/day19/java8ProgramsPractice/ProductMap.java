@@ -39,9 +39,31 @@ public class ProductMap {
 	        map.put(110, new Product(
 	                110, "Printer", "Electronics", 18000.0, 7, "HP", "HP Laser Printer"));
 	        
-	        map.forEach((id, name) -> {
-	        	System.out.println(id+" : "+name);
-	        });
+//	        map.forEach((id, name) -> {
+//	        	System.out.println(id+" : "+name);
+//	        });
 		
+	        // Filter products by price : Products whose price is greater than ₹30,000
+	        map.values()
+	        .stream()
+	        .filter(p -> p.getPrice() > 30000)
+	        .forEach(System.out::println);
+	        
+	        // Filter products by price : Price less than ₹20,000
+	        
+//	        map.values()
+//	        .stream()
+//	        .filter(p -> p.getPrice() < 20000)
+//	        .forEach(System.out::println);
+	        
+	     // Filter products by price : Price between ₹10,000 and ₹50,000
+	        
+//	        map.values()
+//	        .stream()
+//	        .filter(p -> p.getPrice() >= 10000 &&
+//	                     p.getPrice() <= 50000)
+//	        .forEach(System.out::println);
+	        
+	        
 	}
 }
