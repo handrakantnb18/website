@@ -51,18 +51,18 @@ public class ProductMap {
 	        
 	        // Filter products by price : Price less than ₹20,000
 	        
-	        map.values()
-	        .stream()
-	        .filter(p -> p.getPrice() < 20000)
-	        .forEach(System.out::println);
+//	        map.values()
+//	        .stream()
+//	        .filter(p -> p.getPrice() < 20000)
+//	        .forEach(System.out::println);
 	        
 	     // Filter products by price : Price between ₹10,000 and ₹50,000
 	        
-//	        map.values()
-//	        .stream()
-//	        .filter(p -> p.getPrice() >= 10000 &&
-//	                     p.getPrice() <= 50000)
-//	        .forEach(System.out::println);
+	        map.values()
+	        .stream()
+	        .filter(p -> p.getPrice() >= 10000 &&
+	                     p.getPrice() <= 50000)
+	        .forEach(System.out::println);
 	        
 	        
 	}
