@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.product.application.entity.Product;
+import com.product.application.exception.ResourceNotFoundException;
 import com.product.application.repository.ProductRepository;
 
 import jakarta.transaction.Transactional;
@@ -20,4 +21,12 @@ public class ProductService {
 	public List<Product> getAllProducts(){
 		return productRepository.findAll();
 	}
+	
+	@Transactional(readOnly = true)
+	public Product getProductById(Long id) {
+		return productRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Product not found with id : "+id));
+	}
+	
+	
 }
