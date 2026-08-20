@@ -30,8 +30,12 @@ public class EmployeeMap {
 		list.put(110, new Employee(110, "Kiran", "IT", "9876543219", 75000.0, "Nashik", "kiran@gmail.com", "Spring Boot"));
 		
 		
-		list.forEach((e1, e2) -> {
-			System.out.println(e1+ " : "+e2);
+//		list.forEach((e1, e2) -> {
+//			System.out.println(e1+ " : "+e2);
+//		});
+		
+		list.forEach((id, emp) -> {
+			System.out.println(id+ " : "+emp.getSalary());
 		});
 		
 		
