@@ -1,5 +1,6 @@
 package com.day20.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,11 +39,28 @@ public class EmployeeMap {
 //			System.out.println(id+ " : "+emp.getSalary());
 //		});
 		
+		// Get only salaries using Stream
+//		list.values()
+//		   .stream()
+//		   .map(Employee::getSalary)
+//		   .forEach(System.out::println);
 		
-		list.values()
-		   .stream()
-		   .map(Employee::getSalary)
-		   .forEach(System.out::println);
+		
+		// Get maximum salary
+		Employee maxSalary = list.values()
+		        .stream()
+		        .max(Comparator.comparing(Employee::getSalary))
+		        .get();
+
+		System.out.println("Maximum Salary = " + maxSalary.getSalary());
+
+	// Get minimum salary
+		Employee minSalary = list.values()
+		        .stream()
+		        .min(Comparator.comparing(Employee::getSalary))
+		        .get();
+
+		System.out.println("Minimum Salary = " + minSalary.getSalary());
 		
 	}
 }
