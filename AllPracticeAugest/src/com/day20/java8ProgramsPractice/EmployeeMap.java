@@ -34,11 +34,15 @@ public class EmployeeMap {
 //			System.out.println(e1+ " : "+e2);
 //		});
 		
-		list.forEach((id, emp) -> {
-			System.out.println(id+ " : "+emp.getSalary());
-		});
+//		list.forEach((id, emp) -> {
+//			System.out.println(id+ " : "+emp.getSalary());
+//		});
 		
 		
+		list.values()
+		   .stream()
+		   .map(Employee::getSalary)
+		   .forEach(System.out::println);
 		
 	}
 }
