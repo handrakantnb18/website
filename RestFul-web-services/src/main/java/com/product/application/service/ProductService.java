@@ -29,7 +29,7 @@ public class ProductService {
 	}
 	
 	public Product createProduct(Product product) {
-		if(productRepository.existByNameIgnoreCase(product.getName())) {
+		if(productRepository.existsByNameIgnoreCase(product.getName())) {
 			throw new IllegalArgumentException("A Product with this name already exists: "+product.getName());
 		}
 		
