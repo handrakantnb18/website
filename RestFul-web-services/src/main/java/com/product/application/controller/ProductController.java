@@ -21,7 +21,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/v1/products")
+@RequestMapping("/api/v1/products/")
 @RequiredArgsConstructor
 public class ProductController {
 
@@ -37,7 +37,7 @@ public class ProductController {
 		return ResponseEntity.ok(productService.getProductById(id));
 	}
 	
-	@PostMapping
+	@PostMapping("/create")
 	public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) 
 	{
 		Product created = productService.createProduct(product);
