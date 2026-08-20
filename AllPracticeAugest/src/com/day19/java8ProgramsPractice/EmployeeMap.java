@@ -31,19 +31,34 @@ public class EmployeeMap {
 
 	     // maximum/minimum salary, and sorting employees by salary.
 	     
-	     map.forEach((id, name) -> {
-	    	 System.out.println(id+" : "+name);
-	     });
+//	     map.forEach((id, name) -> {
+//	    	 System.out.println(id+" : "+name);
+//	     });
 	     
 	     // Map<Integer, Employee> map, Maximum Salary
 	     
-	     Employee max =
-			     map.values()
-			     .stream()
-			     .max((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()))
-			     .get();
+//	     Employee max =
+//			     map.values()
+//			     .stream()
+//			     .max((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()))
+//			     .get();
+//	     
+//	     System.out.println(max);
 	     
-	     System.out.println(max);
+	     // Sorting Employees by Salary — Ascending
+	     System.out.println("Ascending Order : ");
+	     map.values()
+	     .stream()
+	     .sorted((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()))
+	     .forEach(System.out::println);
+	     
+	     System.out.println(" Descending order : ");
+	     
+	     // Sorting Employees by Salary — Descending
+	     map.values()
+	     .stream()
+	     .sorted((e1, e2) -> e2.getSalary().compareTo(e1.getSalary()))
+	     .forEach(System.out::println);
 	     
 	     
 	}	
