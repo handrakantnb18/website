@@ -29,9 +29,21 @@ public class EmployeeMap {
 
 	     map.put(110, new Employee(110, "Kiran", "Nashik", "IT", 75000.0, "kiran@gmail.com", "9876543219"));
 
+	     // maximum/minimum salary, and sorting employees by salary.
+	     
 	     map.forEach((id, name) -> {
 	    	 System.out.println(id+" : "+name);
 	     });
+	     
+	     // Map<Integer, Employee> map, Maximum Salary
+	     
+	     Employee max =
+			     map.values()
+			     .stream()
+			     .max((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()))
+			     .get();
+	     
+	     System.out.println(max);
 	     
 	     
 	}	
