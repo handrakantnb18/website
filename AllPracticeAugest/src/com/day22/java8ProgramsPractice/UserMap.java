@@ -30,7 +30,7 @@ public class UserMap {
 		);
 		
 		users.stream()
-		.filter(u -> u.getCountry().equalsIgnoreCase("Solapur"))
+		.filter(u -> u.getUname().equalsIgnoreCase("Vijay"))
 		.forEach(System.out::println);
 		
 		
