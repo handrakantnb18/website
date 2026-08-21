@@ -2,6 +2,8 @@ package com.day22.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class UserMap {
 
@@ -29,9 +31,20 @@ public class UserMap {
 		    new User(10, "Kiran", "kiran@gmail.com", "Station Road", "9876543219", "Solapur", "Female")
 		);
 		
-		users.stream()
-		.filter(u -> u.getUname().equalsIgnoreCase("Vijay"))
-		.forEach(System.out::println);
+		// Sort users by name
+//		users.stream()
+//		.filter(u -> u.getUname().equalsIgnoreCase("Vijay"))
+//		.forEach(System.out::println);
+		
+		// Group users by gender
+		Map<String, List<User>> genderWiseUsers =
+		        users.stream()
+		             .collect(Collectors.groupingBy(User::getGender));
+
+		genderWiseUsers.forEach((gender, userList) -> {
+		    System.out.println(gender);
+		    userList.forEach(System.out::println);
+		});
 		
 		
 	}
