@@ -33,9 +33,15 @@ public class EmployeeMap {
 	);
 		
 		//Filter employees by department
+//		list.stream()
+//		.filter(e -> e.getDept().equalsIgnoreCase("IT"))
+//		.forEach(System.out::println);
+		
+		// Filter employees by salary
 		list.stream()
-		.filter(e -> e.getDept().equalsIgnoreCase("IT"))
+		.filter(e -> e.getSalary() > 70000)
 		.forEach(System.out::println);
+		
 		
 		
 	}
