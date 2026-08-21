@@ -37,15 +37,22 @@ public class UserMap {
 //		.forEach(System.out::println);
 		
 		// Group users by gender
-		Map<String, List<User>> genderWiseUsers =
-		        users.stream()
-		             .collect(Collectors.groupingBy(User::getGender));
-
-		genderWiseUsers.forEach((gender, userList) -> {
-		    System.out.println(gender);
-		    userList.forEach(System.out::println);
-		});
+//		Map<String, List<User>> genderWiseUsers =
+//		        users.stream()
+//		             .collect(Collectors.groupingBy(User::getGender));
+//
+//		genderWiseUsers.forEach((gender, userList) -> {
+//		    System.out.println(gender);
+//		    userList.forEach(System.out::println);
+//		});
 		
+		
+		// map() — get only emails
+		List<String> emails = users.stream()
+		        .map(User::getEmail)
+		        .collect(Collectors.toList());
+
+		System.out.println(emails);
 		
 	}
 }
