@@ -1,6 +1,7 @@
 package com.day21.java8ProgramsPractice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +39,21 @@ public class EmployeeMap {
 //		.forEach(System.out::println);
 		
 		// Filter employees by salary
-		list.stream()
-		.filter(e -> e.getSalary() > 70000)
-		.forEach(System.out::println);
+//		list.stream()
+//		.filter(e -> e.getSalary() > 70000)
+//		.forEach(System.out::println);
 		
+		// Sort employees by salary — ascending
+		System.out.println("Ascending Order : ");
+		list.stream()
+        .sorted(Comparator.comparingDouble(Employee::getSalary))
+        .forEach(System.out::println);
+		
+		// Sort employees by salary — descending
+		System.out.println("Descending Order : ");
+		list.stream()
+        .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+        .forEach(System.out::println);
 		
 		
 	}
