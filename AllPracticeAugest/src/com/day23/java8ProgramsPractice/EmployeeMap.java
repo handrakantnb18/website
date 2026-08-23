@@ -29,8 +29,17 @@ public class EmployeeMap {
 
 		list.put(10, new Employee(10, "Kiran", "kiran@gmail.com", 95000.0, "Pune", "9876543219", "IT"));
 
-		list.forEach((id, emp) -> {
-			System.out.println(emp);
-		});
+//		list.forEach((id, emp) -> {
+//			System.out.println(emp);
+//		});
+		
+		// Filter employees with salary > 70000
+		
+		list.values()
+		.stream()
+		.filter(e -> e.getSalary() > 70000)
+		.forEach(System.out::println);
+		
+		
 	}
 }
