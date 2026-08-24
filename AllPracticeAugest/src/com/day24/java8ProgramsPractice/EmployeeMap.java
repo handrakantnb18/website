@@ -34,10 +34,16 @@ public class EmployeeMap {
 //        });
         
         
+//        map.values()
+//        .stream()
+//        .filter(e -> e.getDept().equalsIgnoreCase("IT"))
+//        .forEach(System.out::println);
+        
         map.values()
         .stream()
-        .filter(e -> e.getDept().equalsIgnoreCase("IT"))
+        .filter(e -> e.getSalary() > 70000)
         .forEach(System.out::println);
+        
         
 	}
 }
