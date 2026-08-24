@@ -29,10 +29,18 @@ public class BankMap {
 
 	     bank.put(10, new Bank(10, "Kiran", "Thane", "kiran@gmail.com", "9876543219", 1001001010L, "Thane"));
 	        
-	    bank.forEach((id, name) -> {
-	    	System.out.println(id+" : "+name);
-	    });  
+	     // Display all bank users
+//	    bank.forEach((id, name) -> {
+//	    	System.out.println(id+" : "+name);
+//	    });  
 	    
+	     String branch = "Pune";
+	     
+	    bank.entrySet()
+	    .stream()
+	    .filter(entry -> entry.getValue().getAddress().equalsIgnoreCase(branch))
+	    .forEach(entry -> System.out.println(entry.getValue()));
 	    
+	     
 	}
 }
