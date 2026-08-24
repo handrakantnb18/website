@@ -29,11 +29,15 @@ public class EmployeeMap {
 
         map.put(10, new Employee(10, "Kiran", "kiran@gmail.com", "IT", 90000.0, "9876543219", "Thane"));
         
-        map.forEach((id, name) -> {
-        	System.out.println(id+" : "+name);
-        });
+//        map.forEach((id, name) -> {
+//        	System.out.println(id+" : "+name);
+//        });
         
         
+        map.values()
+        .stream()
+        .filter(e -> e.getDept().equalsIgnoreCase("IT"))
+        .forEach(System.out::println);
         
 	}
 }
