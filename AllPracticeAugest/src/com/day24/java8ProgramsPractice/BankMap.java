@@ -2,6 +2,7 @@ package com.day24.java8ProgramsPractice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class BankMap {
 
@@ -34,13 +35,24 @@ public class BankMap {
 //	    	System.out.println(id+" : "+name);
 //	    });  
 	    
-	     String branch = "Pune";
-	     
-	    bank.entrySet()
-	    .stream()
-	    .filter(entry -> entry.getValue().getAddress().equalsIgnoreCase(branch))
-	    .forEach(entry -> System.out.println(entry.getValue()));
+//	     String branch = "Pune";
+//	     
+//	    bank.entrySet()
+//	    .stream()
+//	    .filter(entry -> entry.getValue().getAddress().equalsIgnoreCase(branch))
+//	    .forEach(entry -> System.out.println(entry.getValue()));
 	    
+	     Scanner sc = new Scanner(System.in);
+	     
+	     System.out.println("Enter branch : ");
+	     String branch = sc.nextLine();
+	     
+	     bank.values()
+	     .stream()
+	     .filter(bank1 -> bank1.getBranch().equalsIgnoreCase(branch))
+	     .forEach(System.out::println);
+	     
+	     
 	     
 	}
 }
