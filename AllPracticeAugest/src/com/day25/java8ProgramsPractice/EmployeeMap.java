@@ -31,12 +31,18 @@ public class EmployeeMap {
 				
 				);
 		
-		List<String> names= 
-				emp.stream()
-				.map(Employee::getName)
-				.collect(Collectors.toList());
+//		List<String> names= 
+//				emp.stream()
+//				.map(Employee::getName)
+//				.collect(Collectors.toList());
+//		
+//		System.out.println(names);
 		
-		System.out.println(names);
+		List<Employee> res =
+		emp.stream()
+		.filter(e -> e.getSalary() > 5000)
+		.collect(Collectors.toList());
 		
+		System.out.println(res);
 	}
 }
