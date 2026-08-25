@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MaxNumber {
 
+	// find max number in the list
 	public static void main(String[] args) {
 		
 		List<Integer> num = Arrays.asList(
