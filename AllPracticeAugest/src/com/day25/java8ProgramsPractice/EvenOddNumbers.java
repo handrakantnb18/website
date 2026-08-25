@@ -14,12 +14,13 @@ public class EvenOddNumbers {
 		System.out.println("Even Numbers : ");
 		list.stream()
 		.filter(e -> e % 2 == 0)
-		.forEach(System.out::println);
+		.forEach(System.out::print);
 		
+		System.out.println("");
 		System.out.println("Odd Numbers : ");
 		list.stream()
 		.filter(o -> o % 2 != 0)
-		.forEach(System.out::println);
+		.forEach(System.out::print);
 		
 	}
 }
