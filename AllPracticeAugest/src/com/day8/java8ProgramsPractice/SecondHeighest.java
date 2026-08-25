@@ -20,5 +20,15 @@ public class SecondHeighest {
 				.get();
 		
 		System.out.println(sec);
+		
+		// Get the complete employee record having second-highest salary
+		
+//		select * from FROM employee WHERE salary =(
+//				SELECT MAX(salary)
+//				FROM employee
+//				WHERE salary < (SELECT MAX(salary) FROM employee)
+//				);
+//		
+	
 	}
 }
