@@ -33,18 +33,29 @@ public class EmployeeMap {
 //			System.out.println(id+" : "+name);
 //		});
 		
-		System.out.println("Salary greater than ₹70,000 : ");
+//		// Salary greater than ₹70,000
+//		System.out.println("Salary greater than ₹70,000 : ");
+//		map.values()
+//		.stream()
+//		.filter(emp -> emp.getSalary() > 70000)
+//		.forEach(emp -> System.out.println(emp));
+//		
+//		// Salary less than ₹70,000
+//		System.out.println("===========================");
+//		System.out.println("Salary less than ₹70,000");
+//		map.values()
+//		.stream()
+//		.filter(e -> e.getSalary() < 70000)
+//		.forEach(em -> System.out.println(em));
+//	
+		// Salary between ₹60,000 and ₹80,000
+		System.out.println("Salary between ₹60,000 and ₹80,000 :");
 		map.values()
 		.stream()
-		.filter(emp -> emp.getSalary() > 70000)
-		.forEach(emp -> System.out.println(emp));
+		.filter(emp -> emp.getSalary() >= 55000 && emp.getSalary() <= 75000)
+		.forEach(e -> System.out.println(e));
 		
-		System.out.println("===========================");
-		System.out.println("Salary less than ₹70,000");
-		map.values()
-		.stream()
-		.filter(e -> e.getSalary() < 70000)
-		.forEach(em -> System.out.println(em));
+		
 		
 	}
 }
