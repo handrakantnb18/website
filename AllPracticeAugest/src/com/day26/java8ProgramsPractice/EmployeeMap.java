@@ -29,11 +29,22 @@ public class EmployeeMap {
 
 		map.put(10, new Employee(10, "Akash", "akash@gmail.com", "HR", 58000.0, "Satara", "HR Executive", "9876543219"));
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" : "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" : "+name);
+//		});
 		
+		System.out.println("Salary greater than ₹70,000 : ");
+		map.values()
+		.stream()
+		.filter(emp -> emp.getSalary() > 70000)
+		.forEach(emp -> System.out.println(emp));
 		
+		System.out.println("===========================");
+		System.out.println("Salary less than ₹70,000");
+		map.values()
+		.stream()
+		.filter(e -> e.getSalary() < 70000)
+		.forEach(em -> System.out.println(em));
 		
 	}
 }
