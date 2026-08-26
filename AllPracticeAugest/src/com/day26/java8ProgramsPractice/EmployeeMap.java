@@ -48,13 +48,19 @@ public class EmployeeMap {
 //		.filter(e -> e.getSalary() < 70000)
 //		.forEach(em -> System.out.println(em));
 //	
-		// Salary between ₹60,000 and ₹80,000
-		System.out.println("Salary between ₹60,000 and ₹80,000 :");
+//		// Salary between ₹60,000 and ₹80,000
+//		System.out.println("Salary between ₹60,000 and ₹80,000 :");
+//		map.values()
+//		.stream()
+//		.filter(emp -> emp.getSalary() >= 55000 && emp.getSalary() <= 75000)
+//		.forEach(e -> System.out.println(e));
+		
+		// Filter salary and print only name + salary
+		
 		map.values()
 		.stream()
-		.filter(emp -> emp.getSalary() >= 55000 && emp.getSalary() <= 75000)
-		.forEach(e -> System.out.println(e));
-		
+		.filter(emp -> emp.getSalary() > 75000)
+		.forEach(emp -> System.out.println(emp.getName() + " : "+emp.getSalary()));
 		
 		
 	}
