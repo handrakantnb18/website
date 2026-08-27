@@ -26,27 +26,45 @@ public class EmployeeStreamSalary {
 		        new EmployeeStream(9, "Kiran", "Finance", 65000.0)
 				);
 		
+		// for the Employee object
+		// First, I group employees by department. Then I remove duplicate salaries using
+//		Map<String, Optional<EmployeeStream>> result = emp.stream()
+//				.collect(Collectors.groupingBy(
+//						EmployeeStream::getDept,
+//						Collectors.collectingAndThen(
+//								Collectors.toMap(
+//										EmployeeStream:: getSalary,
+//										Function.identity(),
+//										BinaryOperator.maxBy(
+//												Comparator.comparing(
+//														EmployeeStream::getSalary))),
+//								map -> map.values().stream()
+//								.sorted(Comparator.comparing(
+//										EmployeeStream::getSalary)
+//										.reversed())
+//								.skip(1)
+//								.findFirst()
+//								)
+//						));
+//		System.out.println(result);
 		
-		Map<String, Optional<EmployeeStream>> result = emp.stream()
+		// Better Interview Solution — Second-Highest Distinct Salary
+		
+		Map<String, Optional<Double>> res =
+				emp.stream()
 				.collect(Collectors.groupingBy(
 						EmployeeStream::getDept,
 						Collectors.collectingAndThen(
-								Collectors.toMap(
-										EmployeeStream:: getSalary,
-										Function.identity(),
-										BinaryOperator.maxBy(
-												Comparator.comparing(
-														EmployeeStream::getSalary))),
-								map -> map.values().stream()
-								.sorted(Comparator.comparing(
-										EmployeeStream::getSalary)
-										.reversed())
+								Collectors.mapping(EmployeeStream::getSalary,
+										Collectors.toSet()
+										),
+								salaries -> salaries.stream()
+								.sorted(Comparator.reverseOrder())
 								.skip(1)
 								.findFirst()
 								)
 						));
-		System.out.println(result);
-		
-		
+				
+		System.out.println(res);
 	}
 }
