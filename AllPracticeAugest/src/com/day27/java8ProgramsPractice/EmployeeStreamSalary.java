@@ -50,21 +50,40 @@ public class EmployeeStreamSalary {
 		
 		// Better Interview Solution — Second-Highest Distinct Salary
 		
-		Map<String, Optional<Double>> res =
-				emp.stream()
+//		Map<String, Optional<Double>> res =
+//				emp.stream()
+//				.collect(Collectors.groupingBy(
+//						EmployeeStream::getDept,
+//						Collectors.collectingAndThen(
+//								Collectors.mapping(EmployeeStream::getSalary,
+//										Collectors.toSet()
+//										),
+//								salaries -> salaries.stream()
+//								.sorted(Comparator.reverseOrder())
+//								.skip(1)
+//								.findFirst()
+//								)
+//						));
+//				
+//		System.out.println(res);
+		
+		// Java 8 Stream Solution : duplicate salaries. 
+
+		Map<String, Optional<EmployeeStream>> res = emp.stream()
 				.collect(Collectors.groupingBy(
 						EmployeeStream::getDept,
 						Collectors.collectingAndThen(
-								Collectors.mapping(EmployeeStream::getSalary,
-										Collectors.toSet()
-										),
-								salaries -> salaries.stream()
-								.sorted(Comparator.reverseOrder())
+								Collectors.toList(),
+								list -> list.stream()
+								.sorted(Comparator.comparing(
+										EmployeeStream::getSalary)
+										.reversed())
 								.skip(1)
 								.findFirst()
 								)
 						));
-				
+		
 		System.out.println(res);
+		
 	}
 }
