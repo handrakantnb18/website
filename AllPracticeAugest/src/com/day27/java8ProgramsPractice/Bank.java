@@ -81,6 +81,25 @@ public class Bank {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
+
+	@Override
+	public String toString() {
+		return "Bank [id=" + id + ", name=" + name + ", email=" + email + ", mobileNo=" + mobileNo + ", address="
+				+ address + ", branch=" + branch + ", accountType=" + accountType + ", balance=" + balance + "]";
+	}
+
+	public Bank(Integer id, String name, String email, String mobileNo, String address, String branch,
+			String accountType, Double balance) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.mobileNo = mobileNo;
+		this.address = address;
+		this.branch = branch;
+		this.accountType = accountType;
+		this.balance = balance;
+	}
 	
 	
 	
