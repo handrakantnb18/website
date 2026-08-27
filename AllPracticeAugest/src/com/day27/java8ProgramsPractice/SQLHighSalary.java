@@ -19,7 +19,32 @@ public class SQLHighSalary {
 //				) t
 //		WHERE salary_rank = 2;
 	
+		// f you want to create a Department table for your employee/SQL practice, use:
 		
+//		CREATE TABLE department (
+//			    dept_id INT PRIMARY KEY AUTO_INCREMENT,
+//			    dept_name VARCHAR(100) NOT NULL
+//			);
+		
+		// Insert sample departments
+		
+//		INSERT INTO department (dept_name) VALUES
+//		('IT'),
+//		('HR'),
+//		('Finance'),
+//		('Sales'),
+//		('Marketing');
+		
+		// Check data
+//		SELECT * FROM department;
+		
+		// Output:
+		
+//		1   IT
+//		2   HR
+//		3   Finance
+//		4   Sales
+//		5   Marketing
 		
 	}
 }
