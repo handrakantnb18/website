@@ -29,14 +29,17 @@ public class BankMap {
 
 		map.put(110, new Bank(110, "IndusInd Bank", "indusind@gmail.com", "9876543219", "Pune", "Viman Nagar", "Savings", 60000.0));
 	        
-	   for(Map.Entry<Integer, Bank> entry : map.entrySet()) {
-		   System.out.println("| Key   : | "+entry.getKey()+" |");
-		   System.out.println("| Value : | "+entry.getValue()+" |");
-		   System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+//	   for(Map.Entry<Integer, Bank> entry : map.entrySet()) {
+//		   System.out.println("| Key   : | "+entry.getKey()+" |");
+//		   System.out.println("| Value : | "+entry.getValue()+" |");
+//		   System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+//		   
 		   
-		   
+		map.forEach((id, name) ->{
+			System.out.println(id+ " "+name);
+		});
+		
 		   
 	   }
 		
 	}
-}
