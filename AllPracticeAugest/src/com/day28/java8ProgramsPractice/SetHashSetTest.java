@@ -27,6 +27,15 @@ public class SetHashSetTest {
 		
 		System.out.println("Contains "+s +" "+ set.contains(s));
 		
+		// Removing Elements : Removing custom element using remove() method
+		set.remove("Ram");
+		System.out.println("After removing element : "+set);
+		
+		// Iterating elements : Iterating through the Set via for-each loop 
+		for (String val : set)
+			System.out.println(val+", ");
+		
+		
 		
 	}
 }
