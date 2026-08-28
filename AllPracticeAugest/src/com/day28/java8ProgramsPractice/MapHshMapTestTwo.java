@@ -27,6 +27,19 @@ public class MapHshMapTestTwo {
 		System.out.println(map);
 		System.out.println(map1);
 		
+		// Changing Element : To update a value,
+		// Inserting the Elements
+		map1.put(new Integer(101), "Amit");
+		map1.put(new Integer(102), "Manav");
+		
+		map1.put(new Integer(103), "Ollev");
+		System.out.println("Initial Map : "+map1);
+		
+		// updated
+		map1.put(new Integer(102), "Manisha");
+		
+		System.out.println("Updated Map : "+map1);
+		
 		
 	}
 }
