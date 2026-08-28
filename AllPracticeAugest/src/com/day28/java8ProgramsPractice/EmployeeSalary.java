@@ -30,11 +30,17 @@ public class EmployeeSalary {
 		list.put(110, new Employee(110, "Kiran", "kiran@gmail.com", "Admin", 55000.0, "Administrator", "Mumbai"));
 		
 		// Print all employees
-		for(Map.Entry<Integer, Employee> entry : list.entrySet()) {
-			System.out.println(entry.getKey()+ " : "+entry.getValue());
-		}
+//		for(Map.Entry<Integer, Employee> entry : list.entrySet()) {
+//			System.out.println(entry.getKey()+ " : "+entry.getValue());
+//		}
 		
+		// Using max() salary employee
+		Employee highSalary = list.values()
+				.stream()
+				.max((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()))
+				.orElse(null);
 		
+		System.out.println(highSalary);
 		
 		
 	}
