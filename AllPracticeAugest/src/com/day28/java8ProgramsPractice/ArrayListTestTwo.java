@@ -13,6 +13,9 @@ public class ArrayListTestTwo {
 		list.add("Rahul");
 		list.add("Ram");
 		list.add("Pooja");
+		list.add("Pooja"); // duplicate not allowed
+		list.add(""); // null value not allowed
+		
 		
 		// Accessing elements using get() method
 		String first = list.get(0);
