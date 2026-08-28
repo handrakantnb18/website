@@ -15,9 +15,17 @@ public class SetHashSetTest {
 		set.add("Ajeet");
 		set.add("Ram"); // duplicate not allowed
 		set.add("");
-		set.add("");
+		set.add(""); // one null value allowed
 		
+		// The set interface provides efficient search, insertion, and deletion operations.
 		System.out.println(set);
+		
+		// After adding the elements
+		String s = "Chandrakant"; // false
+		
+		// String s = "Ram"; // true
+		
+		System.out.println("Contains "+s +" "+ set.contains(s));
 		
 		
 	}
