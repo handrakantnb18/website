@@ -26,6 +26,28 @@ public class ArrayListTest {
 		
 		System.out.println("Updated : "+list);
 		
+		// Searching Elements 
+		int i = list.indexOf(2);
+		
+		System.out.println("2 at index : "+i);
+		
+		int l = list.lastIndexOf(1);
+		
+		System.out.println("Last 2 is at index : "+l);
+		
+		// Removing Elements
+		
+		list.add(2, "pruthvi");
+		
+		// Adding For at 1st indexes
+		System.out.println("Initial ArrayList : "+list);
+		
+		list.remove(1);
+		
+		// remove element from the above
+		System.out.println("After the Index Removal : "+list);
+		
+		
 		
 	}
 }
