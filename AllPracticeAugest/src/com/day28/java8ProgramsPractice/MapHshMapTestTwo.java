@@ -40,6 +40,24 @@ public class MapHshMapTestTwo {
 		
 		System.out.println("Updated Map : "+map1);
 		
+		// Removing Elements : This method takes the key value and removes
 		
+		map1.remove(new Integer(1));
+		
+		System.out.println(map1);
+		
+		// Iterating through the Map
+		
+		for (Map.Entry mapElement : map1.entrySet()) {
+			int key = (int)mapElement.getKey();
+			
+			String value = (String)mapElement.getValue();
+			
+			System.out.println(key+" "+value);
+			
+		}
+		
+		
+		 
 	}
 }
