@@ -34,13 +34,24 @@ public class EmployeeSalary {
 //			System.out.println(entry.getKey()+ " : "+entry.getValue());
 //		}
 		
-		// Using max() salary employee
+		// Using max() salary employee : the employee with the maximum salary.
+		System.out.println("Highest salary : ");
 		Employee highSalary = list.values()
 				.stream()
 				.max((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()))
 				.orElse(null);
 		
 		System.out.println(highSalary);
+		
+		// Using min() salary employee : the employee with the minimum salary.		
+		Employee lowSalary = 
+				list.values()
+				.stream()
+				.min((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()))
+				.orElse(null);
+		
+		System.out.println("Lowest Salary : ");
+		System.out.println(lowSalary);
 		
 		
 	}
