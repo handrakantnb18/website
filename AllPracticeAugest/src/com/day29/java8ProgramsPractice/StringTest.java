@@ -13,5 +13,21 @@ public class StringTest {
 		
 		System.out.println(s1+ " = " +s2);
 		
+		// Creating String Using new Keyword
+		// explicitly creates a new String object in memory
+		// rather than using the string literal pool.
+		
+		String str1 = new String("Welcome");
+		String str2 = new String("Welcome");
+		
+		System.out.println(str1+" = "+str2);
+		
+		// Finding String Length
+		
+		String str3 = "Chandrakant bhosale";
+		System.out.println("Length of String : "+str3.length());
+		
+		
+		
 	}
 }
