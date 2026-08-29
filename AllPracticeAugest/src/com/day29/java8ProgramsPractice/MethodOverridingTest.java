@@ -3,7 +3,7 @@ package com.day29.java8ProgramsPractice;
 // Method overriding occurs in two classes that have IS-A (inheritance) relationship.
 //Number and type of parameter must be the same.
 // Return type must be same or covariant.
-
+// It is called dynamic binding or late binding.
 class Animal {
 	
 	public void makeSound() {
