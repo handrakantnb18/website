@@ -38,6 +38,14 @@ public class StringTest {
 		System.out.println("Equals : "+ string1.equals(string2));
 		System.out.println("CompareT result : "+ string1.compareTo(string2));
 		
+		// Concatenating Strings
+		
+		String comb = string1.concat("").concat(string2);
+		
+		System.out.println("Concatenated String : "+comb);
+		
+		// Java String Immutability
+		
 		
 		
 	}
