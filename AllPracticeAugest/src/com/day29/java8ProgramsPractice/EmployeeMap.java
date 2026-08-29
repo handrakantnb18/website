@@ -29,10 +29,19 @@ public class EmployeeMap {
 
 		map.put(110, new Employee(110, "Kiran Shinde", "kiran@gmail.com", "Marketing", 60000.0, "Marketing Executive", "Aurangabad"));
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" : "+name);
-		});
+		// Create Map with 10 Employees
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" : "+name);
+//		});
 		
+		// Display all employees
+		for(Map.Entry<Integer, Employee> entry : map.entrySet()) {
+			System.out.println("Key : "+entry.getKey());
+			System.out.println("Valaue : "+entry.getValue());
+			System.out.println("------------------------------------------------------------------------------");
+			
+			
+		}
 		
 	}
 }
