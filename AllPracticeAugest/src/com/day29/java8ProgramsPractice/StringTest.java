@@ -27,6 +27,17 @@ public class StringTest {
 		String str3 = "Chandrakant bhosale";
 		System.out.println("Length of String : "+str3.length());
 		
+		// Finding a Character in a String
+		System.out.println("Index of 'O' : "+str3.indexOf('o'));
+		
+		// Comparing Strings
+		
+		String string1 = "Apple";
+		String string2 = "Banana";
+		
+		System.out.println("Equals : "+ string1.equals(string2));
+		System.out.println("CompareT result : "+ string1.compareTo(string2));
+		
 		
 		
 	}
