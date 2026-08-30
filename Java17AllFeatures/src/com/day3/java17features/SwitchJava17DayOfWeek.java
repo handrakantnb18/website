@@ -1,5 +1,8 @@
 package com.day3.java17features;
 
+// getDayOfWeek() should be declared outside main() but inside the class.
+// you cannot declare a normal method inside the main() method in Java.
+
 public class SwitchJava17DayOfWeek {
 
 	public static String getDayOfWeek(int dayNum) {
@@ -19,6 +22,7 @@ public class SwitchJava17DayOfWeek {
 	public static void main(String[] args) {
 		
 		System.out.println(getDayOfWeek(1));
+		System.out.println(getDayOfWeek(3));
 		System.out.println(getDayOfWeek(5));
 		System.out.println(getDayOfWeek(7));
 		System.out.println(getDayOfWeek(10));
