@@ -37,18 +37,28 @@ public class EmployeeSalary {
 		
 		// Find second-highest salary
 		
-		Double secHighSal = 
+//		Double secHighSal = 
+//				map.values()
+//				.stream()
+//				.map(Employee::getSalary)
+//				.distinct()
+//				.sorted(Comparator.reverseOrder())
+//				.skip(2)
+//				.findFirst()
+//				.orElse(null);
+//		
+//		System.out.println("Second High Salary : "+secHighSal);
+		
+		// Find the Employee with Second-Highest Salary
+		Employee secHigh = 
 				map.values()
 				.stream()
-				.map(Employee::getSalary)
-				.distinct()
-				.sorted(Comparator.reverseOrder())
-				.skip(2)
+				.sorted(Comparator.comparing(Employee::getSalary).reversed())
+				.skip(1)
 				.findFirst()
 				.orElse(null);
 		
-		System.out.println("Second High Salary : "+secHighSal);
-		
+		System.out.println(secHigh);
 		
 	}
 }
