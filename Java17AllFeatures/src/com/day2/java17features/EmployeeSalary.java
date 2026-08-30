@@ -1,5 +1,6 @@
 package com.day2.java17features;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,9 +30,24 @@ public class EmployeeSalary {
 
 		map.put(110, new Employee(110, "Akash", "akash@gmail.com", 95000.0, "Bangalore", "IT", "Project Manager"));
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" : "+name);
-		});
+		// Print all employees 
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" : "+name);
+//		});
+		
+		// Find second-highest salary
+		
+		Double secHighSal = 
+				map.values()
+				.stream()
+				.map(Employee::getSalary)
+				.distinct()
+				.sorted(Comparator.reverseOrder())
+				.skip(2)
+				.findFirst()
+				.orElse(null);
+		
+		System.out.println("Second High Salary : "+secHighSal);
 		
 		
 	}
