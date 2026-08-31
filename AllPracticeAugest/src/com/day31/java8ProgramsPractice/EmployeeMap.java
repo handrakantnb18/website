@@ -1,5 +1,6 @@
 package com.day31.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,16 +36,26 @@ public class EmployeeMap {
 		
 		// Highest salary amount
 		
-		Double maximum =
+//		Double maximum =
+//				emp.values()
+//				.stream()
+//				.map(Employee::getSalary)
+//				.max(Double::compareTo)
+//				.orElse(0.0);
+//		
+//		System.out.println("Highest Salary : "+maximum);
+		
+		// Find the complete Employee with highest salary
+		
+		Employee highSal =
 				emp.values()
 				.stream()
-				.map(Employee::getSalary)
-				.max(Double::compareTo)
-				.orElse(0.0);
+				.max(Comparator.comparing(Employee::getSalary))
+				.orElse(null);
 		
-		System.out.println("Highest Salary : "+maximum);
+		System.out.println(highSal);
 		
-		// 
+		
 		
 	}
 }
