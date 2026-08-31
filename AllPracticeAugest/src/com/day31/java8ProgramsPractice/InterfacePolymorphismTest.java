@@ -2,6 +2,7 @@ package com.day31.java8ProgramsPractice;
 
 // interface reference can point to an object of a class 
 // that implements it, showing polymorphic behavior.
+
 interface Animal {
 	void eat();
 	void sleep();
