@@ -29,11 +29,22 @@ public class EmployeeMap {
 
 		emp.put(110, new Employee(110, "Kiran", "kiran@gmail.com", 60000.0, "Sales", "Kolhapur", "Sales Executive"));
 		
-		emp.forEach((id, name) -> {
-			System.out.println(id+" : "+name);
-		});
+//		emp.forEach((id, name) -> {
+//			System.out.println(id+" : "+name);
+//		});
 		
+		// Highest salary amount
 		
+		Double maximum =
+				emp.values()
+				.stream()
+				.map(Employee::getSalary)
+				.max(Double::compareTo)
+				.orElse(0.0);
+		
+		System.out.println("Highest Salary : "+maximum);
+		
+		// 
 		
 	}
 }
