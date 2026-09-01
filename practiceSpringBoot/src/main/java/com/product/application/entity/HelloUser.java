@@ -12,7 +12,7 @@ public class HelloUser {
 	
 	
 	
-	public HelloUser(Integer id, String name, Date dob) {
+	public HelloUser(Integer id, String name, java.util.Date date) {
 		this.id = id;
 		this.name = name;
 		this.dob =dob;
