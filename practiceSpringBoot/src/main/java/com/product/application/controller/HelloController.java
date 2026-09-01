@@ -9,4 +9,9 @@ public class HelloController {
 	public String helloWord() {
 		return "Hello Word";
 	}
+	
+	@GetMapping(path="hello-word")
+	public String helloWord1() {
+		return "Hello Word";
+	}
 }
