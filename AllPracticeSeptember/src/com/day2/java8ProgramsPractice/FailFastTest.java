@@ -20,7 +20,8 @@ public class FailFastTest {
 			
 	// duplicate add list name the fetch ConcurrentModificationException
 			
-			if(fruit.equals("Apple")) {
+			// if(fruit.equals("Graps")) // no error founds in this add list
+			if(fruit.equals("Apple")) { // found error
 				list.add("Apple");
 			}
 		}
