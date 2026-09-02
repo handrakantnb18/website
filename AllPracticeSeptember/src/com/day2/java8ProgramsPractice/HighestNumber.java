@@ -9,7 +9,7 @@ public class HighestNumber {
 	public static void main(String[] args) {
 		
 		List<Integer> num = Arrays.asList(
-				10, 20, 5, 30, 40, 40);
+				10, 20, 5, 30, 40, 50, 88, 92);
 		
 		int max =
 		num.stream()
