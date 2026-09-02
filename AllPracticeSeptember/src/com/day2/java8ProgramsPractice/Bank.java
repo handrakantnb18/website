@@ -2,6 +2,7 @@ package com.day2.java8ProgramsPractice;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -20,6 +21,14 @@ public class Bank {
 				.collect(Collectors.toSet());
 		
 		System.out.println(duplicate);
+		
+		Set<Integer> seen = new HashSet<>();
+
+		Set<Integer> duplicates = list.stream()
+		        .filter(n -> !seen.add(n))
+		        .collect(Collectors.toSet());
+		
+		System.out.println(duplicates);
 		
 	}
 	
