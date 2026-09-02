@@ -3,6 +3,8 @@ package com.day2.java8ProgramsPractice;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+//Modifying the list during iteration does NOT throw an exception
+
 public class FailSafeTest {
 
 	public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class FailSafeTest {
 				
 			}
 		}
-		System.out.println(list);
+		System.out.println("final list = " +list);
 		
 	}
 }
