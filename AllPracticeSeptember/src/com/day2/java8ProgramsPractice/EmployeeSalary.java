@@ -19,9 +19,9 @@ public class EmployeeSalary {
 
 		);
 
-//		emp.forEach((id) -> {
-//			System.out.println(id);
-//		});
+		emp.forEach((id) -> {
+			System.out.println(id);
+		});
 		
 		
 	}
