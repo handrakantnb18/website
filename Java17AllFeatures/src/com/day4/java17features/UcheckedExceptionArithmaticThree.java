@@ -11,7 +11,7 @@ class UserDefinedException extends Exception  {
     }    
 }   
 
-public class UcheckedExceptionArithmaticThree extends Exception {
+public class UcheckedExceptionArithmaticThree  {
 
 	 
 	public static void main(String[] args) {
