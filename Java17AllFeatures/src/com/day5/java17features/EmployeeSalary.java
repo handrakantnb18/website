@@ -3,6 +3,8 @@ package com.day5.java17features;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.jar.Attributes.Name;
 
 public class EmployeeSalary {
 
@@ -25,10 +27,10 @@ public class EmployeeSalary {
 //		});
 		
 		List<Employee> empolyee = 
-		emp.values()
-		.stream()
-		.filter(e -> e.getSalary() > 56000.00)
-		.toList();
+				emp.values()
+				.stream()
+				.filter(e -> e.getSalary() > 56000.00)
+				.toList();
 		
 		System.out.println(empolyee);
 		
@@ -39,6 +41,30 @@ public class EmployeeSalary {
 				System.out.println(name);
 			}
 		});
+		
+//		if(emp != null) {
+//			if(emp.getAddress() != null) {
+//				System.out.println(
+//						emp.getAddress().getCity());
+//			}
+//		}
+		
+//		if (emp != null) {
+//		    System.out.println(emp.getCity());
+//		}
+
+		
+//		Optional.ofNullable(emp)
+//		        .map(Employee::getAddress)
+//		        .map(Address::getCity)
+//		        .ifPresent(System.out::println);
+
+		
+//		Optional.ofNullable(emp)
+//		        .map(Employee::getCity)
+//		        .map(Address::getCity)
+//		        .ifPresent(System.out::println);
+
 		
 	}
 }
