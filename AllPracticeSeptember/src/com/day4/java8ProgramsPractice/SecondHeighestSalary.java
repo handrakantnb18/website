@@ -1,7 +1,9 @@
 package com.day4.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class SecondHeighestSalary {
 
@@ -29,10 +31,35 @@ public class SecondHeighestSalary {
 		
 		emp.put("Pooja", new Employee(10, "Pooja Verma", "Marketing", 64000.0, "Chennai"));
 
-		emp.forEach((id, name) -> {
-			System.out.println(id+" : "+name);
-		});
+//		emp.forEach((id, name) -> {
+//			System.out.println(id+" : "+name);
+//		});
 		
+		 Optional<Employee> result = emp.values()
+	                .stream()
+	                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+	                .skip(1)
+	                .findFirst();
+
+	        result.ifPresent(e -> 
+	            System.out.println("Second Highest Salary: " 
+	                    + e.getName() + " - " + e.getSalary())
+	        );
+		
+	        
+//		 Optional<Employee> result =
+//			    emp.stream()
+//			        .collect(Collectors.groupingBy(
+//			            Employee::getDept,
+//			            Collectors.collectingAndThen(
+//			                Collectors.toList(),
+//			                list -> list.stream()
+//			                    .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+//			                    .skip(1)
+//			                    .findFirst()
+//			            )
+//			        ));
+
 		
 	}
 }
