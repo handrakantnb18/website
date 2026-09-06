@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class SecondHeighestSalary {
 
@@ -35,16 +36,16 @@ public class SecondHeighestSalary {
 //			System.out.println(id+" : "+name);
 //		});
 		
-		 Optional<Employee> result = emp.values()
-	                .stream()
-	                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
-	                .skip(1)
-	                .findFirst();
-
-	        result.ifPresent(e -> 
-	            System.out.println("Second Highest Salary: " 
-	                    + e.getName() + " - " + e.getSalary())
-	        );
+//		 Optional<Employee> result = emp.values()
+//	                .stream()
+//	                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+//	                .skip(1)
+//	                .findFirst();
+//
+//	        result.ifPresent(e -> 
+//	            System.out.println("Second Highest Salary: " 
+//	                    + e.getName() + " - " + e.getSalary())
+//	        );
 		
 	        
 //		 Optional<Employee> result =
@@ -61,5 +62,21 @@ public class SecondHeighestSalary {
 //			        ));
 
 		
+	        Map<String, Optional<Double>> result1 =
+	        	    emp.values().stream()
+	        	        .collect(Collectors.groupingBy(
+	        	            Employee::getDept,
+	        	            Collectors.collectingAndThen(
+	        	                Collectors.mapping(Employee::getSalary, Collectors.toList()),
+	        	                salaries -> salaries.stream()
+	        	                    .distinct()
+	        	                    .sorted(Comparator.reverseOrder())
+	        	                    .skip(1)
+	        	                    .findFirst()
+	        	            )
+	        	        ));
+
+	        System.out.println(result1);
+	        
 	}
 }
