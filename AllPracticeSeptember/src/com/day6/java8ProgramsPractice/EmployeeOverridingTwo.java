@@ -5,9 +5,10 @@ public class EmployeeOverridingTwo  {
 
 	void add(int a, int b) {
 //		super.sub(a, b);
-		a = 50;
-		b = 20;
+//		a = 50;
+//		b = 20;
 		
+		System.out.println(a - b);
 	}
 	
 }
