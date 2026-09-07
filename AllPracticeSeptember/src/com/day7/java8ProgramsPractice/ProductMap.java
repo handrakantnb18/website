@@ -1,8 +1,10 @@
 package com.day7.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProductMap {
 
@@ -26,13 +28,30 @@ public class ProductMap {
 //			System.out.println(id+ " "+name);
 //		});
 		
-	     List<Product> list =
+//	     List<Product> list =
+//				map.values()
+//				.stream()
+//				.filter(p -> p.getPrice() > 20000)
+//				.toList();
+//		
+//		System.out.println(list);
+		
+		Map<Double, List<Product>> res =
 				map.values()
 				.stream()
-				.filter(p -> p.getPrice() > 20000)
-				.toList();
+				.collect(Collectors.groupingBy(Product::getPrice));
 		
-		System.out.println(list);
+		System.out.println(res);
+		
+		
+		Product product =
+		map.values()
+		.stream()
+		.max(Comparator.comparing(Product::getPrice))
+		.orElse(null);
+		
+		System.out.println(product);
+		
 		
 	}
 }
