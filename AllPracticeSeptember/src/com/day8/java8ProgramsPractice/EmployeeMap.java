@@ -1,6 +1,7 @@
 package com.day8.java8ProgramsPractice;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.day7.java8ProgramsPractice.Employee;
@@ -22,11 +23,17 @@ public class EmployeeMap {
 		map.put(5, new Employee(5, "Priya", "priya@gmail.com", 45000.00, "HR", "Hyd"));
 		
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+ " "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+ " "+name);
+//		});
 		
+		List<Employee> employee = 
+				map.values()
+				.stream()
+				.filter(emp -> emp.getSalary() > 60000.00)
+				.toList();
 		
+		System.out.println(employee);
 		
 	}
 }
