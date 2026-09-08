@@ -22,5 +22,7 @@ public class NonZeroElements {
 		for (int num : arr) {
 			System.out.println(num + " ");
 		}
+		
+		
 	}
 }
