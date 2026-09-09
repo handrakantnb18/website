@@ -29,9 +29,15 @@ public class EmployeeMap {
 
 		map.put(110, new Employee(110, "Kiran", "kiran@gmail.com",  68000.0, "Sales", "Mumbai"));
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+ " = "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+ " = "+name);
+//		});
+		
+		map.values()
+		.stream()
+		.filter(e -> e.getSalary() > 70000)
+		.forEach(System.out::println);
+		
 		
 		
 	}
