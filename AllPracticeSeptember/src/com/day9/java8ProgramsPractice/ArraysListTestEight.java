@@ -14,8 +14,10 @@ public class ArraysListTestEight {
         list.add("4. Ram");  
         list.add("5. Vaibhav");  
         list.add("6. Pooja");
+        list.add("7. Vaibhav");  
+        list.add("8. Pooja");
   
-        list.add(2, "7. Gaurav");  
+        list.add(4  , "7. Gaurav");  
   
         ArrayList<String> list2 = new ArrayList<>();  
         list2.add("8. Sonoo");  
