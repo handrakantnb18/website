@@ -33,10 +33,18 @@ public class EmployeeMap {
 //			System.out.println(id+ " = "+name);
 //		});
 		
+//		map.values()
+//		.stream()
+//		.filter(e -> e.getSalary() > 70000)
+//		.forEach(System.out::println);
+		
+		Employee map1 =
 		map.values()
 		.stream()
-		.filter(e -> e.getSalary() > 70000)
-		.forEach(System.out::println);
+		.max((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()))
+		.orElse(null);
+		
+		System.out.println(map1);
 		
 		
 		
