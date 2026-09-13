@@ -2,7 +2,7 @@ package com.day13.java8ProgramsPractice;
 
 // Single Inheritance
 // single inheritance, a sub-class is derived from only one super class
-
+// It inherits the properties and behavior of a single-parent class. 
 class Vehicle {
 	 Vehicle() {
 		System.out.println("This is Vehical..");
