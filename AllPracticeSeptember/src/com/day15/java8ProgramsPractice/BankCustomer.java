@@ -1,14 +1,15 @@
 package com.day15.java8ProgramsPractice;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BankCustomer {
 
 	public static void main(String[] args) {
-		
+
 		Map<Integer, Bank> bank = new HashMap<Integer, Bank>();
-		
+
 		bank.put(101, new Bank(101, "Rahul", "rahul@gmail.com", 55000.0, "Loan", "Pune"));
 
 		bank.put(102, new Bank(102, "Amit", "amit@gmail.com", 62000.0, "Accounts", "Mumbai"));
@@ -29,10 +30,30 @@ public class BankCustomer {
 
 		bank.put(110, new Bank(110, "Kiran", "kiran@gmail.com", 90000.0, "Manager", "Nagpur"));
 
-		bank.forEach((id, cust) -> {
-			System.out.println(id+ " "+cust);
-		});
+//		bank.forEach((id, cust) -> {
+//			System.out.println(id+ " "+cust);
+//		});
+
+		//Map<Integer, List<Bank>> sal =
+		
+		List<Bank> sal = 
+				bank.values()
+				.stream()
+				.filter(e -> e.getSalary() > 75000.00)
+				.toList();
+
+		System.out.println(sal);
 		
 		
+//		Map<Integer, List<Bank>> sal = 
+//				bank.values()
+//				.stream()
+//				.collect(e -> e.getSalary() > 55000.00)
+//				.count();
+//				
+//
+//		System.out.println(sal);
+		
+
 	}
 }
