@@ -1,6 +1,7 @@
 package com.day16.java8ProgramsPractice;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeSalary {
@@ -30,11 +31,16 @@ public class EmployeeSalary {
 		map.put(110, new Employee(110, "Kiran", "kiran@gmail.com", 52000.0, "HR", "Nagpur", "HR Executive"));
 		
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
+//		});
 		
-		
+		List<Employee> list = map.values()
+		        .stream()
+		        .filter(e -> e.getSalary() > 60000)
+		        .toList();
+
+		System.out.println(list);
 		
 	}
 }
