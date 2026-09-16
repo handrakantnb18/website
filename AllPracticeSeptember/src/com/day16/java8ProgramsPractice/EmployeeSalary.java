@@ -1,5 +1,6 @@
 package com.day16.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,12 +36,21 @@ public class EmployeeSalary {
 //			System.out.println(id+" "+name);
 //		});
 		
-		List<Employee> list = map.values()
+//		List<Employee> list = map.values()
+//		        .stream()
+//		        .filter(e -> e.getSalary() > 60000)
+//		        .toList();
+//
+//		System.out.println(list);
+		
+		
+		Employee emp = map.values()
 		        .stream()
-		        .filter(e -> e.getSalary() > 60000)
-		        .toList();
+		        .max(Comparator.comparing(Employee::getSalary))
+		        .orElse(null);
 
-		System.out.println(list);
+		System.out.println(emp);
+		
 		
 	}
 }
