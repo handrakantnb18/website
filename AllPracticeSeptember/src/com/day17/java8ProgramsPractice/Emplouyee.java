@@ -13,11 +13,22 @@ public class Emplouyee {
 	private String dept;
 	
 	private String city;
+	
+	private String designation;
+	
 
 	@Override
 	public String toString() {
 		return "Emplouyee [id=" + id + ", name=" + name + ", email=" + email + ", salary=" + salary + ", dept=" + dept
-				+ ", city=" + city + "]";
+				+ ", city=" + city + ", designation"+designation+" ]";
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 
 	public Integer getId() {
@@ -68,7 +79,10 @@ public class Emplouyee {
 		this.city = city;
 	}
 
-	public Emplouyee(Integer id, String name, String email, Double salary, String dept, String city) {
+	
+
+	public Emplouyee(Integer id, String name, String email, Double salary, String dept, String city,
+			String designation) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -76,6 +90,7 @@ public class Emplouyee {
 		this.salary = salary;
 		this.dept = dept;
 		this.city = city;
+		this.designation = designation;
 	}
 	
 	
