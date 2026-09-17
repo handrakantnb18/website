@@ -1,5 +1,6 @@
 package com.day17.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,9 +32,16 @@ public class EmployeeSalary {
 
 		map.put(110, new Emplouyee(110, "Kiran", "kiran@gmail.com", 52000.0, "HR", "Nagpur", "HR Executive"));
 
-		map.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
+//		});
+		
+		Emplouyee emp = map.values()
+		        .stream()
+		        .max(Comparator.comparing(Emplouyee::getSalary))
+		        .orElse(null);
+
+		System.out.println(emp);
 		
 		
 	}
