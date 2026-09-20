@@ -1,6 +1,8 @@
 package com.day20.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EmployeeSalary {
@@ -29,9 +31,26 @@ public class EmployeeSalary {
 
 		map.put(110, new Employee(110, "Kiran Bhosale", "kiran@gmail.com", 68000.0, "Finance", "Pune"));
 
-		map.forEach((id, name) -> {
-			System.out.println(id + " " + name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id + " " + name);
+//		});
 
+		// Salary greater than 60,000
+		List<Employee> list = map.values()
+		        .stream()
+		        .filter(e -> e.getSalary() > 60000)
+		        .toList();
+
+		System.out.println(list);
+		
+		
+		// Highest salary
+		Employee highestSalary = map.values()
+		        .stream()
+		        .max(Comparator.comparing(Employee::getSalary))
+		        .orElse(null);
+
+		System.out.println(highestSalary);
+		
 	}
 }
