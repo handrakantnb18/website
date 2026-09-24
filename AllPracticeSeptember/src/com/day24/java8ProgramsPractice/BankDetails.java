@@ -33,17 +33,17 @@ public class BankDetails {
 
 		map.put(110, new Bank(110, "kiran444", "Kiran@444", "kiran@gmail.com", 320000.0, "Thane", "Savings"));
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
+//		});
 		
 		// Amount greater than 100000
-//		List<Bank> list = map.values()
-//		        .stream()
-//		        .filter(b -> b.getAmount() > 100000)
-//		        .toList();
-//
-//		System.out.println(list);
+		List<Bank> list = map.values()
+		        .stream()
+		        .filter(b -> b.getAmount() > 100000)
+		        .toList();
+
+		System.out.println(list);
 		
 	}
 }
