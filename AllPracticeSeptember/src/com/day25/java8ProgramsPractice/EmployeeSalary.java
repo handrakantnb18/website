@@ -62,12 +62,19 @@ public class EmployeeSalary {
 		
 		// Sort Employees by Salary in Descending Order
 		
+//		employees.values()
+//        .stream()
+//        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+//        .forEach(System.out::println);
+		
+		// If you want ascending order
+		
 		employees.values()
         .stream()
-        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+        .sorted(Comparator.comparing(Employee::getSalary))
         .forEach(System.out::println);
 		
-		// 
+		
 		
 	}
 }
