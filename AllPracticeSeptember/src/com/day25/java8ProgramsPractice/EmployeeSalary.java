@@ -2,7 +2,9 @@ package com.day25.java8ProgramsPractice;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeSalary {
 
@@ -69,11 +71,25 @@ public class EmployeeSalary {
 		
 		// If you want ascending order
 		
-		employees.values()
-        .stream()
-        .sorted(Comparator.comparing(Employee::getSalary))
-        .forEach(System.out::println);
+//		employees.values()
+//        .stream()
+//        .sorted(Comparator.comparing(Employee::getSalary))
+//        .forEach(System.out::println);
 		
+		// Group Employees by Department using Java 8 Streams
+		
+		Map<String, List<Employee>> employeesByDept =
+		        employees.values()
+		                .stream()
+		                .collect(Collectors.groupingBy(Employee::getDept));
+
+		employeesByDept.forEach((dept, empList) -> {
+		    System.out.println("Department: " + dept);
+
+		    empList.forEach(emp ->
+		            System.out.println("  " + emp.getName()
+		                    + " - " + emp.getSalary()));
+		});
 		
 		
 	}
