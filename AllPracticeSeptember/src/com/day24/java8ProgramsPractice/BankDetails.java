@@ -45,5 +45,6 @@ public class BankDetails {
 
 		System.out.println(list);
 		
+		
 	}
 }
