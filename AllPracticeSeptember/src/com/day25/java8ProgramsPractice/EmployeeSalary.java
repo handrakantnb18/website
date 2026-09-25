@@ -78,18 +78,28 @@ public class EmployeeSalary {
 		
 		// Group Employees by Department using Java 8 Streams
 		
-		Map<String, List<Employee>> employeesByDept =
-		        employees.values()
-		                .stream()
-		                .collect(Collectors.groupingBy(Employee::getDept));
+//		Map<String, List<Employee>> employeesByDept =
+//		        employees.values()
+//		                .stream()
+//		                .collect(Collectors.groupingBy(Employee::getDept));
+//
+//		employeesByDept.forEach((dept, empList) -> {
+//		    System.out.println("Department: " + dept);
+//
+//		    empList.forEach(emp ->
+//		            System.out.println("  " + emp.getName()
+//		                    + " - " + emp.getSalary()));
+//		});
+		
+		
+		// Get Only Employee Names Using map()
+		
+		List<String> employeeNames = employees.values()
+		        .stream()
+		        .map(Employee::getName)
+		        .collect(Collectors.toList());
 
-		employeesByDept.forEach((dept, empList) -> {
-		    System.out.println("Department: " + dept);
-
-		    empList.forEach(emp ->
-		            System.out.println("  " + emp.getName()
-		                    + " - " + emp.getSalary()));
-		});
+		employeeNames.forEach(System.out::println);
 		
 		
 	}
