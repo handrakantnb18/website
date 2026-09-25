@@ -38,27 +38,36 @@ public class EmployeeSalary {
 		
 		// Find the Second-Highest Salary using Java 8 Streams
 		
-		Double secondHighestSalary = employees.values()
-		        .stream()
-		        .map(Employee::getSalary)
-		        .distinct()
-		        .sorted(Comparator.reverseOrder())
-		        .skip(1)
-		        .findFirst()
-		        .orElse(null);
-
-		System.out.println("Second Highest Salary: " + secondHighestSalary);
+//		Double secondHighestSalary = employees.values()
+//		        .stream()
+//		        .map(Employee::getSalary)
+//		        .distinct()
+//		        .sorted(Comparator.reverseOrder())
+//		        .skip(1)
+//		        .findFirst()
+//		        .orElse(null);
+//
+//		System.out.println("Second Highest Salary: " + secondHighestSalary);
+		
+		// If you want the complete Employee : Second-highest salary employee: Sneha Kulkarni — ₹95,000.
+		
+//		Employee secondHighestEmployee = employees.values()
+//		        .stream()
+//		        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+//		        .skip(1)
+//		        .findFirst()
+//		        .orElse(null);
+//
+//		System.out.println(secondHighestEmployee);
+		
+		// Sort Employees by Salary in Descending Order
+		
+		employees.values()
+        .stream()
+        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+        .forEach(System.out::println);
 		
 		// 
-		
-		Employee secondHighestEmployee = employees.values()
-		        .stream()
-		        .sorted(Comparator.comparing(Employee::getSalary).reversed())
-		        .skip(1)
-		        .findFirst()
-		        .orElse(null);
-
-		System.out.println(secondHighestEmployee);
 		
 	}
 }
