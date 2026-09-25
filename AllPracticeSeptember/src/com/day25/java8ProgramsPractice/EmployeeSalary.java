@@ -1,5 +1,6 @@
 package com.day25.java8ProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,10 +31,23 @@ public class EmployeeSalary {
 
 		employees.put(110, new Employee(110, "Kiran Pawar", "kiran.pawar@gmail.com", 100000.0, "IT", "Bangalore", "Tech Lead"));
 
-		employees.values()
-        .stream()
-        .filter(emp -> emp.getSalary() > 80000)
-        .forEach(System.out::println);
+//		employees.values()
+//        .stream()
+//        .filter(emp -> emp.getSalary() > 80000)
+//        .forEach(System.out::println);
+		
+		
+		Double secondHighestSalary = employees.values()
+		        .stream()
+		        .map(Employee::getSalary)
+		        .distinct()
+		        .sorted(Comparator.reverseOrder())
+		        .skip(1)
+		        .findFirst()
+		        .orElse(null);
+
+		System.out.println("Second Highest Salary: " + secondHighestSalary);
+		
 		
 		
 	}
