@@ -15,6 +15,7 @@ public class EvenOddNumbers {
 		.filter(e -> e % 2 == 0)
 		.forEach(System.out::print);
 		
+		
 		System.out.println();
 		System.out.println("Odd Numbers : ");
 		list.stream()
