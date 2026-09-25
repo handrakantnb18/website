@@ -36,6 +36,7 @@ public class EmployeeSalary {
 //        .filter(emp -> emp.getSalary() > 80000)
 //        .forEach(System.out::println);
 		
+		// Find the Second-Highest Salary using Java 8 Streams
 		
 		Double secondHighestSalary = employees.values()
 		        .stream()
@@ -48,7 +49,16 @@ public class EmployeeSalary {
 
 		System.out.println("Second Highest Salary: " + secondHighestSalary);
 		
+		// 
 		
+		Employee secondHighestEmployee = employees.values()
+		        .stream()
+		        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+		        .skip(1)
+		        .findFirst()
+		        .orElse(null);
+
+		System.out.println(secondHighestEmployee);
 		
 	}
 }
