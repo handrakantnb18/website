@@ -16,6 +16,7 @@ public class LinearSearchTestOne {
 		return -1;
 	}
 
+	
 	public static void main(String[] args) {
 
 		int[] a = { 3, 4, 1, 7, 5, 8 };
