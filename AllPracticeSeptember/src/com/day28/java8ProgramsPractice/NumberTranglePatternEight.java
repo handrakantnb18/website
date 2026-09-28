@@ -17,6 +17,7 @@ public class NumberTranglePatternEight {
 			}
 
 			System.out.println();
+			
 		}
 
 		for (i = 2; i <= n; i++) {
