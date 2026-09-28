@@ -4,6 +4,7 @@ package com.day28.java8ProgramsPractice;
 //Generates Pascal’s Triangle with proper alignment, showing binomial
 //coefficients for each row
 
+
 public class NumberTranglePatternSix {
 
 	public static void printPascal(int n) {
