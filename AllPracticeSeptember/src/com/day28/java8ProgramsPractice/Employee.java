@@ -88,6 +88,11 @@ public class Employee {
 		this.city = city;
 		this.desc = desc;
 	}
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	
