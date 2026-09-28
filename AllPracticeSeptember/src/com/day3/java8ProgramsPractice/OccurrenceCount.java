@@ -5,6 +5,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 // Count occurrences of each character
+
 public class OccurrenceCount {
 
 	public static void main(String[] args) {
