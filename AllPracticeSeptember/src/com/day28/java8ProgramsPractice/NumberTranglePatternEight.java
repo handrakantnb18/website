@@ -7,6 +7,7 @@ package com.day28.java8ProgramsPractice;
 public class NumberTranglePatternEight {
 
 	public static void printPattern(int n) {
+		
 		int i, j;
 
 		for (i = n; i >= 1; i--) {
