@@ -16,6 +16,7 @@ public class NumberTranglePatternFour {
 			}
 
 			for (j = 1; j <= 2 * i - 1; j++) {
+				
 				if (j == 1 || j == 2 * i - 1)
 					System.out.print("*");
 				else
