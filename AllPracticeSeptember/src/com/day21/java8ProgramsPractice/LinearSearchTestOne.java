@@ -18,7 +18,7 @@ public class LinearSearchTestOne {
 
 	public static void main(String[] args) {
 
-		int[] a = { 3, 4, 1, 7, 5 };
+		int[] a = { 3, 4, 1, 7, 5, 8 };
 		int n = a.length;
 
 		int x = 4;
