@@ -16,7 +16,7 @@ public class EvanOddNumbers {
 		.forEach(System.out::print);
 		
 		System.out.println();
-		System.out.println("Odd numbers :");
+		System.out.println("Odd numbers in the list :");
 		list.stream()
 		.filter(e -> e % 2 != 0)
 		.forEach(System.out::print);
