@@ -26,15 +26,15 @@ public class EmployeeSalary {
 
 		// System.out.println(map1);
 		
-		map1.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
-		
-		
-//		map1.forEach((id, sal) -> {
-//			if(sal.getSalary() < 60000)
-//				System.out.println(sal);
+//		map1.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
 //		});
+//		
+		
+		map1.forEach((id, sal) -> {
+			if(sal.getSalary() < 60000)
+				System.out.println(sal);
+		});
 		
 		
 	}
