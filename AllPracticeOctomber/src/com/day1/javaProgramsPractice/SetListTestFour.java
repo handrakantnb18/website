@@ -1,0 +1,31 @@
+package com.day1.javaProgramsPractice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+//The values can be removed from the Set using the remove() method.
+
+public class SetListTestFour {
+
+	public static void main(String[] args) {
+		
+		Set<String> list = new HashSet<String>();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("B");
+		list.add("D");
+		list.add("E");
+		list.add("F");
+		list.add("G");
+		list.add("H");
+		list.add("I");
+		
+		System.out.println("Initial HAshSet : "+list);
+		
+		list.remove("B");
+		
+		System.out.println("AFter removing elements : "+list);
+		
+	}
+}
