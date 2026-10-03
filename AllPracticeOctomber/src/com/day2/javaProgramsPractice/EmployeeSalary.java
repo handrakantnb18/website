@@ -23,17 +23,17 @@ public class EmployeeSalary {
 		emp.put(6, new Employee(106, "Ram", "ram@gmail.com", 87000.00, "Trans", "Mumbai", "managaer"));
 
 		
-		emp.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
-		
-		
-//		emp.forEach((id, salary) -> {
-//			if(salary.getSalary() < 70000) {
-//				System.out.println(salary);
-//			}
+//		emp.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
 //		});
 		
+		
+		emp.forEach((id, salary) -> {
+			
+			if(salary.getSalary() < 70000) {
+				System.out.println(salary);
+			}
+		});
 		
 		
 	}
