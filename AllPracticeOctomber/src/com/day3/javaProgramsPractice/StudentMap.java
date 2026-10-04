@@ -30,10 +30,17 @@ public class StudentMap {
 		map.put(10, new Student(10, "Kiran", "kiran@gmail.com", 38000.0, "Shivaji College", "Kolhapur", "Science"));
 		
 		
-		map.forEach((id, name) -> {
-			System.out.println(id+" "+name);
-		});
+//		map.forEach((id, name) -> {
+//			System.out.println(id+" "+name);
+//		});
 
+		map.entrySet()
+		   .stream()
+		   .filter(entry -> entry.getValue()
+				   .getFees() < 46000)
+		   .forEach(entry -> System.out.println(
+				   entry.getValue()));
+		
 		
 	}
 
