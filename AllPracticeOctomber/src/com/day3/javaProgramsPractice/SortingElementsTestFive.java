@@ -9,7 +9,7 @@ import java.util.Collections;
 public class SortingElementsTestFive {
 
 	public static void main(String[] args) {
-		
+
 		ArrayList<String> fruit = new ArrayList<String>();
 		fruit.add("Apple");
 		fruit.add("Banana");
@@ -17,12 +17,12 @@ public class SortingElementsTestFive {
 		fruit.add("Orange");
 		fruit.add("Annar");
 		fruit.add("Mango");
-		
-		System.out.println("Befor sortinh elements : "+fruit);
-		
+
+		System.out.println("Befor sortinh elements : " + fruit);
+
 		Collections.sort(fruit);
-		
-		System.out.println("After sort elements : "+fruit);
-		
+
+		System.out.println("After sort elements : " + fruit);
+
 	}
 }
