@@ -2,6 +2,7 @@ package com.day3.javaProgramsPractice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StudentMap {
 
@@ -34,13 +35,24 @@ public class StudentMap {
 //			System.out.println(id+" "+name);
 //		});
 
-		map.entrySet()
-		   .stream()
-		   .filter(entry -> entry.getValue()
-				   .getFees() < 46000)
-		   .forEach(entry -> System.out.println(
-				   entry.getValue()));
+//		map.entrySet()
+//		   .stream()
+//		   .filter(entry -> entry.getValue()
+//				   .getFees() < 46000)
+//		   .forEach(entry -> System.out.println(
+//				   entry.getValue()));
+//		
 		
+		Map<Integer, Student> result = map.entrySet()
+		        .stream()
+		        .filter(entry -> entry.getValue().getFees() < 46000)
+		        .collect(Collectors.toMap(
+		                Map.Entry::getKey,
+		                Map.Entry::getValue
+		        ));
+
+		result.forEach((id, student) ->
+		        System.out.println(id + " : " + student));
 		
 	}
 
