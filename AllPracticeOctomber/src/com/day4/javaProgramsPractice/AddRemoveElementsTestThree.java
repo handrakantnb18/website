@@ -20,6 +20,7 @@ public class AddRemoveElementsTestThree {
 		System.out.println("Initial collection : "+fruit);
 		
 		fruit.remove("Graphs");
+		System.out.println("After removing Mongo : "+fruit);
 		
 		Collection<String> rem = new ArrayList<String>();
 		rem.add("Apple");
@@ -27,7 +28,6 @@ public class AddRemoveElementsTestThree {
 		
 		fruit.removeAll(rem);
 		System.out.println("After removeAll() : "+fruit);
-		
 		
 	}
 }
