@@ -1,4 +1,4 @@
-package com.day1.javaProgramsPractice;
+ package com.day1.javaProgramsPractice;
 
 import java.util.Collections;
 import java.util.HashMap;
