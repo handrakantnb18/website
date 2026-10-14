@@ -35,18 +35,27 @@ public class EmployeeMap {
 
 				new Employee(10, "Rohit", "rohit@gmail.com", 90000.0, "IT", "Mumbai", "Architect"));
 
-		Employee highestSalaryEmployee = 
-				employees.stream()
-				.max(Comparator.comparing
-						(Employee::getSalary))
-				.orElse(null);
+//		Employee highestSalaryEmployee = 
+//				employees.stream()
+//				.max(Comparator.comparing
+//						(Employee::getSalary))
+//				.orElse(null);
+//
+//		System.out.println("Employee with Highest Salary:");
+//
+//		if (highestSalaryEmployee != null) {
+//			System.out.println(highestSalaryEmployee);
+//		}
 
-		System.out.println("Employee with Highest Salary:");
+		// If the interviewer asks only for the highest salary amount,
+		
+		Double highestSalary = employees.stream()
+		        .map(Employee::getSalary)
+		        .max(Double::compareTo)
+		        .orElse(0.0);
 
-		if (highestSalaryEmployee != null) {
-			System.out.println(highestSalaryEmployee);
-		}
-
+		System.out.println("Highest Salary : "+highestSalary);
+		
 	}
 
 }
