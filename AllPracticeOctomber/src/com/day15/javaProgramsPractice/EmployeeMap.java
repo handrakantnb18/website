@@ -1,9 +1,12 @@
 package com.day15.javaProgramsPractice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import com.day14.javaProgramsPractice.Employee;
+
+// list of 10 employees and find the highest salary
 
 public class EmployeeMap {
 
@@ -32,13 +35,24 @@ public class EmployeeMap {
 
 		// If the interviewer asks only for the highest salary amount,
 
-		Double highestSalary = 
-				employees.stream()
-				.map(Employee::getSalary)
-				.max(Double::compareTo)
-				.orElse(0.0);
+//		Double highestSalary = 
+//				employees.stream()
+//				.map(Employee::getSalary)
+//				.max(Double::compareTo)
+//				.orElse(0.0);
+//
+//		System.out.println("Highest Salary : " + highestSalary);
 
-		System.out.println("Highest Salary : " + highestSalary);
+		Employee highestSalaryEmployee = 
+				employees.stream()
+				.max(Comparator.comparing(Employee::getSalary))
+				.orElse(null);
+
+		System.out.println("Employee with Highest Salary:");
+
+		if (highestSalaryEmployee != null) {
+			System.out.println(highestSalaryEmployee);
+		}
 
 	}
 }
