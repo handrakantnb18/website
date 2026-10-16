@@ -1,5 +1,6 @@
 package com.day16.javaProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,10 +32,17 @@ public class ProductMap {
 
 		// map.forEach((key, value) -> System.out.println(key + " = " + value));
 
-		map.values().stream()
-	    .filter(p -> p.getPrice() > 10000)
-	    .forEach(System.out::println);
+//		map.values().stream()
+//	    .filter(p -> p.getPrice() > 10000)
+//	    .forEach(System.out::println);
+//		
 		
+		Product highestPriceProduct = map.values()
+		        .stream()
+		        .max(Comparator.comparing(Product::getPrice))
+		        .orElse(null);
+
+		System.out.println("Highest Price Product: " + highestPriceProduct);
 		
 	}
 }
