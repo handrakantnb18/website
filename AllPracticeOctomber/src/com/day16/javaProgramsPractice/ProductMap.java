@@ -29,8 +29,12 @@ public class ProductMap {
 
 		map.put(10, new Product(10, "Mouse", "mouse@gmail.com", 800.0, "IT", "Pune", "IT Branch"));
 
-		map.forEach((key, value) -> System.out.println(key + " = " + value));
+		// map.forEach((key, value) -> System.out.println(key + " = " + value));
 
+		map.values().stream()
+	    .filter(p -> p.getPrice() > 10000)
+	    .forEach(System.out::println);
+		
 		
 	}
 }
