@@ -71,6 +71,24 @@ public class Employee {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", salary=" + salary + ", dept=" + dept
+				+ ", city=" + city + ", desc=" + desc + "]";
+	}
+
+	public Employee(Integer id, String name, String email, Double salary, String dept, String city, String desc) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.salary = salary;
+		this.dept = dept;
+		this.city = city;
+		this.desc = desc;
+	}
+	
 	
 	
 }
