@@ -9,6 +9,7 @@ public class CountStringLettersFive {
 
 	public static void main(String[] args) {
 
+		
 		List<String> names = 
 				Arrays.asList("Apple", "Banana", "Avocado", "Cherry");
 
