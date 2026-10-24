@@ -13,6 +13,7 @@ public class SecondHighTherteen {
 		List<Integer> numbers = 
 				Arrays.asList(5, 13, 4, 21, 8, 21);
 
+		
 		int secondHighest = 
 				numbers.stream()
 				.distinct()
