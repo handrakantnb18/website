@@ -10,7 +10,7 @@ public class FindFirstElementEleven {
 	public static void main(String[] args) {
 
 		List<String> items = 
-				Arrays.asList("First", "Second", "Third");
+				Arrays.asList("First", "Second", "Third", "Four", "Fifth");
 
 		String first = 
 				items.stream()
@@ -19,13 +19,31 @@ public class FindFirstElementEleven {
 		
 		System.out.println("Find First : "+first);
 		
-		String first1 = 
+		String second = 
 				items.stream()
 				.skip(1)
 				.findFirst()
 				.orElse("Empty");
 		
-		System.out.println("Find First skip : "+first1);
+		System.out.println("Find First skip : "+second);
+		
+		String third = 
+				items.stream()
+				.skip(2)
+				.findFirst()
+				.orElse("Empty");
+		
+		System.out.println("Find Second skip : "+third);
+		
 
+		String fourth = 
+				items.stream()
+				.skip(3)
+				.findFirst()
+				.orElse("Empty");
+		
+		System.out.println("Find Third skip : "+fourth);
+	
+		
 	}
 }
