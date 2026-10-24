@@ -11,8 +11,10 @@ public class StringUppercaseTwo {
 	public static void main(String[] args) {
 
 		List<String> words =
-				Arrays.asList("java", "stream", "api", "Python", "Node", "React");
+				Arrays.asList("java", "stream",
+						"api", "Python", "Node", "React", "Php");
 
+		
 		List<String> upperCaseWords = 
 				words.stream()
 				.map(String::toUpperCase)
