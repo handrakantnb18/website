@@ -17,5 +17,10 @@ public class ConcatTwoStreamFourteen {
 		.filter(i -> i > 50)
 		.forEach(System.out::println);
 
+		integerList.stream()
+		.map(i -> i * i * i)
+		.filter(i -> i > 25)
+		.forEach(System.out::println);
+		
 	}
 }
