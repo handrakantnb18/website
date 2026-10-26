@@ -6,8 +6,9 @@ import java.util.List;
 public class EmployeeSalary {
 
 	public static void main(String[] args) {
-		
+
 		List<Employee> employees = Arrays.asList(
+
 				new Employee(1, "Rahul", "rahul@gmail.com", 45000.0, "IT", "Pune", "Developer"),
 
 				new Employee(2, "Priya", "priya@gmail.com", 65000.0, "HR", "Mumbai", "HR Executive"),
@@ -35,9 +36,8 @@ public class EmployeeSalary {
 				.map(Employee::getSalary)
 				.max(Double::compareTo)
 				.orElse(0.0);
-		
-				System.out.println(highestSalary);
-		
-		
+
+		System.out.println(highestSalary);
+
 	}
 }
