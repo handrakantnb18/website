@@ -10,7 +10,8 @@ public class CharFrequencyTestNine {
 
 	public static void main(String[] args) {
 
-		String inputString = "Java Concept Of The Day";
+		String inputString = "my name is chandrakant bhosale "
+				+ "from sangli and i am software engineer";
 
 		Map<Character, Long> charCountMap = 
 				inputString.chars()
