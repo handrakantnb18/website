@@ -32,5 +32,9 @@ public class PersonalDetails {
 		// Print all Persons
 		map.forEach((key, person) -> System.out.println(person));
 
+		// Find employees with salary greater than ₹60,000
+
+		map.values().stream().filter(e -> e.getPsalary() > 60000).forEach(System.out::println);
+
 	}
 }
