@@ -2,6 +2,7 @@ package com.day29.javaProgramsPractice;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProductMap {
@@ -38,17 +39,24 @@ public class ProductMap {
 		
 		// Using the 10 Product objects above, find the product with the highest price using Java Streams.
 		
-		 Product highest = map.values()
-	                .stream()
-	                .max(Comparator.comparing(Product::getPprice))
-	                .orElseThrow(() ->
-	                        new RuntimeException("No products found"));
-
-	        System.out.println("Highest Price Product:");
-	        System.out.println("Name: " + highest.getPname());
-	        System.out.println("Price: " + highest.getPprice());
-	        System.out.println("City: " + highest.getPcity());
+//		 Product highest = map.values()
+//	                .stream()
+//	                .max(Comparator.comparing(Product::getPprice))
+//	                .orElseThrow(() ->
+//	                        new RuntimeException("No products found"));
+//
+//	        System.out.println("Highest Price Product:");
+//	        System.out.println("Name: " + highest.getPname());
+//	        System.out.println("Price: " + highest.getPprice());
+//	        System.out.println("City: " + highest.getPcity());
 	        
+	        // Using the 10 Product objects above, find products with price greater than 10000 using Java Streams.
 	        
+		List<Product> result = map.values()
+		        .stream()
+		        .filter(p -> p.getPprice() < 50000)
+		        .toList();
+		System.out.println(result);
+		
 	}
 }
