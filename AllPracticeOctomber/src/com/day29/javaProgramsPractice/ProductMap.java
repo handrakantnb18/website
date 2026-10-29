@@ -1,5 +1,6 @@
 package com.day29.javaProgramsPractice;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,10 +30,25 @@ public class ProductMap {
 
 		map.put(10, new Product(10, "Camera", "camera@gmail.com", 35000.0, "Sangli", "Digital Camera"));
 
-		// Display all products
+		// Display all products : Use Map<Integer, Product> with HashMap to store 10 products, where the product ID
 
-		for (Map.Entry<Integer, Product> entry : map.entrySet()) {
-			System.out.println(entry.getKey() + " -> " + entry.getValue());
-		}
+//		for (Map.Entry<Integer, Product> entry : map.entrySet()) {
+//			System.out.println(entry.getKey() + " -> " + entry.getValue());
+//		}
+		
+		// Using the 10 Product objects above, find the product with the highest price using Java Streams.
+		
+		 Product highest = map.values()
+	                .stream()
+	                .max(Comparator.comparing(Product::getPprice))
+	                .orElseThrow(() ->
+	                        new RuntimeException("No products found"));
+
+	        System.out.println("Highest Price Product:");
+	        System.out.println("Name: " + highest.getPname());
+	        System.out.println("Price: " + highest.getPprice());
+	        System.out.println("City: " + highest.getPcity());
+	        
+	        
 	}
 }
