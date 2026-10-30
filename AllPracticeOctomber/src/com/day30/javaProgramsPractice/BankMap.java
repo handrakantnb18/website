@@ -38,25 +38,25 @@ public class BankMap {
 //		
 		// Using the 10 Bank customers above, find the customer with the highest balance using Java Streams.
 		
-		Bank highestBalanceCustomer = map.values()
-		        .stream()
-		        .max(Comparator.comparing(Bank::getBalance))
-		        .orElseThrow(() -> new RuntimeException("No customers found"));
-
-		System.out.println("Customer Name: " + highestBalanceCustomer.getBname());
-		System.out.println("Balance: " + highestBalanceCustomer.getBalance());
-		System.out.println("City: " + highestBalanceCustomer.getBcity());
-		System.out.println("Bank: " + highestBalanceCustomer.getBbranch());
+//		Bank highestBalanceCustomer = map.values()
+//		        .stream()
+//		        .max(Comparator.comparing(Bank::getBalance))
+//		        .orElseThrow(() -> new RuntimeException("No customers found"));
+//
+//		System.out.println("Customer Name: " + highestBalanceCustomer.getBname());
+//		System.out.println("Balance: " + highestBalanceCustomer.getBalance());
+//		System.out.println("City: " + highestBalanceCustomer.getBcity());
+//		System.out.println("Bank: " + highestBalanceCustomer.getBbranch());
 		
 		// max() returns an Optional<Bank> because the Map might be empty
 		
-//		Bank highest = map.values()
-//		        .stream()
-//		        .max((b1, b2) ->
-//		                b1.getBalance().compareTo(b2.getBalance()))
-//		        .orElseThrow();
-//
-//		System.out.println(highest);
+		Bank highest = map.values()
+		        .stream()
+		        .max((b1, b2) ->
+		                b1.getBalance().compareTo(b2.getBalance()))
+		        .orElseThrow();
+
+		System.out.println(highest);
 		
 	}
 }
