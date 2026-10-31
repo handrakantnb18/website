@@ -31,5 +31,76 @@ public class Bank {
                 '}';
     }
 
-	
+	public Integer getBid() {
+		return bid;
+	}
+
+	public void setBid(Integer bid) {
+		this.bid = bid;
+	}
+
+	public String getBname() {
+		return bname;
+	}
+
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+
+	public String getBemail() {
+		return bemail;
+	}
+
+	public void setBemail(String bemail) {
+		this.bemail = bemail;
+	}
+
+	public Double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+
+	public String getBcity() {
+		return bcity;
+	}
+
+	public void setBcity(String bcity) {
+		this.bcity = bcity;
+	}
+
+	public String getBbranch() {
+		return bbranch;
+	}
+
+	public void setBbranch(String bbranch) {
+		this.bbranch = bbranch;
+	}
+
+	public String getBdesc() {
+		return bdesc;
+	}
+
+	public void setBdesc(String bdesc) {
+		this.bdesc = bdesc;
+	}
+
+	public Bank(Integer bid, String bname, String bemail, Double balance, String bcity, String bbranch, String bdesc) {
+		super();
+		this.bid = bid;
+		this.bname = bname;
+		this.bemail = bemail;
+		this.balance = balance;
+		this.bcity = bcity;
+		this.bbranch = bbranch;
+		this.bdesc = bdesc;
+	}
+
+	public Bank() {
+		super();
+		
+	}
+
 }
