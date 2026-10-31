@@ -33,11 +33,25 @@ public class BankMap {
 
 		// Display all 10 bank customers Bank Customers using the Map interface
 		
-		for (Map.Entry<Integer, Bank> 
-		entry : map.entrySet()) {
-			
-			System.out.println(entry.getKey() + " -> " + entry.getValue());
-		}
+//		for (Map.Entry<Integer, Bank> 
+//		entry : map.entrySet()) {
+//			
+//			System.out.println(entry.getKey() + " -> " + entry.getValue());
+//		}
+//		
+		
+		// Using the 10 Bank customers above, find the customer with the highest balance using Java Streams.
+		
+		Bank highestBalanceCustomer = map.values()
+		        .stream()
+		        .max(Comparator.comparing(Bank::getBalance))
+		        .orElseThrow(() -> new RuntimeException("No customers found"));
+
+		System.out.println("Customer Name: " + highestBalanceCustomer.getBname());
+		System.out.println("Balance: " + highestBalanceCustomer.getBalance());
+		System.out.println("City: " + highestBalanceCustomer.getBcity());
+		System.out.println("Bank: " + highestBalanceCustomer.getBbranch());
+
 		
 		
 	}
