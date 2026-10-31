@@ -1,5 +1,6 @@
 package com.day30.javaProgramsPractice;
 
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -31,8 +32,17 @@ public class Product {
 
 		// Create 10 Product objects using Map
 		
-		map.forEach((key, value) -> System.out.println(value));
+//		map.forEach((key, value) -> System.out.println(value));
 
+		// Find the customer with the highest balance
+		
+		ProductFind highestBalance = map.values()
+		        .stream()
+		        .max(Comparator.comparing(ProductFind::getPrice))
+		        .orElseThrow();
+
+		System.out.println(highestBalance);
+		
 		
 	}
 }
