@@ -36,13 +36,22 @@ public class Product {
 
 		// Find the customer with the highest balance
 		
-		ProductFind highestBalance = map.values()
-		        .stream()
-		        .max(Comparator.comparing(ProductFind::getPrice))
-		        .orElseThrow();
-
-		System.out.println(highestBalance);
+//		ProductFind highestBalance = map.values()
+//		        .stream()
+//		        .max(Comparator.comparing(ProductFind::getPrice))
+//		        .orElseThrow();
+//
+//		System.out.println(highestBalance);
 		
+		// Find customers having balance greater than 75,000
+		
+		map.values()
+        .stream()
+        .filter(c -> c.getPrice() > 7500)
+        .forEach(System.out::println);
+		
+		
+		System.out.println();
 		
 	}
 }
