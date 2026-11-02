@@ -29,13 +29,22 @@ public class CheckProduct {
 		map.put(10, new Product(110, "Smart Watch", "watch@gmail.com", 5000.0, "Electronics", "Solapur", "Market Yard", 18));
 
 		// Display all products
-		for (Map.Entry<Integer, Product> entry : map.entrySet()) {
+//		for (Map.Entry<Integer, Product> entry : map.entrySet()) {
+//
+//			System.out.println("Key: " + entry.getKey());
+//			System.out.println("Value: " + entry.getValue());
+//			System.out.println("--------------------------------");
+//		}
 
-			System.out.println("Key: " + entry.getKey());
-			System.out.println("Value: " + entry.getValue());
-			System.out.println("--------------------------------");
-		}
+		// 
+		
+		 Product maxPriceProduct = map.values()
+	                .stream()
+	                .max(Comparator.comparing(Product::getPrice))
+	                .orElse(null);
 
+	        System.out.println("Highest Price Product:");
+	        System.out.println(maxPriceProduct);
 		
 	}
 }
