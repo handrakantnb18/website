@@ -36,15 +36,22 @@ public class CheckProduct {
 //			System.out.println("--------------------------------");
 //		}
 
-		// 
+		// Find the lowest-price product
 		
-		 Product maxPriceProduct = map.values()
-	                .stream()
-	                .max(Comparator.comparing(Product::getPrice))
-	                .orElse(null);
-
-	        System.out.println("Highest Price Product:");
-	        System.out.println(maxPriceProduct);
+//		 Product maxPriceProduct = map.values()
+//	                .stream()
+//	                .max(Comparator.comparing(Product::getPrice))
+//	                .orElse(null);
+//
+//	        System.out.println("Highest Price Product:");
+//	        System.out.println(maxPriceProduct);
 		
+	        // Group products by productType using Java 8 Streams and Collectors.groupingBy().
+	        
+		 map.values()
+         .stream()
+         .filter(p -> p.getCity().equals("Pune"))
+         .forEach(System.out::println);
+		 
 	}
 }
