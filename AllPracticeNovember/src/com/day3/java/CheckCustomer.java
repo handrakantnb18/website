@@ -36,6 +36,13 @@ public class CheckCustomer {
 		}
 
 		
-		
+		Customer highestPrice = map.values()
+                .stream()
+                .max(Comparator.comparing(Customer::getPrice))
+                .orElse(null);
+
+        System.out.println("Highest Price Customer: " + highestPrice);
+        
+        
 	}
 }
