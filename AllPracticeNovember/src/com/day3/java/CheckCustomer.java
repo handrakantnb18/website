@@ -1,6 +1,7 @@
 package com.day3.java;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CheckCustomer {
 
@@ -30,19 +31,33 @@ public class CheckCustomer {
 
 		// Display all customers
 
-		for (Map.Entry<Integer, Customer> entry : map.entrySet()) {
+//		for (Map.Entry<Integer, Customer> entry : map.entrySet()) {
+//
+//			System.out.println(entry.getKey() + " = " + entry.getValue());
+//		}
 
-			System.out.println(entry.getKey() + " = " + entry.getValue());
-		}
-
+		// Find Customer with the Highest Price
 		
-		Customer highestPrice = map.values()
-                .stream()
-                .max(Comparator.comparing(Customer::getPrice))
-                .orElse(null);
+//		Customer highestPrice = map.values()
+//                .stream()
+//                .max(Comparator.comparing(Customer::getPrice))
+//                .orElse(null);
+//
+//        System.out.println("Highest Price Customer: " + highestPrice);
+        
+		// Find Customers from Pune City
+		
+		 Map<Integer, Customer> result = map.entrySet()
+	                .stream()
+	                .filter(entry -> entry.getValue()
+	                        .getCity().equalsIgnoreCase("Pune"))
+	                .collect(Collectors.toMap(
+	                        Map.Entry::getKey,
+	                        Map.Entry::getValue
+	                ));
 
-        System.out.println("Highest Price Customer: " + highestPrice);
-        
-        
+	        result.forEach((key, value) ->
+	                System.out.println(key + " = " + value));
+	        
 	}
 }
