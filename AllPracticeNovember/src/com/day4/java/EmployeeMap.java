@@ -57,6 +57,21 @@ public class EmployeeMap {
 		
 		System.out.println(employeeMap);
 		
+		// Find the employee who has the maximum salary from the employeeMap.
+		
+		Optional<Employee> highestSalary = employeeMap.values()
+		        .stream()
+		        .max(Comparator.comparing(Employee::getSalary));
+
+		highestSalary.ifPresent(emp -> {
+		    System.out.println("Employee ID: " + emp.getId());
+		    System.out.println("Name: " + emp.getName());
+		    System.out.println("Email: " + emp.getEmail());
+		    System.out.println("Salary: " + emp.getSalary());
+		    System.out.println("City: " + emp.getCity());
+		    System.out.println("Project: " + emp.getPRoject());
+		});
+		
 		
 	}
 }
