@@ -32,17 +32,30 @@ public class EmployeeMap {
 
 
 		Map<Integer, Employee> employeeMap = new HashMap<>();
+//		
+//		for (Employee emp : employees) {
+//		    employeeMap.put(emp.getId(), emp);
+//		}
+//
+//		// Display all employees
+//		employeeMap.forEach((id, emp) -> {
+//		    System.out.println(id + " " + emp.getName() + " "
+//		            + emp.getSalary() + " " + emp.getCity());
+//		});
 		
-		for (Employee emp : employees) {
-		    employeeMap.put(emp.getId(), emp);
-		}
-
-		// Display all employees
-		employeeMap.forEach((id, emp) -> {
-		    System.out.println(id + " " + emp.getName() + " "
-		            + emp.getSalary() + " " + emp.getCity());
-		});
+		// Display employees whose salary is greater than 50,000.
 		
+		employeeMap.values()
+	    .stream()
+	    .filter(emp -> emp.getSalary() > 50000)
+	    .forEach(emp -> System.out.println(
+	        emp.getId() + " " +
+	        emp.getName() + " " +
+	        emp.getSalary() + " " +
+	        emp.getCity()
+	    ));
+		
+		System.out.println(employeeMap);
 		
 		
 	}
