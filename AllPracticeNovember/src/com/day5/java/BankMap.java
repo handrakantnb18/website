@@ -2,8 +2,7 @@ package com.day5.java;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import com.day1.java.Bank;
+import java.util.stream.Collectors;
 
 public class BankMap {
 
@@ -36,11 +35,26 @@ public class BankMap {
 
 		// Find customers balance greater than 50000
 
-        map.values()
-           .stream()
-           .filter(customer -> customer.getBalance() > 50000)
-           .forEach(System.out::println);
-        
+//        map.values()
+//           .stream()
+//           .filter(customer -> customer.getBalance() > 50000)
+//           .forEach(System.out::println);
+//        
 	
+     // Find Customers from Pune City
+		
+     		 Map<Integer, Bank> result = map.entrySet()
+     	                .stream()
+     	                .filter(entry -> entry.getValue()
+     	                        .getCity().equalsIgnoreCase("Pune"))
+     	                .collect(Collectors.toMap(
+     	                        Map.Entry::getKey,
+     	                        Map.Entry::getValue
+     	                ));
+
+     	        result.forEach((key, value) ->
+     	                System.out.println(key + " = " + value));
+     	        
+     	        
 	}
 }
