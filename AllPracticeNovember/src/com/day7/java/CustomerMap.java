@@ -36,19 +36,25 @@ public class CustomerMap {
 
 		// Find Customers from Pune City
 			
-			 Map<Integer, Customer> result = map.entrySet()
-		                .stream()
-		                .filter(entry -> entry.getValue()
-		                        .getCity().equalsIgnoreCase("Pune"))
-		                .collect(Collectors.toMap(
-		                        Map.Entry::getKey,
-		                        Map.Entry::getValue
-		                ));
-
-		        result.forEach((key, value) ->
-		                System.out.println(key + " = " + value));
+//			 Map<Integer, Customer> result = map.entrySet()
+//		                .stream()
+//		                .filter(entry -> entry.getValue()
+//		                        .getCity().equalsIgnoreCase("Pune"))
+//		                .collect(Collectors.toMap(
+//		                        Map.Entry::getKey,
+//		                        Map.Entry::getValue
+//		                ));
+//
+//		        result.forEach((key, value) ->
+//		                System.out.println(key + " = " + value));
 		        
-		       
+		        
+		        map.values()
+		           .stream()
+		           .filter(customer -> customer.getBalance() > 50000)
+		           .forEach(System.out::println);
+		        
+		        
 	}
 	
 }
