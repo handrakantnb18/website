@@ -14,6 +14,7 @@ public class Bank {
 
 	private String accountType;
 
+	
 	@Override
 	public String toString() {
 		return "Bank [bid=" + bid + ", name=" + name + ", balance=" + balance + ", branch=" + branch + ", city=" + city
