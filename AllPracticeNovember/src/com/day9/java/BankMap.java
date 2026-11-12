@@ -31,8 +31,16 @@ public class BankMap {
 		map.put(110, new Bank(110, "Kiran", 55000.0, "HDFC", "Nashik", "Savings"));
 
 		// Display all customers
-		map.forEach((key, value) -> System.out.println(value));
+		// map.forEach((key, value) -> System.out.println(value));
 		
-		
+		// Find customers balance greater than 50000
+
+      map.values()
+         .stream()
+         .filter(customer -> customer.getBalance() > 50000)
+         .forEach(System.out::println);
+ 
+      
+      
 	}
 }
