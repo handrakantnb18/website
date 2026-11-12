@@ -24,15 +24,15 @@ public class EmployeeMap {
 
 		// get all employees details
 
-		map.forEach((id, name) -> System.out.println(name));
+		// map.forEach((id, name) -> System.out.println(name));
 
 		// Find customers balance greater than 50000
 
-//      map.values()
-//         .stream()
-//         .filter(customer -> customer.getBalance() > 50000)
-//         .forEach(System.out::println);
-// 
+      map.values()
+         .stream()
+         .filter(customer -> customer.getSalary() > 50000)
+         .forEach(System.out::println);
+ 
 
 		// Find Customers from Pune City
 
