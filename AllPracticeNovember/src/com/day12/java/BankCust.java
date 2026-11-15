@@ -2,12 +2,14 @@ package com.day12.java;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.day5.java.Bank;
 
 public class BankCust {
 
 	public static void main(String[] args) {
-		
+
 		Map<Integer, Bank> map = new HashMap<Integer, Bank>();
 
 		map.put(101, new Bank(101, "Rahul", 50000.0, "SBI", "Pune", "Savings"));
@@ -31,7 +33,23 @@ public class BankCust {
 		map.put(110, new Bank(110, "Kiran", 55000.0, "HDFC", "Nashik", "Savings"));
 
 		// Display all customers
-		 map.forEach((key, value) -> System.out.println(value));
-	
+		// map.forEach((key, value) -> System.out.println(value));
+
+		// Find Customers from Pune City
+
+		Map<Integer, Bank> result = 
+				map.entrySet()
+				.stream()
+				.filter(entry -> entry
+						.getValue()
+						.getCity()
+						.equalsIgnoreCase("Pune"))
+				.collect(Collectors
+						.toMap(Map.Entry::getKey, 
+								Map.Entry::getValue));
+
+		result.forEach((key, value) -> 
+		System.out.println(key + " = " + value));
+
 	}
 }
