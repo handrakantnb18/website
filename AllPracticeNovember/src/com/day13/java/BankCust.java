@@ -2,6 +2,9 @@ package com.day13.java;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import com.day5.java.Bank;
 
 
 public class BankCust {
@@ -31,7 +34,24 @@ public class BankCust {
 		map.put(110, new Bank(110, "Kiran", 55000.0, "HDFC", "Nashik", "Savings"));
 
 		// Display all customers
-		 map.forEach((key, value) -> System.out.println(value));
+		// map.forEach((key, value) -> System.out.println(value));
 	
+		
+		// Find Customers from Pune City
+		
+		 Map<Integer, Bank> result = map.entrySet()
+	                .stream()
+	                .filter(entry -> entry.getValue()
+	                        .getCity().equalsIgnoreCase("Pune"))
+	                .collect(Collectors.toMap(
+	                        Map.Entry::getKey,
+	                        Map.Entry::getValue
+	                ));
+
+	        result.forEach((key, value) ->
+	                System.out.println(key + " = " + value));
+
+	        
+		
 	}
 }
