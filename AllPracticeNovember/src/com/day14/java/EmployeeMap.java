@@ -47,18 +47,30 @@ public class EmployeeMap {
 
         // Find the employee with the second-highest salary.
         
-		 Employee secondHighest = map.values()
+//		 Employee secondHighest = map.values()
+//	                .stream()
+//	                .sorted(Comparator.comparing(Employee::getSalary).reversed())
+//	                .skip(1)
+//	                .findFirst()
+//	                .orElse(null);
+//
+//	        System.out.println("Second Highest Salary Employee:");
+//
+//	        System.out.println(secondHighest);
+	        
+	        // A simpler solution for the second-highest distinct salary is:
+	        
+	        Double secondSalary = map.values()
 	                .stream()
-	                .sorted(Comparator.comparing(Employee::getSalary).reversed())
+	                .map(Employee::getSalary)
+	                .distinct()
+	                .sorted(Comparator.reverseOrder())
 	                .skip(1)
 	                .findFirst()
 	                .orElse(null);
-
-	        System.out.println("Second Highest Salary Employee:");
-
-	        System.out.println(secondHighest);
+	        
+	        System.out.println("Second Highest Salary Employee : "+secondSalary);
 	        
 	        
-        
 	}
 }
