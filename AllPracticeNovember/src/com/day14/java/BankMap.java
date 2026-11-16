@@ -69,13 +69,20 @@ public class BankMap {
 	        
 	        // Find customers from Pune
 
-	        System.out.println("Customers from Pune:");
+//	        System.out.println("Customers from Pune:");
+//
+//	        map.values()
+//	           .stream()
+//	           .filter(e -> e.getCity().equals("Pune"))
+//	           .forEach(System.out::println);
 
-	        map.values()
-	           .stream()
-	           .filter(e -> e.getCity().equals("Pune"))
-	           .forEach(System.out::println);
+		// How can we count Pune customers?
+		
+	        long count = map.values()
+	                .stream()
+	                .filter(e -> "Pune".equals(e.getCity()))
+	                .count();
 
-	        
+	        System.out.println("Total Pune Customers: " + count);
 	}
 }
