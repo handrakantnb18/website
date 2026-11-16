@@ -33,11 +33,18 @@ public class BankMap {
 
 		// Display all bank customers
 
-		for (Map.Entry<Integer, Bank> entry : map.entrySet()) {
+//		for (Map.Entry<Integer, Bank> entry : map.entrySet()) {
+//
+//			System.out.println(entry.getKey() + " = " + entry.getValue());
+//		}
 
-			System.out.println(entry.getKey() + " = " + entry.getValue());
-		}
+		  // Find customers balance greater than 50000
 
-		
+        map.values()
+           .stream()
+           .filter(e -> e.getBalance() > 50000)
+           .forEach(System.out::println);
+        
+        
 	}
 }
