@@ -1,5 +1,6 @@
 package com.day14.java;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,11 +41,21 @@ public class BankMap {
 
 		  // Find customers balance greater than 50000
 
-        map.values()
-           .stream()
-           .filter(e -> e.getBalance() > 50000)
-           .forEach(System.out::println);
+//        map.values()
+//           .stream()
+//           .filter(e -> e.getBalance() > 50000)
+//           .forEach(System.out::println);
+//        
+        // Find customer with lowest balance
         
+		 Bank lowestBalance = map.values()
+	                .stream()
+	                .min(Comparator.comparing(Bank::getBalance))
+	                .orElse(null);
+
+	        System.out.println("Lowest Balance Customer:");
+
+	        System.out.println(lowestBalance);
         
 	}
 }
