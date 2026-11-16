@@ -98,9 +98,18 @@ public class BankMap {
 	        
 		// Sort customers by balance ascending
 		
+//	        map.values()
+//	        .stream()
+//	        .sorted(Comparator.comparing(Bank::getBalance))
+//	        .forEach(System.out::println);
+	        
+		// Find the top 3 bank customers with the highest balance.
+		
 	        map.values()
 	        .stream()
-	        .sorted(Comparator.comparing(Bank::getBalance))
+	        .sorted(Comparator.comparing(
+	            Bank::getBalance).reversed())
+	        .limit(3)
 	        .forEach(System.out::println);
 	        
 	        
