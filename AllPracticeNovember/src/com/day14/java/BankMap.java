@@ -48,14 +48,24 @@ public class BankMap {
 //        
         // Find customer with lowest balance
         
-		 Bank lowestBalance = map.values()
+//		 Bank lowestBalance = map.values()
+//	                .stream()
+//	                .min(Comparator.comparing(Bank::getBalance))
+//	                .orElse(null);
+//
+//	        System.out.println("Lowest Balance Customer:");
+//
+//	        System.out.println(lowestBalance);
+//        
+		// Find Customer with the Lowest Balance Using Java 8 Streams and Map Interface
+		
+	        Bank lowestBalance = map.values()
 	                .stream()
-	                .min(Comparator.comparing(Bank::getBalance))
+	                .sorted(Comparator.comparing(Bank::getBalance))
+	                .findFirst()
 	                .orElse(null);
 
-	        System.out.println("Lowest Balance Customer:");
-
 	        System.out.println(lowestBalance);
-        
+	        
 	}
 }
