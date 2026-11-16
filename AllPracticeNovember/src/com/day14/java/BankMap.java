@@ -125,18 +125,35 @@ public class BankMap {
 	        
 	        // Average balance branch-wise
 
-	        Map<String, Double> result = map.values()
-	                .stream()
-	                .collect(Collectors.groupingBy(
-	                        Bank::getBranch,
-	                        Collectors.averagingDouble(
-	                                Bank::getBalance
-	                        )
-	                ));
-
-	        result.forEach((branch, average) ->
-	                System.out.println(branch + " = " + average)
-	        );
+//	        Map<String, Double> result = map.values()
+//	                .stream()
+//	                .collect(Collectors.groupingBy(
+//	                        Bank::getBranch,
+//	                        Collectors.averagingDouble(
+//	                                Bank::getBalance
+//	                        )
+//	                ));
+//
+//	        result.forEach((branch, average) ->
+//	                System.out.println(branch + " = " + average)
+//	        );
 	        
+		// Find the highest balance customer in each bank branch using Java 8 Streams.
+		
+		Map<String, Double> result = map.values()
+                .stream()
+                .collect(
+	        Collectors.groupingBy(
+	        	    Bank::getBranch,
+	        	    Collectors.averagingDouble(
+	        	        Bank::getBalance
+	        	    )
+	        	));
+	        
+		 result.forEach((branch, average) ->
+        System.out.println(branch + " = " + average)
+				 );
+		 
+		 
 	}
 }
