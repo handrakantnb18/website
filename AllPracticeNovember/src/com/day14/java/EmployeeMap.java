@@ -30,21 +30,23 @@ public class EmployeeMap {
 
 		// Display all employees
 
-		for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
-
-			System.out.println("Key : " + entry.getKey());
-			System.out.println("Value : " + entry.getValue());
-			System.out.println("--------------------------------");
-		}
+//		for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
+//
+//			System.out.println("Key : " + entry.getKey());
+//			System.out.println("Value : " + entry.getValue());
+//			System.out.println("--------------------------------");
+//		}
 
 		
 		 // Find Employees Whose Salary Is Greater Than 50,000
 
-        map.entrySet()
-           .stream()
-           .filter(e -> e.getValue().getSalary() > 50000)
-           .forEach(e -> System.out.println(e.getValue()));
+//        map.entrySet()
+//           .stream()
+//           .filter(e -> e.getValue().getSalary() > 50000)
+//           .forEach(e -> System.out.println(e.getValue()));
 
+        // Find the employee with the second-highest salary.
+        
         
         
 	}
