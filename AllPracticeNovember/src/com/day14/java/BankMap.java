@@ -88,13 +88,20 @@ public class BankMap {
 	        
 	        // Sort customers by balance descending
 
-	        System.out.println("Customers Sorted By Balance Descending:");
-
+//	        System.out.println("Customers Sorted By Balance Descending:");
+//
+//	        map.values()
+//	           .stream()
+//	           .sorted(Comparator.comparing(
+//	                   Bank::getBalance).reversed())
+//	           .forEach(System.out::println);
+	        
+		// Sort customers by balance ascending
+		
 	        map.values()
-	           .stream()
-	           .sorted(Comparator.comparing(
-	                   Bank::getBalance).reversed())
-	           .forEach(System.out::println);
+	        .stream()
+	        .sorted(Comparator.comparing(Bank::getBalance))
+	        .forEach(System.out::println);
 	        
 	        
 	}
