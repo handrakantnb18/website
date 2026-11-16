@@ -105,13 +105,22 @@ public class BankMap {
 	        
 		// Find the top 3 bank customers with the highest balance.
 		
-	        map.values()
-	        .stream()
-	        .sorted(Comparator.comparing(
-	            Bank::getBalance).reversed())
-	        .limit(3)
-	        .forEach(System.out::println);
+//	        map.values()
+//	        .stream()
+//	        .sorted(Comparator.comparing(
+//	            Bank::getBalance).reversed())
+//	        .limit(3)
+//	        .forEach(System.out::println);
 	        
+	     // Calculate Average Bank Balance
+
+	        double averageBalance = map.values()
+	                .stream()
+	                .mapToDouble(Bank::getBalance)
+	                .average()
+	                .orElse(0.0);
+
+	        System.out.println("Average Bank Balance: " + averageBalance);
 	        
 	}
 }
