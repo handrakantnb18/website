@@ -78,11 +78,24 @@ public class BankMap {
 
 		// How can we count Pune customers?
 		
-	        long count = map.values()
-	                .stream()
-	                .filter(e -> "Pune".equals(e.getCity()))
-	                .count();
+//	        long count = map.values()
+//	                .stream()
+//	                .filter(e -> "Pune".equals(e.getCity()))
+//	                .count();
+//
+//	        System.out.println("Total Pune Customers: " + count);
+	        
+	        
+	        // Sort customers by balance descending
 
-	        System.out.println("Total Pune Customers: " + count);
+	        System.out.println("Customers Sorted By Balance Descending:");
+
+	        map.values()
+	           .stream()
+	           .sorted(Comparator.comparing(
+	                   Bank::getBalance).reversed())
+	           .forEach(System.out::println);
+	        
+	        
 	}
 }
