@@ -38,6 +38,14 @@ public class EmployeeMap {
 		}
 
 		
-		
+		 // Find Employees Whose Salary Is Greater Than 50,000
+
+        map.entrySet()
+           .stream()
+           .filter(e -> e.getValue().getSalary() > 50000)
+           .forEach(e -> System.out.println(e.getValue()));
+
+        
+        
 	}
 }
