@@ -59,13 +59,23 @@ public class BankMap {
 //        
 		// Find Customer with the Lowest Balance Using Java 8 Streams and Map Interface
 		
-	        Bank lowestBalance = map.values()
-	                .stream()
-	                .sorted(Comparator.comparing(Bank::getBalance))
-	                .findFirst()
-	                .orElse(null);
+//	        Bank lowestBalance = map.values()
+//	                .stream()
+//	                .sorted(Comparator.comparing(Bank::getBalance))
+//	                .findFirst()
+//	                .orElse(null);
+//
+//	        System.out.println(lowestBalance);
+	        
+	        // Find customers from Pune
 
-	        System.out.println(lowestBalance);
+	        System.out.println("Customers from Pune:");
+
+	        map.values()
+	           .stream()
+	           .filter(e -> e.getCity().equals("Pune"))
+	           .forEach(System.out::println);
+
 	        
 	}
 }
