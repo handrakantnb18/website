@@ -3,6 +3,7 @@ package com.day14.java;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.day12.java.Bank;
 
@@ -114,13 +115,28 @@ public class BankMap {
 	        
 	     // Calculate Average Bank Balance
 
-	        double averageBalance = map.values()
-	                .stream()
-	                .mapToDouble(Bank::getBalance)
-	                .average()
-	                .orElse(0.0);
+//	        double averageBalance = map.values()
+//	                .stream()
+//	                .mapToDouble(Bank::getBalance)
+//	                .average()
+//	                .orElse(0.0);
+//
+//	        System.out.println("Average Bank Balance: " + averageBalance);
+	        
+	        // Average balance branch-wise
 
-	        System.out.println("Average Bank Balance: " + averageBalance);
+	        Map<String, Double> result = map.values()
+	                .stream()
+	                .collect(Collectors.groupingBy(
+	                        Bank::getBranch,
+	                        Collectors.averagingDouble(
+	                                Bank::getBalance
+	                        )
+	                ));
+
+	        result.forEach((branch, average) ->
+	                System.out.println(branch + " = " + average)
+	        );
 	        
 	}
 }
