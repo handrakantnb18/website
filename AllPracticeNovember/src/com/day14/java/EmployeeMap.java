@@ -1,6 +1,7 @@
 package com.day14.java;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class EmployeeMap {
 
@@ -60,17 +61,35 @@ public class EmployeeMap {
 	        
 	        // A simpler solution for the second-highest distinct salary is:
 	        
-	        Double secondSalary = map.values()
+//	        Double secondSalary = map.values()
+//	                .stream()
+//	                .map(Employee::getSalary)
+//	                .distinct()
+//	                .sorted(Comparator.reverseOrder())
+//	                .skip(1)
+//	                .findFirst()
+//	                .orElse(null);
+//	        
+//	        System.out.println("Second Highest Salary Employee : "+secondSalary);
+//	        
+	        // If duplicate salaries exist, use distinct() before sorting to find the second-highest distinct salary.
+		
+	        Employee secondHighest = map.values()
 	                .stream()
-	                .map(Employee::getSalary)
-	                .distinct()
-	                .sorted(Comparator.reverseOrder())
+	                .sorted(Comparator.comparing(Employee::getSalary).reversed())
+	                .collect(Collectors.toMap(
+	                        Employee::getSalary,
+	                        e -> e,
+	                        (e1, e2) -> e1,
+	                        LinkedHashMap::new
+	                ))
+	                .values()
+	                .stream()
 	                .skip(1)
 	                .findFirst()
 	                .orElse(null);
 	        
-	        System.out.println("Second Highest Salary Employee : "+secondSalary);
-	        
+	        System.out.println("Second Highest Salary Employee : "+secondHighest);
 	        
 	}
 }
