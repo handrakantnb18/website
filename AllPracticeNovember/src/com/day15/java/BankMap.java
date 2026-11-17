@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.day12.java.Bank;
 
@@ -58,18 +59,30 @@ public class BankMap {
 
 		        // Find customer with highest balance
 
-		        Optional<Bank> highestBalance = customers.stream()
-		                .max(Comparator.comparingDouble(Bank::getBalance));
-
-		        highestBalance.ifPresent(customer -> {
-		            System.out.println("Highest Balance Customer:");
-		            System.out.println("ID          : " + customer.getBid());
-		            System.out.println("Name        : " + customer.getName());
-		            System.out.println("Balance     : " + customer.getBalance());
-		            System.out.println("Branch      : " + customer.getBranch());
-		            System.out.println("City        : " + customer.getCity());
-		            System.out.println("Account Type: " + customer.getAccountType());
-		        });
+//		        Optional<Bank> highestBalance = customers.stream()
+//		                .max(Comparator.comparingDouble(Bank::getBalance));
+//
+//		        highestBalance.ifPresent(customer -> {
+//		            System.out.println("Highest Balance Customer:");
+//		            System.out.println("ID          : " + customer.getBid());
+//		            System.out.println("Name        : " + customer.getName());
+//		            System.out.println("Balance     : " + customer.getBalance());
+//		            System.out.println("Branch      : " + customer.getBranch());
+//		            System.out.println("City        : " + customer.getCity());
+//		            System.out.println("Account Type: " + customer.getAccountType());
+//		        });
         
+		        
+		        // Find customers having balance greater than 50000
+
+		        List<Bank> result = customers.stream()
+		                .filter(c -> c.getBalance() > 50000)
+		                .collect(Collectors.toList());
+
+		        System.out.println("Customers having balance greater than 50000:");
+
+		        result.forEach(System.out::println);
+		        
+		        
 	}
 }
