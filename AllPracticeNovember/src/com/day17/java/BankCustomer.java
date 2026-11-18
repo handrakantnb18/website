@@ -43,14 +43,29 @@ public class BankCustomer {
 
 		  // Find customers having balance greater than 50000
 
-	        List<Bank> result = customers.stream()
-	                .filter(c -> c.getBalance() > 50000)
-	                .collect(Collectors.toList());
-
-	        System.out.println("Customers having balance greater than 50000:");
-
-	        result.forEach(System.out::println);
+//	        List<Bank> result = customers.stream()
+//	                .filter(c -> c.getBalance() > 50000)
+//	                .collect(Collectors.toList());
+//
+//	        System.out.println("Customers having balance greater than 50000:");
+//
+//	        result.forEach(System.out::println);
 	        
+
+	     // Alternative approach using for-each loop
+			
+//	        Bank highest = null;
+//
+//	        for (Bank customer : customers.values()) {
+//
+//	            if (highest == null ||
+//	                customer.getBalance() > highest.getBalance()) {
+//
+//	                highest = customer;
+//	            }
+//	        }
+//
+//	        System.out.println("Highest Balance Customer: " + highest);
 
 	}
 }
