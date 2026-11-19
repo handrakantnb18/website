@@ -61,6 +61,22 @@ public class Bank {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
+
+	@Override
+	public String toString() {
+		return "Bank [bid=" + bid + ", name=" + name + ", balance=" + balance + ", branch=" + branch + ", city=" + city
+				+ ", accountType=" + accountType + "]";
+	}
+
+	public Bank(Integer bid, String name, Double balance, String branch, String city, String accountType) {
+		super();
+		this.bid = bid;
+		this.name = name;
+		this.balance = balance;
+		this.branch = branch;
+		this.city = city;
+		this.accountType = accountType;
+	}
 	
 	
 	
