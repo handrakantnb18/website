@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.day4.java.Employee;
 
 public class EmployeeMap {
 
@@ -79,7 +78,7 @@ public class EmployeeMap {
 				    System.out.println("Email: " + emp.getEmail());
 				    System.out.println("Salary: " + emp.getSalary());
 				    System.out.println("City: " + emp.getCity());
-				    System.out.println("Project: " + emp.getPRoject());
+				    System.out.println("Project: " + emp.getProject());
 				});
 					
 		
