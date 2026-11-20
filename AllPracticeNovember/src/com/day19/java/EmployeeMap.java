@@ -1,9 +1,11 @@
 package com.day19.java;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import com.day4.java.Employee;
 
@@ -52,20 +54,34 @@ public class EmployeeMap {
 		
 		// Display employees whose salary is greater than 50,000.
 		
-				employeeMap.values()
-			    .stream()
-			    .filter(emp -> emp.getSalary() > 50000)
-			    .forEach(emp -> System.out.println(
-			        emp.getId() + " " +
-			        emp.getName() + " " +
-			        emp.getSalary() + " " +
-			        emp.getCity()
-			    ));
+//				employeeMap.values()
+//			    .stream()
+//			    .filter(emp -> emp.getSalary() > 50000)
+//			    .forEach(emp -> System.out.println(
+//			        emp.getId() + " " +
+//			        emp.getName() + " " +
+//			        emp.getSalary() + " " +
+//			        emp.getCity()
+//			    ));
+//				
+//				System.out.println(employeeMap);
 				
-				System.out.println(employeeMap);
 				
-				
-				
+		// Find the employee who has the maximum salary from the employeeMap.
+		
+				Optional<Employee> highestSalary = employeeMap.values()
+				        .stream()
+				        .max(Comparator.comparing(Employee::getSalary));
+
+				highestSalary.ifPresent(emp -> {
+				    System.out.println("Employee ID: " + emp.getId());
+				    System.out.println("Name: " + emp.getName());
+				    System.out.println("Email: " + emp.getEmail());
+				    System.out.println("Salary: " + emp.getSalary());
+				    System.out.println("City: " + emp.getCity());
+				    System.out.println("Project: " + emp.getPRoject());
+				});
+					
 		
 	}
 }
