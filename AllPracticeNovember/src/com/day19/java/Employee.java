@@ -16,6 +16,27 @@ public class Employee {
 
 	private String project;
 
+	
+	
+	
+	
+	public Employee(Integer id, String name, String email, Double salary, String empType, String city, String project) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		Salary = salary;
+		this.empType = empType;
+		this.city = city;
+		this.project = project;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", Salary=" + Salary + ", empType="
+				+ empType + ", city=" + city + ", project=" + project + "]";
+	}
+
 	public Integer getId() {
 		return id;
 	}
