@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.day12.java.Bank;
+
 public class BankCustomer {
 
 	public static void main(String[] args) {
@@ -37,16 +39,29 @@ public class BankCustomer {
 //			System.out.println("Account Type: " + customer.getAccountType());
 //		});
 
-		  // Find customers having balance greater than 50000
+		// Find customers having balance greater than 50000
 
-      List<Bank> result = customers.stream()
-              .filter(c -> c.getBalance() > 50000)
-              .collect(Collectors.toList());
+//		List<Bank> result = customers.stream().filter(c -> c.getBalance() > 50000).collect(Collectors.toList());
+//
+//		System.out.println("Customers having balance greater than 50000:");
+//
+//		result.forEach(System.out::println);
 
-      System.out.println("Customers having balance greater than 50000:");
-
-      result.forEach(System.out::println);
-
+      // Alternative approach using for-each loop
 		
+        Bank highest = null;
+
+        for (Bank customer : customers.values()) {
+
+            if (highest == null ||
+                customer.getBalance() > highest.getBalance()) {
+
+                highest = customer;
+            }
+        }
+
+       System.out.println("Highest Balance Customer: " + highest);
+
+
 	}
 }
