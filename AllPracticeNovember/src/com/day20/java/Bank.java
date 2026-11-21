@@ -72,16 +72,17 @@ public class Bank {
 		this.accountType = accountType;
 	}
 
-	public Bank(Integer id, String name, Double balance, String branch, String city, String accountType) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.balance = balance;
-		this.branch = branch;
-		this.city = city;
-		this.accountType = accountType;
+	@Override
+	public String toString() {
+		return "Bank [id=" + id + ", name=" + name + ", balance=" + balance + ", branch=" + branch + ", city=" + city
+				+ ", accountType=" + accountType + "]";
 	}
-	
-	
+
+	public Bank() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+		
 	
 }
