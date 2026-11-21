@@ -11,22 +11,21 @@ import com.day12.java.Bank;
 public class BankCustomer {
 
 	public static void main(String[] args) {
-		
+
 		List<Bank> customers = Arrays.asList(
 
-	            new Bank(101, "Rahul", 50000.0, "SBI", "Pune", "Saving"),
-	            new Bank(102, "Amit", 75000.0, "HDFC", "Mumbai", "Current"),
-	            new Bank(103, "Priya", 30000.0, "ICICI", "Sangli", "Saving"),
-	            new Bank(104, "Sneha", 90000.0, "SBI", "Pune", "Salary"),
-	            new Bank(105, "Vikas", 45000.0, "Axis", "Mumbai", "Saving"),
-	            new Bank(106, "Kiran", 120000.0, "HDFC", "Sangli", "Current"),
-	            new Bank(107, "Rohit", 25000.0, "ICICI", "Pune", "Salary"),
-	            new Bank(108, "Pooja", 85000.0, "Axis", "Satara", "Saving"),
-	            new Bank(109, "Sagar", 60000.0, "SBI", "Mumbai", "Current"),
-	            new Bank(110, "Neha", 150000.0, "HDFC", "Pune", "Saving")
-	        );
+				new Bank(101, "Rahul", 50000.0, "SBI", "Pune", "Saving"),
+				new Bank(102, "Amit", 75000.0, "HDFC", "Mumbai", "Current"),
+				new Bank(103, "Priya", 30000.0, "ICICI", "Sangli", "Saving"),
+				new Bank(104, "Sneha", 90000.0, "SBI", "Pune", "Salary"),
+				new Bank(105, "Vikas", 45000.0, "Axis", "Mumbai", "Saving"),
+				new Bank(106, "Kiran", 120000.0, "HDFC", "Sangli", "Current"),
+				new Bank(107, "Rohit", 25000.0, "ICICI", "Pune", "Salary"),
+				new Bank(108, "Pooja", 85000.0, "Axis", "Satara", "Saving"),
+				new Bank(109, "Sagar", 60000.0, "SBI", "Mumbai", "Current"),
+				new Bank(110, "Neha", 150000.0, "HDFC", "Pune", "Saving"));
 
-	        // Find customer with highest balance
+		// Find customer with highest balance
 
 //	        Optional<Bank> highestBalance = customers.stream()
 //	                .max(Comparator.comparingDouble(Bank::getBalance));
@@ -41,7 +40,7 @@ public class BankCustomer {
 //	            System.out.println("Account Type: " + customer.getAccountType());
 //	        });
 
-		  // Find customers having balance greater than 50000
+		// Find customers having balance greater than 50000
 
 //        List<Bank> result = customers.stream()
 //                .filter(c -> c.getBalance() > 50000)
@@ -51,9 +50,9 @@ public class BankCustomer {
 //
 //        result.forEach(System.out::println);
 
-        // Alternative approach using for-each loop
-		
-        Bank highest = null;
+		// Alternative approach using for-each loop
+
+		Bank highest = null;
 
 //        for (Bank customer : customers.values()) {
 //
@@ -64,8 +63,7 @@ public class BankCustomer {
 //            }
 //        }
 //
-       System.out.println("Highest Balance Customer: " + highest);
+		System.out.println("Highest Balance Customer: " + highest);
 
-        
 	}
 }
