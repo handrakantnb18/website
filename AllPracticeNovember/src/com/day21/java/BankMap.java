@@ -61,14 +61,26 @@ public class BankMap {
 		
 		// Group customers by city
 		
-		Map<String, List<Bank>> result = map.values()
-		        .stream()
-		        .collect(Collectors.groupingBy(Bank::getCity));
-
-		result.forEach((city, customers) -> {
-		    System.out.println(city + " : " + customers);
-		});
+//		Map<String, List<Bank>> result = map.values()
+//		        .stream()
+//		        .collect(Collectors.groupingBy(Bank::getCity));
+//
+//		result.forEach((city, customers) -> {
+//		    System.out.println(city + " : " + customers);
+//		});
 		
+		// Calculate average balance branch-wise
+		
+		Map<String, Double> result = map.values()
+		        .stream()
+		        .collect(Collectors.groupingBy(
+		                Bank::getBranch,
+		                Collectors.averagingDouble(Bank::getBalance)
+		        ));
+
+		result.forEach((branch, averageBalance) -> {
+		    System.out.println(branch + " : " + averageBalance);
+		});
 		
 		
 	}
