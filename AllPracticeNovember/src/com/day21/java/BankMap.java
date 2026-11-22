@@ -32,9 +32,27 @@ public class BankMap {
 		
 		// Find the customer with the highest balance
 		
+//		Bank customer = map.values()
+//		        .stream()
+//		        .max(Comparator.comparing(Bank::getBalance))
+//		        .orElse(null);
+//
+//		System.out.println(customer);
+		
+		// Find the second-highest account balance
+		
 		Bank customer = map.values()
 		        .stream()
-		        .max(Comparator.comparing(Bank::getBalance))
+		        .map(Bank::getBalance)
+		        .distinct()
+		        .sorted(Comparator.reverseOrder())
+		        .skip(1)
+		        .findFirst()
+		        .map(balance -> map.values()
+		                .stream()
+		                .filter(c -> c.getBalance().equals(balance))
+		                .findFirst()
+		                .orElse(null))
 		        .orElse(null);
 
 		System.out.println(customer);
