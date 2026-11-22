@@ -84,17 +84,28 @@ public class BankMap {
 		
 		// Find customers whose balance is greater than ₹50,000 and sort by balance descending
 		
+//		List<Bank> result = map.values()
+//		        .stream()
+//		        .filter(c -> c.getBalance() > 50000)
+//		        .sorted(Comparator.comparing(
+//		                Bank::getBalance,
+//		                Comparator.reverseOrder()
+//		        ))
+//		        .collect(Collectors.toList());
+//
+//		result.forEach(System.out::println);
+		
+		// Find customers whose balance is greater than ₹50,000 and sort by balance Acending order
+
 		List<Bank> result = map.values()
 		        .stream()
 		        .filter(c -> c.getBalance() > 50000)
 		        .sorted(Comparator.comparing(
-		                Bank::getBalance,
-		                Comparator.reverseOrder()
+		                Bank::getBalance
 		        ))
 		        .collect(Collectors.toList());
 
 		result.forEach(System.out::println);
-		
 		
 	}
 }
