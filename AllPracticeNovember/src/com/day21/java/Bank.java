@@ -2,8 +2,6 @@ package com.day21.java;
 
 public class Bank {
 
-	private Integer id;
-
 	private Integer bid;
 
 	private String name;
@@ -20,10 +18,9 @@ public class Bank {
 
 	private String mobile;
 
-	public Bank(Integer id, Integer bid, String name, Double balance, String branch, String city, String accountType,
+	public Bank( Integer bid, String name, Double balance, String branch, String city, String accountType,
 			String email, String mobile) {
 		super();
-		this.id = id;
 		this.bid = bid;
 		this.name = name;
 		this.balance = balance;
@@ -34,13 +31,7 @@ public class Bank {
 		this.mobile = mobile;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	public Integer getBid() {
 		return bid;
@@ -108,7 +99,7 @@ public class Bank {
 
 	@Override
 	public String toString() {
-		return "Bank [id=" + id + ", bid=" + bid + ", name=" + name + ", balance=" + balance + ", branch=" + branch
+		return "Bank [bid=" + bid + ", name=" + name + ", balance=" + balance + ", branch=" + branch
 				+ ", city=" + city + ", accountType=" + accountType + ", email=" + email + ", mobile=" + mobile + "]";
 	}
 
