@@ -2,7 +2,9 @@ package com.day21.java;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class BankMap {
 
@@ -41,21 +43,31 @@ public class BankMap {
 		
 		// Find the second-highest account balance
 		
-		Bank customer = map.values()
+//		Bank customer = map.values()
+//		        .stream()
+//		        .map(Bank::getBalance)
+//		        .distinct()
+//		        .sorted(Comparator.reverseOrder())
+//		        .skip(1)
+//		        .findFirst()
+//		        .map(balance -> map.values()
+//		                .stream()
+//		                .filter(c -> c.getBalance().equals(balance))
+//		                .findFirst()
+//		                .orElse(null))
+//		        .orElse(null);
+//
+//		System.out.println(customer);
+		
+		// Group customers by city
+		
+		Map<String, List<Bank>> result = map.values()
 		        .stream()
-		        .map(Bank::getBalance)
-		        .distinct()
-		        .sorted(Comparator.reverseOrder())
-		        .skip(1)
-		        .findFirst()
-		        .map(balance -> map.values()
-		                .stream()
-		                .filter(c -> c.getBalance().equals(balance))
-		                .findFirst()
-		                .orElse(null))
-		        .orElse(null);
+		        .collect(Collectors.groupingBy(Bank::getCity));
 
-		System.out.println(customer);
+		result.forEach((city, customers) -> {
+		    System.out.println(city + " : " + customers);
+		});
 		
 		
 		
