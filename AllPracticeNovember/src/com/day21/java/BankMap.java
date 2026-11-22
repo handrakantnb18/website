@@ -71,16 +71,29 @@ public class BankMap {
 		
 		// Calculate average balance branch-wise
 		
-		Map<String, Double> result = map.values()
+//		Map<String, Double> result = map.values()
+//		        .stream()
+//		        .collect(Collectors.groupingBy(
+//		                Bank::getBranch,
+//		                Collectors.averagingDouble(Bank::getBalance)
+//		        ));
+//
+//		result.forEach((branch, averageBalance) -> {
+//		    System.out.println(branch + " : " + averageBalance);
+//		});
+		
+		// Find customers whose balance is greater than ₹50,000 and sort by balance descending
+		
+		List<Bank> result = map.values()
 		        .stream()
-		        .collect(Collectors.groupingBy(
-		                Bank::getBranch,
-		                Collectors.averagingDouble(Bank::getBalance)
-		        ));
+		        .filter(c -> c.getBalance() > 50000)
+		        .sorted(Comparator.comparing(
+		                Bank::getBalance,
+		                Comparator.reverseOrder()
+		        ))
+		        .collect(Collectors.toList());
 
-		result.forEach((branch, averageBalance) -> {
-		    System.out.println(branch + " : " + averageBalance);
-		});
+		result.forEach(System.out::println);
 		
 		
 	}
