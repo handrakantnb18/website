@@ -77,17 +77,27 @@ public class HighestSalaryByDepartment {
 
 		// If duplicate employee IDs exist, handle them using a merge function
 
-		Map<Integer, String> result4 = employees.stream()
-		        .collect(Collectors.toMap(
-		                Employee::getId,
-		                Employee::getName,
-		                (existing, replacement) -> existing
-		        ));
-		
-		System.out.println(result4);
-		
+//		Map<Integer, String> result4 = employees.stream()
+//		        .collect(Collectors.toMap(
+//		                Employee::getId,
+//		                Employee::getName,
+//		                (existing, replacement) -> existing
+//		        ));
+//		
+//		System.out.println(result4);
+//		
 
-		
+		// Find the average salary department-wise
+
+		Map<String, Double> result5 = employees.stream()
+		        .collect(Collectors.groupingBy(
+		                Employee::getDepartment,
+		                Collectors.averagingDouble(Employee::getSalary)
+		        ));
+
+		result5.forEach((department, averageSalary) ->
+		        System.out.println(department + " : " + averageSalary));
+
 		
 	}
 }
