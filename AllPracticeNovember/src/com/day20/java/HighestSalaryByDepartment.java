@@ -56,13 +56,25 @@ public class HighestSalaryByDepartment {
 
 		// Sort employees by salary Ascending
 		
-		List<Employee> result2 = employees.stream()
-		        .sorted(Comparator.comparingDouble(Employee::getSalary)
-		                )
-		        .collect(Collectors.toList());
-		
-		result2.forEach(System.out::println);
+//		List<Employee> result2 = employees.stream()
+//		        .sorted(Comparator.comparingDouble(Employee::getSalary)
+//		                )
+//		        .collect(Collectors.toList());
+//		
+//		result2.forEach(System.out::println);
   
+
+		// Convert a List into a Map using Java 17
+
+		Map<Integer, String> result3 = employees.stream()
+		        .collect(Collectors.toMap(
+		                Employee::getId,
+		                Employee::getName
+		        ));
+		
+		System.out.println(result3);
+		
+
 		
 		
 	}
