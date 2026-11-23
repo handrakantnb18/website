@@ -1,5 +1,8 @@
 package com.day20.java;
 
+import java.util.Map;
+import java.util.stream.Collectors;
+
 // Java 17 supports Records, which are useful for DTOs and API response objects.
 
 record BankAccount(
@@ -24,3 +27,4 @@ public class RecordExample {
 
 	}
 }
+
