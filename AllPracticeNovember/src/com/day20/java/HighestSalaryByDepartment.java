@@ -33,15 +33,26 @@ public class HighestSalaryByDepartment {
 	        
 	     // Partition employees into salary groups
 
-	      Map<Boolean, List<Employee>> result1 = employees.stream()
-	              .collect(Collectors.partitioningBy(
-	                      e -> e.getSalary() >= 50000
-	              ));
-	      
-	      System.out.println("High Salary: " + result1.get(true));
-	      System.out.println("Low Salary: " + result1.get(false));
+//	      Map<Boolean, List<Employee>> result1 = employees.stream()
+//	              .collect(Collectors.partitioningBy(
+//	                      e -> e.getSalary() >= 50000
+//	              ));
+//	      
+//	      System.out.println("High Salary: " + result1.get(true));
+//	      System.out.println("Low Salary: " + result1.get(false));
 
 	        
-	        
+
+
+	   //  Sort employees by salary descending
+	   
+	   List<Employee> result2 = employees.stream()
+	           .sorted(Comparator.comparingDouble(Employee::getSalary)
+	                   .reversed())
+	           .collect(Collectors.toList());
+	   
+	   result2.forEach(System.out::println);
+
+	      
 	}
 }
