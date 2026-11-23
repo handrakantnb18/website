@@ -46,13 +46,24 @@ public class HighestSalaryByDepartment {
 
 	   //  Sort employees by salary descending
 	   
-	   List<Employee> result2 = employees.stream()
-	           .sorted(Comparator.comparingDouble(Employee::getSalary)
-	                   .reversed())
-	           .collect(Collectors.toList());
-	   
-	   result2.forEach(System.out::println);
+//	   List<Employee> result2 = employees.stream()
+//	           .sorted(Comparator.comparingDouble(Employee::getSalary)
+//	                   .reversed())
+//	           .collect(Collectors.toList());
+//	   
+//	   result2.forEach(System.out::println);
 
-	      
+
+		// Sort employees by salary Ascending
+		
+		List<Employee> result2 = employees.stream()
+		        .sorted(Comparator.comparingDouble(Employee::getSalary)
+		                )
+		        .collect(Collectors.toList());
+		
+		result2.forEach(System.out::println);
+  
+		
+		
 	}
 }
