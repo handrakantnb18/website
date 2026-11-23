@@ -51,14 +51,14 @@ public class BankCustomer {
 		
         Bank highest = null;
 
-        for (Bank customer : customers.values()) {
-
-            if (highest == null ||
-                customer.getBalance() > highest.getBalance()) {
-
-                highest = customer;
-            }
-        }
+//        for (Bank customer : customers.values()) {
+//
+//            if (highest == null ||
+//                customer.getBalance() > highest.getBalance()) {
+//
+//                highest = customer;
+//            }
+//        }
 
        System.out.println("Highest Balance Customer: " + highest);
 
