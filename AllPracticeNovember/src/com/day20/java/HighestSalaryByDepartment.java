@@ -66,13 +66,25 @@ public class HighestSalaryByDepartment {
 
 		// Convert a List into a Map using Java 17
 
-		Map<Integer, String> result3 = employees.stream()
+//		Map<Integer, String> result3 = employees.stream()
+//		        .collect(Collectors.toMap(
+//		                Employee::getId,
+//		                Employee::getName
+//		        ));
+//		
+//		System.out.println(result3);
+//		
+
+		// If duplicate employee IDs exist, handle them using a merge function
+
+		Map<Integer, String> result4 = employees.stream()
 		        .collect(Collectors.toMap(
 		                Employee::getId,
-		                Employee::getName
+		                Employee::getName,
+		                (existing, replacement) -> existing
 		        ));
 		
-		System.out.println(result3);
+		System.out.println(result4);
 		
 
 		
