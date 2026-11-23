@@ -17,20 +17,30 @@ public class HighestSalaryByDepartment {
 		
 		// Find the highest-paid employee in each department
 		
-		 Map<String, Employee> result = employees.stream()
-	                .collect(Collectors.groupingBy(
-	                        Employee::getDepartment,
-	                        Collectors.collectingAndThen(
-	                                Collectors.maxBy(
-	                                        Comparator.comparingDouble(Employee::getSalary)
-	                                ),
-	                                Optional::get
-	                        )
-	                ));
-
-	        result.forEach((department, employee) ->
-	                System.out.println(department + " : " + employee));
+//		 Map<String, Employee> result = employees.stream()
+//	                .collect(Collectors.groupingBy(
+//	                        Employee::getDepartment,
+//	                        Collectors.collectingAndThen(
+//	                                Collectors.maxBy(
+//	                                        Comparator.comparingDouble(Employee::getSalary)
+//	                                ),
+//	                                Optional::get
+//	                        )
+//	                ));
+//
+//	        result.forEach((department, employee) ->
+//	                System.out.println(department + " : " + employee));
 	        
+	     // Partition employees into salary groups
+
+	      Map<Boolean, List<Employee>> result1 = employees.stream()
+	              .collect(Collectors.partitioningBy(
+	                      e -> e.getSalary() >= 50000
+	              ));
+	      
+	      System.out.println("High Salary: " + result1.get(true));
+	      System.out.println("Low Salary: " + result1.get(false));
+
 	        
 	        
 	}
