@@ -24,6 +24,7 @@ public class ListSerachingElementFour {
 
 		System.out.println("First Occurrence of 2 is at Index: " + i);
 
+		
 		int l = al.lastIndexOf(5);
 
 		System.out.println("Last Occurrence of 2 is at Index: " + l);
