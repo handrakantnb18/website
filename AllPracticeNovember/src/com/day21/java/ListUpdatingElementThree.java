@@ -20,6 +20,7 @@ public class ListUpdatingElementThree {
 		al.add("7. Seema");
 		al.add("8. Reta");
 
+		
 		System.out.println("Initial ArrayList " + al);
 		al.set(1, "1. Pooja");
 
