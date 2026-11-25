@@ -42,20 +42,30 @@ public class BankCustomer {
 
 		// Find customer with highest balance
 		
-		      Bank highest = map.values()
-		              .stream()
-		              .max(Comparator.comparingDouble(Bank::getBalance))
-		              .orElseThrow(() -> new RuntimeException("No customers found"));
+//		      Bank highest = map.values()
+//		              .stream()
+//		              .max(Comparator.comparingDouble(Bank::getBalance))
+//		              .orElseThrow(() -> new RuntimeException("No customers found"));
+//		
+//		      System.out.println("Highest Balance Customer:");
+//		      System.out.println("ID          : " + highest.getBid());
+//		      System.out.println("Name        : " + highest.getName());
+//		      System.out.println("Balance     : " + highest.getBalance());
+//		      System.out.println("Branch      : " + highest.getBranch());
+//		      System.out.println("City        : " + highest.getCity());
+//		      System.out.println("Account Type: " + highest.getAccountType());
+
+
+      // we need to compare the balance inside each Bank object.
+        
+      Bank highestBank = map.values()
+              .stream()
+              .max(Comparator.comparingDouble(Bank::getBalance))
+              .orElseThrow(() -> new RuntimeException("No customers found"));
+      System.out.println(highestBank);
+
 		
-		      System.out.println("Highest Balance Customer:");
-		      System.out.println("ID          : " + highest.getBid());
-		      System.out.println("Name        : " + highest.getName());
-		      System.out.println("Balance     : " + highest.getBalance());
-		      System.out.println("Branch      : " + highest.getBranch());
-		      System.out.println("City        : " + highest.getCity());
-		      System.out.println("Account Type: " + highest.getAccountType());
-
-
+		
 		
 	}
 }
