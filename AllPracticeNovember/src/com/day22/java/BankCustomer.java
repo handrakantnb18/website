@@ -67,20 +67,27 @@ public class BankCustomer {
 
   // Alternative approach using for-each loop
 		
-      Bank highest = null;
-
-      for (Bank customer : map.values()) {
-
-          if (highest == null ||
-              customer.getBalance() > highest.getBalance()) {
-
-              highest = customer;
-          }
-      }
-
-      System.out.println("Highest Balance Customer: " + highest);
+//      Bank highest = null;
+//
+//      for (Bank customer : map.values()) {
+//
+//          if (highest == null ||
+//              customer.getBalance() > highest.getBalance()) {
+//
+//              highest = customer;
+//          }
+//      }
+//
+//      System.out.println("Highest Balance Customer: " + highest);
 
 		
+
+		  // Find customers balance greater than 50000
+
+	    map.values()
+	       .stream()
+	       .filter(e -> e.getBalance() > 50000)
+	       .forEach(System.out::println);
 
 		
 		
