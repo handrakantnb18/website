@@ -55,12 +55,30 @@ public class BankMap {
 
      // we need to compare the balance inside each Bank object.
         
-      Bank highestBank = map.values()
-              .stream()
-              .max(Comparator.comparingDouble(Bank::getBalance))
-              .orElseThrow(() -> new RuntimeException("No customers found"));
-      System.out.println(highestBank);
+//      Bank highestBank = map.values()
+//              .stream()
+//              .max(Comparator.comparingDouble(Bank::getBalance))
+//              .orElseThrow(() -> new RuntimeException("No customers found"));
+//      System.out.println(highestBank);
 
+      
+      // Alternative approach using for-each loop
+		
+    Bank highest = null;
+
+    for (Bank customer : map.values()) {
+
+        if (highest == null ||
+            customer.getBalance() > highest.getBalance()) {
+
+            highest = customer;
+        }
+    }
+
+    System.out.println("Highest Balance Customer: " + highest);
+
+
+    
 		
 	}
 }
