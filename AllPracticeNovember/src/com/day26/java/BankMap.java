@@ -1,5 +1,6 @@
 package com.day26.java;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ import com.day23.java.Bank;
 public class BankMap {
 
 	public static void main(String[] args) {
-		
+
 		Map<Integer, Bank> map = new HashMap<>();
 
 		map.put(101, new Bank(101, "Rahul", 50000.0, "SBI", "Pune", "Savings"));
@@ -33,11 +34,25 @@ public class BankMap {
 
 		// Display all bank customers
 
-		for (Map.Entry<Integer, Bank> entry : map.entrySet()) {
+//		for (Map.Entry<Integer, Bank> entry : map.entrySet()) {
+//
+//			System.out.println(entry.getKey() + " = " + entry.getValue());
+//		}		
 
-			System.out.println(entry.getKey() + " = " + entry.getValue());
-		}		
+		// Find customer with highest balance
 
+		Bank highest = map.values().stream().max(Comparator.comparingDouble(Bank::getBalance))
+				.orElseThrow(() -> new RuntimeException("No customers found"));
+
+		System.out.println("Highest Balance Customer:");
+		System.out.println("ID          : " + highest.getBid());
+		System.out.println("Name        : " + highest.getName());
+		System.out.println("Balance     : " + highest.getBalance());
+		System.out.println("Branch      : " + highest.getBranch());
+		System.out.println("City        : " + highest.getCity());
+		System.out.println("Account Type: " + highest.getAccountType());
+
+		
 		
 	}
 }
