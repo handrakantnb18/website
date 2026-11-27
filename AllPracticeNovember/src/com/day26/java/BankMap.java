@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class BankMap {
 
 	public static void main(String[] args) {
@@ -51,28 +50,34 @@ public class BankMap {
 //		System.out.println("City        : " + highest.getCity());
 //		System.out.println("Account Type: " + highest.getAccountType());
 //
-		
-     // we need to compare the balance inside each Bank object.
-        
+
+		// we need to compare the balance inside each Bank object.
+
 //		Bank highestBank = map.values().stream().max(Comparator.comparingDouble(Bank::getBalance))
 //				.orElseThrow(() -> new RuntimeException("No customers found"));
 //		System.out.println(highestBank);
 //		
-		
-		   // Alternative approach using for-each loop
-		
-			Bank highest = null;
 
-			for (Bank customer : map.values()) {
+		// Alternative approach using for-each loop
 
-				if (highest == null || customer.getBalance() > highest.getBalance()) {
+//			Bank highest = null;
+//
+//			for (Bank customer : map.values()) {
+//
+//				if (highest == null || customer.getBalance() > highest.getBalance()) {
+//
+//					highest = customer;
+//				}
+//			}
+//
+//			System.out.println("Highest Balance Customer: " + highest);
 
-					highest = customer;
-				}
-			}
+		// Find customers balance greater than 50000
 
-			System.out.println("Highest Balance Customer: " + highest);
-		
-		
+		map.values()
+		.stream()
+		.filter(e -> e.getBalance() > 50000)
+		.forEach(System.out::println);
+
 	}
 }
