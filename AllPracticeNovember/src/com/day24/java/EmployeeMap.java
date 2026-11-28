@@ -40,19 +40,40 @@ public class EmployeeMap {
 
 		// Find employee with highest salary
 
-		Employee emp = map.values().stream()
-				.max(Comparator.comparing(Employee::getSalary))
-				.orElse(null);
+//		Employee emp = map.values().stream()
+//				.max(Comparator.comparing(Employee::getSalary))
+//				.orElse(null);
+//
+//		System.out.println("Highest Salary Employee:");
+//
+//		if (emp != null) {
+//			System.out.println("ID         : " + emp.getId());
+//			System.out.println("Name       : " + emp.getName());
+//			System.out.println("Salary     : " + emp.getSalary());
+//			System.out.println("Department : " + emp.getDepartment());
+//		}
 
-		System.out.println("Highest Salary Employee:");
+		// Find employee with lowest salary
+
+		Employee emp = map.values()
+		        .stream()
+		        .min(Comparator.comparing(Employee::getSalary))
+		        .orElse(null);
 
 		if (emp != null) {
-			System.out.println("ID         : " + emp.getId());
-			System.out.println("Name       : " + emp.getName());
-			System.out.println("Salary     : " + emp.getSalary());
-			System.out.println("Department : " + emp.getDepartment());
-		}
 
+		    System.out.println("Lowest Salary Employee:");
+
+		    System.out.println("ID         : " + emp.getId());
+		    System.out.println("Name       : " + emp.getName());
+		    System.out.println("Email      : " + emp.getEmail());
+		    System.out.println("Salary     : " + emp.getSalary());
+		    System.out.println("EmpType    : " + emp.getEmpType());
+		    System.out.println("City       : " + emp.getCity());
+		    System.out.println("Project    : " + emp.getProject());
+		    System.out.println("Department : " + emp.getDepartment());
+		}
+		
 		
 		
 	}
