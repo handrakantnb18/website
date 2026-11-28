@@ -93,16 +93,32 @@ public class EmployeeMap {
 //        
      // Find employees earning salary greater than 50000
 
-        map.values()
-           .stream()
-           .filter(emp -> emp.getSalary() > 50000)
-           .forEach(emp -> System.out.println(
-                   emp.getId() + " | " +
-                   emp.getName() + " | " +
-                   emp.getSalary() + " | " +
-                   emp.getDepartment()
-           ));
-		
+//        map.values()
+//           .stream()
+//           .filter(emp -> emp.getSalary() > 50000)
+//           .forEach(emp -> System.out.println(
+//                   emp.getId() + " | " +
+//                   emp.getName() + " | " +
+//                   emp.getSalary() + " | " +
+//                   emp.getDepartment()
+//           ));
+//		
+        
+		 // Find employee with highest salary
+
+        Employee emp = map.values()
+                .stream()
+                .max(Comparator.comparing(Employee::getSalary))
+                .orElse(null);
+
+        System.out.println("Highest Salary Employee:");
+
+        if (emp != null) {
+            System.out.println("ID         : " + emp.getId());
+            System.out.println("Name       : " + emp.getName());
+            System.out.println("Salary     : " + emp.getSalary());
+            System.out.println("Department : " + emp.getDepartment());
+        }
         
         
         
